@@ -42,3 +42,4 @@ jobs:
           name: ${{ github.event.inputs.compositionId }}
           path: out/${{ github.event.inputs.compositionId }}.mp4
           retention-days: 7
+
