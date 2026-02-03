@@ -26,12 +26,12 @@ export const CallToAction: React.FC<{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 30,
+        gap: 40,
       }}
     >
       <div
         style={{
-          fontSize: 48,
+          fontSize: 56,
           fontWeight: 700,
           color: 'white',
           fontFamily: FONTS.korean,
@@ -45,9 +45,9 @@ export const CallToAction: React.FC<{
         style={{
           transform: `scale(${buttonScale})`,
           background: `linear-gradient(135deg, ${COLORS.accent}, ${COLORS.accentGradient})`,
-          padding: '20px 60px',
+          padding: '24px 70px',
           borderRadius: 50,
-          fontSize: 36,
+          fontSize: 42,
           fontWeight: 700,
           color: 'white',
           fontFamily: FONTS.english,
@@ -58,7 +58,7 @@ export const CallToAction: React.FC<{
 
       <div
         style={{
-          fontSize: 24,
+          fontSize: 30,
           color: COLORS.gray,
           fontFamily: FONTS.korean,
         }}
