@@ -5,6 +5,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
+import { FONTS } from '../styles';
 
 export const Logo: React.FC<{
   size?: number;
@@ -49,7 +50,7 @@ export const Logo: React.FC<{
           fontSize: size * 0.5,
           fontWeight: 'bold',
           color: 'white',
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: FONTS.english,
         }}
       >
         V
@@ -70,7 +71,7 @@ export const Logo: React.FC<{
               fontSize: size * 0.4,
               fontWeight: 800,
               color: 'white',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: FONTS.english,
               letterSpacing: -1,
             }}
           >
@@ -81,7 +82,7 @@ export const Logo: React.FC<{
               fontSize: size * 0.15,
               color: '#06B6D4',
               fontWeight: 600,
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: FONTS.english,
               letterSpacing: 4,
               textTransform: 'uppercase',
               marginTop: 4,

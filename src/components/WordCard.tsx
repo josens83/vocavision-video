@@ -5,7 +5,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import { COLORS } from '../styles';
+import { COLORS, FONTS } from '../styles';
 import { WordData } from '../data/words';
 
 export const WordCard: React.FC<{
@@ -42,31 +42,31 @@ export const WordCard: React.FC<{
         padding: 40,
       }}
     >
-      {/* 단어 */}
+      {/* 단어 (영어) */}
       <div
         style={{
           fontSize: 100,
           fontWeight: 800,
           color: 'white',
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: FONTS.english,
           textTransform: 'lowercase',
         }}
       >
         {word.word}
       </div>
 
-      {/* 발음 */}
+      {/* 발음 (영어 + 한국어) */}
       <div
         style={{
           fontSize: 32,
           color: COLORS.accent,
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: FONTS.korean,
         }}
       >
         {word.pronunciation} · {word.koreanPron}
       </div>
 
-      {/* 뜻 */}
+      {/* 뜻 (한국어) */}
       {showMeaning && (
         <div
           style={{
@@ -74,21 +74,21 @@ export const WordCard: React.FC<{
             fontSize: 48,
             fontWeight: 600,
             color: COLORS.gold,
-            fontFamily: 'Pretendard, sans-serif',
+            fontFamily: FONTS.korean,
           }}
         >
           {word.meaning}
         </div>
       )}
 
-      {/* 암기법 */}
+      {/* 암기법 (한국어) */}
       {showMnemonic && (
         <div
           style={{
             opacity: mnemonicOpacity,
             fontSize: 36,
             color: COLORS.green,
-            fontFamily: 'Pretendard, sans-serif',
+            fontFamily: FONTS.korean,
             textAlign: 'center',
             maxWidth: 800,
             lineHeight: 1.5,
@@ -113,7 +113,7 @@ export const WordCard: React.FC<{
             style={{
               fontSize: 28,
               color: 'white',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: FONTS.english,
               fontStyle: 'italic',
             }}
           >
@@ -123,7 +123,7 @@ export const WordCard: React.FC<{
             style={{
               fontSize: 24,
               color: COLORS.gray,
-              fontFamily: 'Pretendard, sans-serif',
+              fontFamily: FONTS.korean,
             }}
           >
             → {word.rhymeKo}

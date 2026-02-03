@@ -1,16 +1,29 @@
 import React from 'react';
-import { AbsoluteFill, Sequence } from 'remotion';
+import { AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame } from 'remotion';
 import { GradientBackground } from '../components/GradientBackground';
 import { Logo } from '../components/Logo';
 import { TextReveal } from '../components/TextReveal';
 import { CallToAction } from '../components/CallToAction';
-import { COLORS } from '../styles';
+import { COLORS, FONTS } from '../styles';
+
+// BGM 볼륨 함수 (페이드인/페이드아웃)
+const getBgmVolume = (frame: number) => {
+  // 처음 1초 페이드인, 마지막 2초 페이드아웃
+  const fadeIn = interpolate(frame, [0, 30], [0, 0.3], { extrapolateRight: 'clamp' });
+  const fadeOut = interpolate(frame, [2190, 2250], [0.3, 0], { extrapolateLeft: 'clamp' });
+  return Math.min(fadeIn, fadeOut);
+};
 
 export const CompanyIntro: React.FC = () => {
+  const frame = useCurrentFrame();
+
   // 30fps × 75초 = 2250프레임
   return (
     <AbsoluteFill>
       <GradientBackground />
+
+      {/* 배경 음악 (BGM 파일이 public/audio/bgm-intro.mp3에 있을 때 활성화) */}
+      {/* <Audio src={staticFile('audio/bgm-intro.mp3')} volume={getBgmVolume(frame)} /> */}
 
       {/* Scene 1: 로고 인트로 (0~5초, 0~150프레임) */}
       <Sequence from={0} durationInFrames={150}>
@@ -150,7 +163,7 @@ export const CompanyIntro: React.FC = () => {
               alignItems: 'center',
               fontSize: 24,
               color: COLORS.gray,
-              fontFamily: 'Pretendard, sans-serif',
+              fontFamily: FONTS.korean,
             }}
           >
             📱 화면 녹화 삽입 예정

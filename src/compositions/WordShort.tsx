@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Sequence } from 'remotion';
+import { AbsoluteFill, Audio, Sequence, staticFile } from 'remotion';
 import { GradientBackground } from '../components/GradientBackground';
 import { Logo } from '../components/Logo';
 import { WordCard } from '../components/WordCard';
@@ -17,6 +17,9 @@ export const WordShort: React.FC<{
   return (
     <AbsoluteFill>
       <GradientBackground />
+
+      {/* 배경 음악 (BGM 파일이 public/audio/bgm-short.mp3에 있을 때 활성화) */}
+      {/* <Audio src={staticFile('audio/bgm-short.mp3')} volume={0.3} loop /> */}
 
       {/* 로고 (0~2초) */}
       <Sequence from={0} durationInFrames={60}>
