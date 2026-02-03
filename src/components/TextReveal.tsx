@@ -1,5 +1,6 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
+import { FONTS } from '../styles';
 
 export const TextReveal: React.FC<{
   text: string;
@@ -36,7 +37,7 @@ export const TextReveal: React.FC<{
         fontWeight,
         color,
         textAlign,
-        fontFamily: 'Pretendard, Inter, sans-serif',
+        fontFamily: FONTS.korean,
         lineHeight: 1.4,
       }}
     >

@@ -1,6 +1,6 @@
 import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
-import { COLORS } from '../styles';
+import { COLORS, FONTS } from '../styles';
 
 export const CallToAction: React.FC<{
   startFrame?: number;
@@ -34,7 +34,7 @@ export const CallToAction: React.FC<{
           fontSize: 48,
           fontWeight: 700,
           color: 'white',
-          fontFamily: 'Pretendard, sans-serif',
+          fontFamily: FONTS.korean,
           textAlign: 'center',
         }}
       >
@@ -50,7 +50,7 @@ export const CallToAction: React.FC<{
           fontSize: 36,
           fontWeight: 700,
           color: 'white',
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: FONTS.english,
         }}
       >
         vocavision.kr
@@ -60,7 +60,7 @@ export const CallToAction: React.FC<{
         style={{
           fontSize: 24,
           color: COLORS.gray,
-          fontFamily: 'Pretendard, sans-serif',
+          fontFamily: FONTS.korean,
         }}
       >
         수능 L1(기초) 880개+ 단어 무료 학습

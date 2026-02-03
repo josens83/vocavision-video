@@ -1,3 +1,5 @@
+import { koreanFontFamily, englishFontFamily } from './fonts';
+
 // VocaVision 브랜드 컬러
 export const COLORS = {
   primary: '#0F172A',      // Navy (메인)
@@ -22,9 +24,8 @@ export const VIDEO = {
   PORTRAIT: { width: 1080, height: 1920, fps: 30 },
 };
 
-// 폰트
+// 폰트 (Google Fonts 로드)
 export const FONTS = {
-  title: 'Pretendard, sans-serif',
-  body: 'Pretendard, sans-serif',
-  english: 'Inter, sans-serif',
+  korean: koreanFontFamily,    // 'Noto Sans KR' - 한국어 텍스트용
+  english: englishFontFamily,  // 'Inter' - 영어 텍스트용
 };
