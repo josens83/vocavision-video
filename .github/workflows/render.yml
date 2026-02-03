@@ -11,8 +11,7 @@ on:
         options:
           - CompanyIntro
           - WordShort
-          - WordShort-ubiquitous
-          - WordShort-paradigm
+          - WordShort-set-001
 
 jobs:
   render:

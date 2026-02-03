@@ -2,27 +2,29 @@ import React from 'react';
 import { AbsoluteFill, Audio, Sequence, staticFile } from 'remotion';
 import { GradientBackground } from '../components/GradientBackground';
 import { Logo } from '../components/Logo';
-import { WordCard } from '../components/WordCard';
-import { CallToAction } from '../components/CallToAction';
 import { TextReveal } from '../components/TextReveal';
+import { WordSection } from '../components/WordSection';
+import { Transition } from '../components/Transition';
+import { CallToAction } from '../components/CallToAction';
 import { COLORS } from '../styles';
-import { SAMPLE_WORDS } from '../data/words';
+import { WORD_SETS } from '../data/words';
 
 export const WordShort: React.FC<{
-  wordIndex?: number;
-}> = ({ wordIndex = 0 }) => {
-  const word = SAMPLE_WORDS[wordIndex] || SAMPLE_WORDS[0];
+  setIndex?: number;
+}> = ({ setIndex = 0 }) => {
+  const wordSet = WORD_SETS[setIndex] || WORD_SETS[0];
+  const [word1, word2, word3] = wordSet.words;
 
-  // 30fps 기준, 총 20초 = 600프레임
+  // 30fps × 55초 = 1650프레임
   return (
     <AbsoluteFill>
       <GradientBackground />
 
-      {/* 배경 음악 */}
+      {/* BGM */}
       <Audio src={staticFile('audio/bgm-short.mp3')} volume={0.3} loop />
 
-      {/* 로고 (0~2초) */}
-      <Sequence from={0} durationInFrames={60}>
+      {/* ===== 인트로 (0~3초, 0~90프레임) ===== */}
+      <Sequence from={0} durationInFrames={90}>
         <AbsoluteFill
           style={{
             justifyContent: 'flex-start',
@@ -31,41 +33,44 @@ export const WordShort: React.FC<{
           }}
         >
           <Logo size={60} showText={false} />
+          <div style={{ marginTop: 16 }}>
+            <TextReveal
+              text="오늘의 영단어"
+              fontSize={36}
+              color={COLORS.accent}
+              fontWeight={600}
+            />
+          </div>
         </AbsoluteFill>
       </Sequence>
 
-      {/* "오늘의 단어" 타이틀 (1~3초) */}
-      <Sequence from={30} durationInFrames={60}>
-        <AbsoluteFill
-          style={{
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            paddingTop: 200,
-          }}
-        >
-          <TextReveal
-            text="오늘의 수능 단어"
-            fontSize={36}
-            color={COLORS.accent}
-            fontWeight={500}
-          />
-        </AbsoluteFill>
+      {/* ===== 단어 1 (3~18초, 90~540프레임) ===== */}
+      <Sequence from={90} durationInFrames={450}>
+        <WordSection word={word1} />
       </Sequence>
 
-      {/* 단어 카드 (2~16초) */}
-      <Sequence from={60} durationInFrames={420}>
-        <AbsoluteFill
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <WordCard word={word} />
-        </AbsoluteFill>
+      {/* ===== 전환 1 (18~20초, 540~600프레임) ===== */}
+      <Sequence from={540} durationInFrames={60}>
+        <Transition />
       </Sequence>
 
-      {/* CTA (16~20초) */}
-      <Sequence from={480} durationInFrames={120}>
+      {/* ===== 단어 2 (20~35초, 600~1050프레임) ===== */}
+      <Sequence from={600} durationInFrames={450}>
+        <WordSection word={word2} />
+      </Sequence>
+
+      {/* ===== 전환 2 (35~37초, 1050~1110프레임) ===== */}
+      <Sequence from={1050} durationInFrames={60}>
+        <Transition />
+      </Sequence>
+
+      {/* ===== 단어 3 (37~52초, 1110~1560프레임) ===== */}
+      <Sequence from={1110} durationInFrames={450}>
+        <WordSection word={word3} />
+      </Sequence>
+
+      {/* ===== 아웃트로/CTA (52~55초, 1560~1650프레임) ===== */}
+      <Sequence from={1560} durationInFrames={90}>
         <AbsoluteFill
           style={{
             justifyContent: 'center',
