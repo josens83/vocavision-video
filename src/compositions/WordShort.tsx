@@ -18,8 +18,8 @@ export const WordShort: React.FC<{
     <AbsoluteFill>
       <GradientBackground />
 
-      {/* 배경 음악 (BGM 파일이 public/audio/bgm-short.mp3에 있을 때 활성화) */}
-      {/* <Audio src={staticFile('audio/bgm-short.mp3')} volume={0.3} loop /> */}
+      {/* 배경 음악 */}
+      <Audio src={staticFile('audio/bgm-short.mp3')} volume={0.3} loop />
 
       {/* 로고 (0~2초) */}
       <Sequence from={0} durationInFrames={60}>
