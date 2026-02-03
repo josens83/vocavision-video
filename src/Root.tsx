@@ -7,7 +7,7 @@ import { VIDEO } from './styles';
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* 회사 소개 영상 — 16:9, 75초 */}
+      {/* 회사 소개 영상 — 16:9, 75초 (기존 유지) */}
       <Composition
         id="CompanyIntro"
         component={CompanyIntro}
@@ -17,42 +17,29 @@ export const RemotionRoot: React.FC = () => {
         height={VIDEO.LANDSCAPE.height}
       />
 
-      {/* 단어 쇼츠 — 9:16, 20초 */}
+      {/* ===== 3단어 쇼츠 — 9:16, 55초 ===== */}
+      <Composition
+        id="WordShort-set-001"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 0,
+        }}
+      />
+
+      {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
         component={WordShort}
-        durationInFrames={600}
+        durationInFrames={1650}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
         defaultProps={{
-          wordIndex: 0,
-        }}
-      />
-
-      {/* 단어 쇼츠 — ubiquitous */}
-      <Composition
-        id="WordShort-ubiquitous"
-        component={WordShort}
-        durationInFrames={600}
-        fps={VIDEO.PORTRAIT.fps}
-        width={VIDEO.PORTRAIT.width}
-        height={VIDEO.PORTRAIT.height}
-        defaultProps={{
-          wordIndex: 0,
-        }}
-      />
-
-      {/* 단어 쇼츠 — paradigm */}
-      <Composition
-        id="WordShort-paradigm"
-        component={WordShort}
-        durationInFrames={600}
-        fps={VIDEO.PORTRAIT.fps}
-        width={VIDEO.PORTRAIT.width}
-        height={VIDEO.PORTRAIT.height}
-        defaultProps={{
-          wordIndex: 1,
+          setIndex: 0,
         }}
       />
     </>
