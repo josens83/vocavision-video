@@ -19,7 +19,12 @@ export interface WordSet {
 }
 
 // ============================================================
-// 샘플 데이터 — 첫 번째 세트
+// 🔧 영상 제작 시 아래 데이터만 수정하면 됩니다
+// 각 단어의 모든 필드를 원하는 대로 변경 가능합니다
+//
+// rhymeImageUrl 확인:
+//   Supabase → Storage → word-images → visuals
+//   패턴: https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/{파일명}
 // ============================================================
 
 export const WORD_SETS: WordSet[] = [
@@ -33,8 +38,8 @@ export const WORD_SETS: WordSet[] = [
         pronunciation: "/juːˈbɪk.wɪ.təs/",
         koreanPron: "유-비-퀴-터스",
         stress: "비",
-        rhymeCaption: "you be with us — everywhere",
-        rhymeCaptionKo: "너 우리와 함께 — 어디에나",
+        rhymeCaption: "Ubiquitous — you be with us, everywhere.",
+        rhymeCaptionKo: "유비쿼터스 — 너 우리와 함께, 어디에나",
         rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ubiquitous-rhyme-1768381623510.png",
         example: "Smartphones have become ubiquitous in modern life.",
         exampleKo: "스마트폰은 현대 생활에서 어디에나 있게 되었다.",
@@ -45,8 +50,8 @@ export const WORD_SETS: WordSet[] = [
         pronunciation: "/ˈpær.ə.daɪm/",
         koreanPron: "패-러-다임",
         stress: "패",
-        rhymeCaption: "pair a dime — same coin, different view",
-        rhymeCaptionKo: "동전 한 쌍 — 같은 동전, 다른 관점",
+        rhymeCaption: "Through time we climb to build a new paradigm!",
+        rhymeCaptionKo: "시간을 통해 올라 새로운 패러다임을 만든다!",
         rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/paradigm-rhyme-1768311466472.png",
         example: "A paradigm shift changes how you think.",
         exampleKo: "패러다임 전환은 사고방식을 바꾼다.",
@@ -57,8 +62,8 @@ export const WORD_SETS: WordSet[] = [
         pronunciation: "/kənˈdʒek.tʃər/",
         koreanPron: "컨-젝-쳐",
         stress: "젝",
-        rhymeCaption: "without structure leads to rupture",
-        rhymeCaptionKo: "구조 없는 추측은 결국 망한다",
+        rhymeCaption: "A conjecture without structure leads to rupture.",
+        rhymeCaptionKo: "구조 없는 추측은 결국 망한다.",
         rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/conjecture-rhyme-1768312988877.png",
         example: "My conjecture about the missing cookies pointed to my cat.",
         exampleKo: "사라진 쿠키에 대한 내 추측은 고양이를 가리켰다.",

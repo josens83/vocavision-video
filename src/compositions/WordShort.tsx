@@ -6,7 +6,7 @@ import { TextReveal } from '../components/TextReveal';
 import { WordSection } from '../components/WordSection';
 import { Transition } from '../components/Transition';
 import { CallToAction } from '../components/CallToAction';
-import { COLORS } from '../styles';
+import { COLORS, FONTS } from '../styles';
 import { WORD_SETS } from '../data/words';
 
 export const WordShort: React.FC<{
@@ -27,19 +27,29 @@ export const WordShort: React.FC<{
       <Sequence from={0} durationInFrames={90}>
         <AbsoluteFill
           style={{
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             alignItems: 'center',
-            paddingTop: 80,
           }}
         >
-          <Logo size={60} showText={false} />
-          <div style={{ marginTop: 16 }}>
+          <Logo size={100} showText={true} />
+          <div style={{ marginTop: 24 }}>
             <TextReveal
               text="오늘의 영단어"
-              fontSize={36}
+              fontSize={48}
               color={COLORS.accent}
-              fontWeight={600}
+              fontWeight={700}
             />
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 120,
+              fontSize: 24,
+              color: COLORS.gray,
+              fontFamily: FONTS.english,
+            }}
+          >
+            vocavision.kr
           </div>
         </AbsoluteFill>
       </Sequence>
