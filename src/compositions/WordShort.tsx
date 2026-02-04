@@ -22,6 +22,7 @@ const IntroSection: React.FC = () => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
+        paddingBottom: 120,
       }}
     >
       {/* 1행: 로고 + VocaVision AI (가로 배열) */}
@@ -31,13 +32,13 @@ const IntroSection: React.FC = () => {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          gap: 16,
+          gap: 20,
         }}
       >
-        <Logo size={56} showText={false} />
+        <Logo size={72} showText={false} />
         <span
           style={{
-            fontSize: 44,
+            fontSize: 60,
             fontWeight: 700,
             color: 'white',
             fontFamily: FONTS.english,
@@ -51,10 +52,10 @@ const IntroSection: React.FC = () => {
       <div
         style={{
           opacity: sloganOpacity,
-          fontSize: 22,
+          fontSize: 30,
           color: '#9CA3AF',
           fontFamily: FONTS.english,
-          marginTop: 8,
+          marginTop: 12,
           fontStyle: 'italic',
         }}
       >
@@ -65,11 +66,11 @@ const IntroSection: React.FC = () => {
       <div
         style={{
           opacity: titleOpacity,
-          fontSize: 52,
+          fontSize: 68,
           fontWeight: 700,
           color: COLORS.accent,
           fontFamily: FONTS.korean,
-          marginTop: 40,
+          marginTop: 50,
         }}
       >
         오늘의 영단어
@@ -80,8 +81,8 @@ const IntroSection: React.FC = () => {
         style={{
           opacity: urlOpacity,
           position: 'absolute',
-          bottom: 80,
-          fontSize: 28,
+          bottom: 100,
+          fontSize: 36,
           color: '#9CA3AF',
           fontFamily: FONTS.english,
         }}
