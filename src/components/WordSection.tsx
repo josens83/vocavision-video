@@ -128,13 +128,13 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
         {/* 영어 캡션 */}
         <div
           style={{
-            fontSize: 28,
+            fontSize: 34,
             color: COLORS.accent,
             fontFamily: FONTS.english,
             fontStyle: 'italic',
             textAlign: 'center',
-            lineHeight: 1.4,
-            maxWidth: 900,
+            lineHeight: 1.5,
+            maxWidth: 920,
             paddingLeft: 40,
             paddingRight: 40,
           }}
@@ -145,11 +145,12 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
         {/* 한국어 캡션 */}
         <div
           style={{
-            fontSize: 22,
+            fontSize: 28,
             color: '#9CA3AF',
             fontFamily: FONTS.korean,
-            marginTop: 6,
+            marginTop: 10,
             textAlign: 'center',
+            lineHeight: 1.4,
           }}
         >
           {word.rhymeCaptionKo}
@@ -181,34 +182,34 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
       <div
         style={{
           opacity: exampleOpacity,
-          marginTop: 28,
+          marginTop: 32,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 8,
+          gap: 12,
         }}
       >
         <div
           style={{
-            fontSize: 26,
+            fontSize: 32,
             color: 'white',
             fontFamily: FONTS.english,
             fontStyle: 'italic',
             textAlign: 'center',
-            maxWidth: 900,
-            lineHeight: 1.5,
+            maxWidth: 920,
+            lineHeight: 1.6,
           }}
         >
           "{word.example}"
         </div>
         <div
           style={{
-            fontSize: 24,
+            fontSize: 28,
             color: COLORS.gray,
             fontFamily: FONTS.korean,
             textAlign: 'center',
-            maxWidth: 900,
-            lineHeight: 1.4,
+            maxWidth: 920,
+            lineHeight: 1.5,
           }}
         >
           {word.exampleKo}
