@@ -39,7 +39,7 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
       style={{
         justifyContent: 'flex-start',
         alignItems: 'center',
-        paddingTop: 140,
+        paddingTop: 160,
         paddingLeft: 60,
         paddingRight: 60,
       }}
@@ -54,6 +54,7 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
           color: 'white',
           fontFamily: FONTS.english,
           textAlign: 'center',
+          marginBottom: 16,
         }}
       >
         {word.word}
@@ -66,7 +67,7 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
           fontSize: 32,
           color: COLORS.accent,
           fontFamily: FONTS.english,
-          marginTop: 12,
+          marginTop: 4,
           textAlign: 'center',
         }}
       >
@@ -80,7 +81,7 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
           fontSize: 32,
           color: COLORS.accent,
           fontFamily: FONTS.korean,
-          marginTop: 4,
+          marginTop: 6,
           textAlign: 'center',
         }}
       >
@@ -95,27 +96,64 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
           fontWeight: 600,
           color: COLORS.gold,
           fontFamily: FONTS.korean,
-          marginTop: 32,
+          marginTop: 28,
           textAlign: 'center',
         }}
       >
         {word.meaning}
       </div>
 
-      {/* Rhyme 캡션 */}
+      {/* Rhyme 섹션 */}
       <div
         style={{
           opacity: rhymeCaptionOpacity,
-          fontSize: 34,
-          color: COLORS.green,
-          fontFamily: FONTS.english,
-          marginTop: 28,
-          textAlign: 'center',
-          lineHeight: 1.4,
-          maxWidth: 900,
+          marginTop: 24,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
-        {word.rhymeCaption}
+        {/* Rhyme 라벨 */}
+        <div
+          style={{
+            fontSize: 18,
+            color: '#9CA3AF',
+            fontFamily: FONTS.english,
+            marginBottom: 6,
+          }}
+        >
+          🎵 Rhyme
+        </div>
+
+        {/* 영어 캡션 */}
+        <div
+          style={{
+            fontSize: 28,
+            color: COLORS.accent,
+            fontFamily: FONTS.english,
+            fontStyle: 'italic',
+            textAlign: 'center',
+            lineHeight: 1.4,
+            maxWidth: 900,
+            paddingLeft: 40,
+            paddingRight: 40,
+          }}
+        >
+          {word.rhymeCaption}
+        </div>
+
+        {/* 한국어 캡션 */}
+        <div
+          style={{
+            fontSize: 22,
+            color: '#9CA3AF',
+            fontFamily: FONTS.korean,
+            marginTop: 6,
+            textAlign: 'center',
+          }}
+        >
+          {word.rhymeCaptionKo}
+        </div>
       </div>
 
       {/* Rhyme 이미지 */}
@@ -123,7 +161,7 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
         style={{
           opacity: imageOpacity,
           transform: `scale(${imageScale})`,
-          marginTop: 32,
+          marginTop: 24,
           borderRadius: 16,
           overflow: 'hidden',
           boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
@@ -143,34 +181,34 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
       <div
         style={{
           opacity: exampleOpacity,
-          marginTop: 32,
+          marginTop: 28,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 10,
+          gap: 8,
         }}
       >
         <div
           style={{
-            fontSize: 28,
+            fontSize: 26,
             color: 'white',
             fontFamily: FONTS.english,
             fontStyle: 'italic',
             textAlign: 'center',
             maxWidth: 900,
-            lineHeight: 1.6,
+            lineHeight: 1.5,
           }}
         >
           "{word.example}"
         </div>
         <div
           style={{
-            fontSize: 26,
+            fontSize: 24,
             color: COLORS.gray,
             fontFamily: FONTS.korean,
             textAlign: 'center',
             maxWidth: 900,
-            lineHeight: 1.5,
+            lineHeight: 1.4,
           }}
         >
           {word.exampleKo}

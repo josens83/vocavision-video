@@ -1,13 +1,96 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, staticFile } from 'remotion';
+import { AbsoluteFill, Audio, Sequence, staticFile, interpolate, useCurrentFrame } from 'remotion';
 import { GradientBackground } from '../components/GradientBackground';
 import { Logo } from '../components/Logo';
-import { TextReveal } from '../components/TextReveal';
 import { WordSection } from '../components/WordSection';
 import { Transition } from '../components/Transition';
 import { CallToAction } from '../components/CallToAction';
 import { COLORS, FONTS } from '../styles';
 import { WORD_SETS } from '../data/words';
+
+// 인트로 컴포넌트 (애니메이션 포함)
+const IntroSection: React.FC = () => {
+  const frame = useCurrentFrame();
+
+  const logoOpacity = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
+  const sloganOpacity = interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' });
+  const titleOpacity = interpolate(frame, [30, 50], [0, 1], { extrapolateRight: 'clamp' });
+  const urlOpacity = interpolate(frame, [40, 60], [0, 1], { extrapolateRight: 'clamp' });
+
+  return (
+    <AbsoluteFill
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      {/* 1행: 로고 + VocaVision AI (가로 배열) */}
+      <div
+        style={{
+          opacity: logoOpacity,
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 16,
+        }}
+      >
+        <Logo size={56} showText={false} />
+        <span
+          style={{
+            fontSize: 44,
+            fontWeight: 700,
+            color: 'white',
+            fontFamily: FONTS.english,
+          }}
+        >
+          VocaVision AI
+        </span>
+      </div>
+
+      {/* 2행: 슬로건 */}
+      <div
+        style={{
+          opacity: sloganOpacity,
+          fontSize: 22,
+          color: '#9CA3AF',
+          fontFamily: FONTS.english,
+          marginTop: 8,
+          fontStyle: 'italic',
+        }}
+      >
+        Vocabulary, Visualized.
+      </div>
+
+      {/* 3행: 오늘의 영단어 */}
+      <div
+        style={{
+          opacity: titleOpacity,
+          fontSize: 52,
+          fontWeight: 700,
+          color: COLORS.accent,
+          fontFamily: FONTS.korean,
+          marginTop: 40,
+        }}
+      >
+        오늘의 영단어
+      </div>
+
+      {/* 4행: URL (하단 고정) */}
+      <div
+        style={{
+          opacity: urlOpacity,
+          position: 'absolute',
+          bottom: 80,
+          fontSize: 28,
+          color: '#9CA3AF',
+          fontFamily: FONTS.english,
+        }}
+      >
+        vocavision.kr
+      </div>
+    </AbsoluteFill>
+  );
+};
 
 export const WordShort: React.FC<{
   setIndex?: number;
@@ -25,33 +108,7 @@ export const WordShort: React.FC<{
 
       {/* ===== 인트로 (0~3초, 0~90프레임) ===== */}
       <Sequence from={0} durationInFrames={90}>
-        <AbsoluteFill
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Logo size={100} showText={true} />
-          <div style={{ marginTop: 24 }}>
-            <TextReveal
-              text="오늘의 영단어"
-              fontSize={48}
-              color={COLORS.accent}
-              fontWeight={700}
-            />
-          </div>
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 120,
-              fontSize: 24,
-              color: COLORS.gray,
-              fontFamily: FONTS.english,
-            }}
-          >
-            vocavision.kr
-          </div>
-        </AbsoluteFill>
+        <IntroSection />
       </Sequence>
 
       {/* ===== 단어 1 (3~18초, 90~540프레임) ===== */}
