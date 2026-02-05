@@ -39,7 +39,7 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
       style={{
         justifyContent: 'flex-start',
         alignItems: 'center',
-        paddingTop: 160,
+        paddingTop: 200,
         paddingLeft: 60,
         paddingRight: 60,
       }}

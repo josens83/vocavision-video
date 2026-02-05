@@ -30,6 +30,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-002: inevitable, acknowledge, conduct */}
+      <Composition
+        id="WordShort-set-002"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 1,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
