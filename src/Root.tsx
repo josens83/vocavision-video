@@ -43,6 +43,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-003: distinct, emerge, restraint */}
+      <Composition
+        id="WordShort-set-003"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 2,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"

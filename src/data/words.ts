@@ -112,6 +112,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-003",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "distinct",
+        meaning: "뚜렷한, 구별되는",
+        pronunciation: "/dɪˈstɪŋkt/",
+        koreanPron: "디-스팅크트 (강세: 스팅)",
+        stress: "스팅",
+        rhymeCaption: "Clip the link — keep it distinct.",
+        rhymeCaptionKo: "연결을 끊어, 분명히 나눈다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/distinct-rhyme-1770284297184.png",
+        example: "The two languages have distinct grammar rules.",
+        exampleKo: "그 두 언어는 뚜렷하게 다른 문법 규칙을 가지고 있다.",
+      },
+      {
+        word: "emerge",
+        meaning: "나타나다, 드러나다",
+        pronunciation: "/ɪˈmɜːrdʒ/",
+        koreanPron: "이-머지 (강세: 머)",
+        stress: "머",
+        rhymeCaption: "From what we immerse, a clear image starts to emerge.",
+        rhymeCaptionKo: "잠겨 있던 것 속에서, 형체가 서서히 드러난다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/emerge-rhyme-1770284446806.png",
+        example: "New evidence emerged during the investigation.",
+        exampleKo: "조사 중에 새로운 증거가 드러났다.",
+      },
+      {
+        word: "restraint",
+        meaning: "자제, 억제",
+        pronunciation: "/rɪˈstreɪnt/",
+        koreanPron: "리-스트레인트 (강세: 스트레인)",
+        stress: "스트레인",
+        rhymeCaption: "The urge strains forward. I pull it back — restraint.",
+        rhymeCaptionKo: "충동은 나아가려 하고, 나는 끝에서 멈춘다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/restraint-rhyme-1770284136808.png",
+        example: "She showed remarkable restraint during the heated debate.",
+        exampleKo: "그녀는 격렬한 토론 중에 놀라운 자제력을 보였다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
