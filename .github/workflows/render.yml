@@ -12,6 +12,7 @@ on:
           - CompanyIntro
           - WordShort
           - WordShort-set-001
+          - WordShort-set-002
 
 jobs:
   render:

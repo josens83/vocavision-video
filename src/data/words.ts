@@ -70,6 +70,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-002",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "inevitable",
+        meaning: "피할 수 없는, 불가피한",
+        pronunciation: "/ɪnˈev.ɪ.tə.bəl/",
+        koreanPron: "이-네-비-터-블 (강세: 네)",
+        stress: "네",
+        rhymeCaption: "You never beat fate — inevitable.",
+        rhymeCaptionKo: "피하려 해도, 결국 마주친다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/inevitable-rhyme-1770260572030.png",
+        example: "Change is inevitable — the only question is when.",
+        exampleKo: "변화는 불가피하다 — 문제는 언제인가뿐.",
+      },
+      {
+        word: "acknowledge",
+        meaning: "인정하다",
+        pronunciation: "/əkˈnɑːl.ɪdʒ/",
+        koreanPron: "억-날-리지 (강세: 날)",
+        stress: "날",
+        rhymeCaption: "I nod to knowledge — acknowledge.",
+        rhymeCaptionKo: "고개를 끄덕여, 봤다는 걸 인정한다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/acknowledge-rhyme-1770271252914.png",
+        example: "She acknowledged her mistake and apologized.",
+        exampleKo: "그녀는 실수를 인정하고 사과했다.",
+      },
+      {
+        word: "conduct",
+        meaning: "수행하다, 실시하다",
+        pronunciation: "/kənˈdʌkt/",
+        koreanPron: "컨-덕-트 (강세: 덕)",
+        stress: "덕",
+        rhymeCaption: "Conduct the research, conduct the band — both need a steady hand.",
+        rhymeCaptionKo: "연구를 수행하든, 악단을 지휘하든 — 둘 다 흔들리지 않는 손이 필요하다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/conduct-rhyme-1770267446240.png",
+        example: "The team conducted a survey of 1,000 students.",
+        exampleKo: "그 팀은 학생 1,000명을 대상으로 설문조사를 실시했다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
