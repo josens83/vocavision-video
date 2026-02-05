@@ -13,6 +13,7 @@ on:
           - WordShort
           - WordShort-set-001
           - WordShort-set-002
+          - WordShort-set-003
 
 jobs:
   render:
