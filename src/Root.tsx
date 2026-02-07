@@ -56,6 +56,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-004: tampering, tempering, tapering */}
+      <Composition
+        id="WordShort-set-004"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 3,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"

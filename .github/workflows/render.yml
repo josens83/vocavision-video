@@ -14,6 +14,7 @@ on:
           - WordShort-set-001
           - WordShort-set-002
           - WordShort-set-003
+          - WordShort-set-004
 
 jobs:
   render:

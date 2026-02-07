@@ -154,6 +154,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-004",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "tampering",
+        meaning: "조작, 불법 접촉",
+        pronunciation: "/ˈtæm.pər.ɪŋ/",
+        koreanPron: "탬-퍼-링 (강세: 탬)",
+        stress: "탬",
+        rhymeCaption: "Tampering? They're hampering!",
+        rhymeCaptionKo: "불법 접촉? 그건 방해 행위야!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/tampering-rhyme-1770430476310.png",
+        example: "The agency was accused of tampering with artists from rival companies.",
+        exampleKo: "그 기획사는 경쟁사 아티스트를 불법 접촉한 혐의를 받았다.",
+      },
+      {
+        word: "tempering",
+        meaning: "담금질, 단련",
+        pronunciation: "/ˈtem.pər.ɪŋ/",
+        koreanPron: "템-퍼-링 (강세: 템)",
+        stress: "템",
+        rhymeCaption: "Tempering steel, remember the feel — temperature makes it real.",
+        rhymeCaptionKo: "철을 담금질할 때, 그 느낌을 기억해 — 온도가 진짜를 만든다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/tempering-rhyme-1770430709366.png",
+        example: "The chef spent hours tempering chocolate to get that perfect shine.",
+        exampleKo: "셰프는 완벽한 광택을 위해 몇 시간 동안 초콜릿을 템퍼링했다.",
+      },
+      {
+        word: "tapering",
+        meaning: "점진적 축소",
+        pronunciation: "/ˈteɪ.pər.ɪŋ/",
+        koreanPron: "테이-퍼-링 (강세: 테이)",
+        stress: "테이",
+        rhymeCaption: "Tapering like paper — thinner now, thicker later.",
+        rhymeCaptionKo: "종이처럼 가늘어져 — 지금은 얇게, 나중에 다시 두껍게.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/tapering-rhyme-1770430758280.png",
+        example: "The Fed announced tapering of bond purchases, shaking global markets.",
+        exampleKo: "연준이 채권 매입 축소를 발표하자 글로벌 시장이 흔들렸다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
