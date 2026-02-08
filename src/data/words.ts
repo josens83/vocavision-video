@@ -196,6 +196,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-005",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "hallucination",
+        meaning: "AI 환각, 거짓 정보 생성",
+        pronunciation: "/həˌluː.sɪˈneɪ.ʃən/",
+        koreanPron: "허-루-시-네이-션 (강세: 네이)",
+        stress: "네이",
+        rhymeCaption: "Hallucination — false information, AI's imagination!",
+        rhymeCaptionKo: "환각 — 거짓 정보, AI의 상상!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/hallucination-rhyme-1770537021468.png",
+        example: "ChatGPT sometimes produces hallucinations — it confidently states false facts.",
+        exampleKo: "ChatGPT는 가끔 환각을 일으킨다 — 거짓 사실을 자신 있게 말한다.",
+      },
+      {
+        word: "agent",
+        meaning: "AI 에이전트, 자율 행동 AI",
+        pronunciation: "/ˈeɪ.dʒənt/",
+        koreanPron: "에이-전트 (강세: 에이)",
+        stress: "에이",
+        rhymeCaption: "An agent takes action — no need for your reaction!",
+        rhymeCaptionKo: "에이전트는 행동한다 — 네 반응 필요 없이!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/agent-rhyme-1770537094101.png",
+        example: "AI agents can book flights, send emails, and manage your calendar autonomously.",
+        exampleKo: "AI 에이전트는 항공권 예약, 이메일 발송, 일정 관리를 자율적으로 할 수 있다.",
+      },
+      {
+        word: "prompt",
+        meaning: "프롬프트, AI 명령어",
+        pronunciation: "/prɒmpt/",
+        koreanPron: "프람트 (강세: 프)",
+        stress: "프",
+        rhymeCaption: "A good prompt is not abrupt — it helps AI erupt!",
+        rhymeCaptionKo: "좋은 프롬프트는 급하지 않다 — AI를 폭발시킨다!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/prompt-rhyme-1770537169354.png",
+        example: "The quality of AI output depends heavily on how you write your prompt.",
+        exampleKo: "AI 출력의 품질은 프롬프트를 어떻게 쓰느냐에 크게 달려 있다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
