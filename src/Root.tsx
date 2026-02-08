@@ -1,8 +1,11 @@
 import React from 'react';
-import { Composition } from 'remotion';
+import { Composition, Still } from 'remotion';
 import { CompanyIntro } from './compositions/CompanyIntro';
 import { WordShort } from './compositions/WordShort';
+import { InstaWordCard } from './compositions/InstaWordCard';
+import { InstaCompareCard } from './compositions/InstaCompareCard';
 import { VIDEO } from './styles';
+import { WORD_SETS } from './data/words';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -79,6 +82,52 @@ export const RemotionRoot: React.FC = () => {
         height={VIDEO.PORTRAIT.height}
         defaultProps={{
           setIndex: 0,
+        }}
+      />
+
+      {/* ===== 인스타그램 단어 카드 (Still 이미지) ===== */}
+
+      {/* set-004 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set004-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['tampering', 'tempering', 'tapering'],
+          title: '발음 비슷, 뜻 완전 다름!',
+          subtitle: '이 3개 구분 가능?',
+        }}
+      />
+
+      {/* set-004 개별 단어 카드 */}
+      <Still
+        id="InstaCard-tampering"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[3].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-tempering"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[3].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-tapering"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[3].words[2],
         }}
       />
     </>
