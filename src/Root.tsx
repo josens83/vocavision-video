@@ -143,6 +143,50 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[3].words[2],
         }}
       />
+
+      {/* set-005 비교 표지 카드 (AI 단어) */}
+      <Still
+        id="InstaCard-set005-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['hallucination', 'agent', 'prompt'],
+          title: 'AI 뉴스 필수 단어!',
+          subtitle: '이 3개 구분 가능?',
+        }}
+      />
+
+      {/* set-005 개별 단어 카드 */}
+      <Still
+        id="InstaCard-hallucination"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[4].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-agent"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[4].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-prompt"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[4].words[2],
+        }}
+      />
     </>
   );
 };

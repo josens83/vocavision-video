@@ -22,6 +22,10 @@ on:
           - InstaCard-tampering
           - InstaCard-tempering
           - InstaCard-tapering
+          - InstaCard-set005-cover
+          - InstaCard-hallucination
+          - InstaCard-agent
+          - InstaCard-prompt
 
 jobs:
   render:
