@@ -16,6 +16,7 @@ on:
           - WordShort-set-002
           - WordShort-set-003
           - WordShort-set-004
+          - WordShort-set-005
           # 인스타 카드 (이미지)
           - InstaCard-set004-cover
           - InstaCard-tampering

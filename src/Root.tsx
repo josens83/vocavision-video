@@ -72,6 +72,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-005: hallucination, agent, prompt (AI 단어) */}
+      <Composition
+        id="WordShort-set-005"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 4,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
