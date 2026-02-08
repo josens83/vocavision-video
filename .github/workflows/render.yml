@@ -1,24 +1,30 @@
-name: Render Video
+name: Render Video/Image
 
 on:
   workflow_dispatch:
     inputs:
-      compositionId:
+      composition:
         description: '렌더링할 컴포지션 ID'
         required: true
         default: 'WordShort'
         type: choice
         options:
+          # 영상
           - CompanyIntro
           - WordShort
           - WordShort-set-001
           - WordShort-set-002
           - WordShort-set-003
           - WordShort-set-004
+          # 인스타 카드 (이미지)
+          - InstaCard-set004-cover
+          - InstaCard-tampering
+          - InstaCard-tempering
+          - InstaCard-tapering
 
 jobs:
   render:
-    name: Render Video
+    name: Render
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -35,13 +41,21 @@ jobs:
       - name: Install Chrome dependencies
         run: npx remotion browser ensure
 
-      - name: Render video
-        run: npx remotion render ${{ github.event.inputs.compositionId }} out/${{ github.event.inputs.compositionId }}.mp4
+      - name: Render
+        run: |
+          COMP="${{ github.event.inputs.composition }}"
 
-      - name: Upload rendered video
+          # InstaCard로 시작하면 이미지 렌더링
+          if [[ "$COMP" == InstaCard-* ]]; then
+            npx remotion still "$COMP" "out/$COMP.png"
+          else
+            npx remotion render "$COMP" "out/$COMP.mp4"
+          fi
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.inputs.compositionId }}
-          path: out/${{ github.event.inputs.compositionId }}.mp4
+          name: ${{ github.event.inputs.composition }}
+          path: out/
           retention-days: 7
 
