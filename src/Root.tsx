@@ -200,6 +200,50 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[4].words[2],
         }}
       />
+
+      {/* set-006 비교 표지 카드 (설날 영어 표현) */}
+      <Still
+        id="InstaCard-set006-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['lunar', 'ritual', 'prosperity'],
+          title: '🧧 설날 영어 표현!',
+          subtitle: '외국인에게 설명해보자',
+        }}
+      />
+
+      {/* set-006 개별 단어 카드 */}
+      <Still
+        id="InstaCard-lunar"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[5].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-ritual"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[5].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-prosperity"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[5].words[2],
+        }}
+      />
     </>
   );
 };
