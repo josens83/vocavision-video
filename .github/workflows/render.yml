@@ -27,6 +27,10 @@ on:
           - InstaCard-hallucination
           - InstaCard-agent
           - InstaCard-prompt
+          - InstaCard-set006-cover
+          - InstaCard-lunar
+          - InstaCard-ritual
+          - InstaCard-prosperity
 
 jobs:
   render:
