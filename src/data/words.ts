@@ -280,6 +280,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-007",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "trajectory",
+        meaning: "궤적, 경로",
+        pronunciation: "/trəˈdʒek.tər.i/",
+        koreanPron: "트러-젝-터-리 (강세: 젝)",
+        stress: "젝",
+        rhymeCaption: "Plot the trajectory, drive with no worry!",
+        rhymeCaptionKo: "궤적을 그려라, 걱정 없이 달려라!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/trajectory-rhyme-1770629831304.png",
+        example: "The autonomous car calculates the optimal trajectory to avoid obstacles.",
+        exampleKo: "자율주행차는 장애물을 피하기 위해 최적의 궤적을 계산한다.",
+      },
+      {
+        word: "autonomous",
+        meaning: "자율적인",
+        pronunciation: "/ɔːˈtɒn.ə.məs/",
+        koreanPron: "어-타-너-머스 (강세: 타)",
+        stress: "타",
+        rhymeCaption: "Autonomous driving — no hands, just thriving!",
+        rhymeCaptionKo: "자율주행 — 손 없이, 그냥 잘 달려!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/autonomous-rhyme-1770629987260.png",
+        example: "Tesla's autonomous vehicles can navigate highways without driver input.",
+        exampleKo: "테슬라의 자율주행 차량은 운전자 입력 없이 고속도로를 주행할 수 있다.",
+      },
+      {
+        word: "redundancy",
+        meaning: "중복, 백업 시스템",
+        pronunciation: "/rɪˈdʌn.dən.si/",
+        koreanPron: "리-던-던-시 (강세: 던)",
+        stress: "던",
+        rhymeCaption: "Redundancy for safety — never ever hasty!",
+        rhymeCaptionKo: "안전을 위한 중복 — 절대 서두르지 마!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/redundancy-rhyme-1770630181387.png",
+        example: "Self-driving cars have redundancy systems — if one sensor fails, another takes over.",
+        exampleKo: "자율주행차에는 중복 시스템이 있다 — 센서 하나가 고장나면 다른 것이 대신한다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

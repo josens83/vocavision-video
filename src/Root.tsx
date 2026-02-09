@@ -98,6 +98,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-007: trajectory, autonomous, redundancy (자율주행) */}
+      <Composition
+        id="WordShort-set-007"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 6,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
