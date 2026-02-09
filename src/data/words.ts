@@ -238,6 +238,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-006",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "lunar",
+        meaning: "달의, 음력의",
+        pronunciation: "/ˈluː.nər/",
+        koreanPron: "루-너 (강세: 루)",
+        stress: "루",
+        rhymeCaption: "Lunar New Year — family near, joy is here!",
+        rhymeCaptionKo: "음력 설날 — 가족이 가까이, 기쁨이 여기에!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/lunar-rhyme-1770600947777.png",
+        example: "Happy Lunar New Year! May prosperity be with you.",
+        exampleKo: "새해 복 많이 받으세요! 번영이 함께하길 바랍니다.",
+      },
+      {
+        word: "ritual",
+        meaning: "의식, 의례",
+        pronunciation: "/ˈrɪtʃ.u.əl/",
+        koreanPron: "리-추-얼 (강세: 리)",
+        stress: "리",
+        rhymeCaption: "A ritual so spiritual — keeps our family bond habitual.",
+        rhymeCaptionKo: "영적인 의식은 가족의 유대를 습관으로 만든다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ritual-rhyme-1770600995594.png",
+        example: "On Lunar New Year, Koreans perform a ritual called 'Charye' to honor ancestors.",
+        exampleKo: "설날에 한국인들은 조상을 기리기 위해 '차례'라는 의식을 행한다.",
+      },
+      {
+        word: "prosperity",
+        meaning: "번영, 풍요",
+        pronunciation: "/prɒˈsper.ə.ti/",
+        koreanPron: "프라-스페-러-티 (강세: 스페)",
+        stress: "스페",
+        rhymeCaption: "Wish for prosperity, live with sincerity!",
+        rhymeCaptionKo: "번영을 기원하고, 진심으로 살아라!",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/prosperity-rhyme-1770602183035.png",
+        example: "Koreans eat tteokguk on New Year's Day, wishing for prosperity and good health.",
+        exampleKo: "한국인들은 설날에 번영과 건강을 기원하며 떡국을 먹는다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

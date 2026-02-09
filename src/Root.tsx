@@ -85,6 +85,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-006: lunar, ritual, prosperity (설날 영어 표현) */}
+      <Composition
+        id="WordShort-set-006"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 5,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
