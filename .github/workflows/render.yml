@@ -32,6 +32,10 @@ on:
           - InstaCard-lunar
           - InstaCard-ritual
           - InstaCard-prosperity
+          - InstaCard-set007-cover
+          - InstaCard-trajectory
+          - InstaCard-autonomous
+          - InstaCard-redundancy
 
 jobs:
   render:

@@ -257,6 +257,50 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[5].words[2],
         }}
       />
+
+      {/* set-007 비교 표지 카드 (자율주행) */}
+      <Still
+        id="InstaCard-set007-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['trajectory', 'autonomous', 'redundancy'],
+          title: '🚗 자율주행 필수 영단어!',
+          subtitle: '테슬라 뉴스 볼 때 꼭 나옴',
+        }}
+      />
+
+      {/* set-007 개별 단어 카드 */}
+      <Still
+        id="InstaCard-trajectory"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[6].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-autonomous"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[6].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-redundancy"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[6].words[2],
+        }}
+      />
     </>
   );
 };
