@@ -322,6 +322,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-008",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "resolution",
+        meaning: "결심, 다짐",
+        pronunciation: "/ˌrez.əˈluː.ʃən/",
+        koreanPron: "레-저-루-션 (강세: 루)",
+        stress: "루",
+        rhymeCaption: "A New Year's resolution with no execution is just an illusion.",
+        rhymeCaptionKo: "실행 없는 새해 결심은 환상일 뿐이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/resolution-rhyme-1770689097938.png",
+        example: "My New Year's resolution was to exercise daily — it lasted exactly three days.",
+        exampleKo: "내 새해 결심은 매일 운동하기였는데, 정확히 3일 갔다.",
+      },
+      {
+        word: "reunion",
+        meaning: "재회, 모임",
+        pronunciation: "/riːˈjuː.ni.ən/",
+        koreanPron: "리-유-니-언 (강세: 유)",
+        stress: "유",
+        rhymeCaption: "A family reunion under the moon — we'll be together soon.",
+        rhymeCaptionKo: "달빛 아래 가족 재회 — 곧 다시 함께할 거야.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/reunion-rhyme-1770688057665.png",
+        example: "The highway was packed — half the country was heading to a family reunion.",
+        exampleKo: "고속도로가 꽉 막혔다 — 전국의 절반이 가족 모임에 가는 중이었다.",
+      },
+      {
+        word: "gratitude",
+        meaning: "감사, 고마움",
+        pronunciation: "/ˈɡræt.ɪ.tjuːd/",
+        koreanPron: "그래-티-튜드 (강세: 그래)",
+        stress: "그래",
+        rhymeCaption: "Gratitude is the greatest attitude.",
+        rhymeCaptionKo: "감사는 가장 위대한 태도이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/gratitude-rhyme-1770687925357.png",
+        example: "I felt deep gratitude when Grandma handed me the biggest piece of galbi.",
+        exampleKo: "할머니가 가장 큰 갈비를 건네주셨을 때 깊은 감사를 느꼈다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
