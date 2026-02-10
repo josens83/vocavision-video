@@ -111,6 +111,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-008: resolution, reunion, gratitude (설날 Part 2) */}
+      <Composition
+        id="WordShort-set-008"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 7,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -299,6 +312,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[6].words[2],
+        }}
+      />
+
+      {/* set-008 비교 표지 카드 (설날 Part 2) */}
+      <Still
+        id="InstaCard-set008-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['resolution', 'reunion', 'gratitude'],
+          title: '🧧 설날 영어 Part 2!',
+          subtitle: '새해 결심부터 감사까지',
+        }}
+      />
+
+      {/* set-008 개별 단어 카드 */}
+      <Still
+        id="InstaCard-resolution"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[7].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-reunion"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[7].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-gratitude"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[7].words[2],
         }}
       />
     </>

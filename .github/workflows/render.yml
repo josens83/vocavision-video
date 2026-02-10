@@ -19,6 +19,7 @@ on:
           - WordShort-set-005
           - WordShort-set-006
           - WordShort-set-007
+          - WordShort-set-008
           # 인스타 카드 (이미지)
           - InstaCard-set004-cover
           - InstaCard-tampering
@@ -36,6 +37,10 @@ on:
           - InstaCard-trajectory
           - InstaCard-autonomous
           - InstaCard-redundancy
+          - InstaCard-set008-cover
+          - InstaCard-resolution
+          - InstaCard-reunion
+          - InstaCard-gratitude
 
 jobs:
   render:
