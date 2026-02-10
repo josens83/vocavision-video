@@ -4,6 +4,7 @@ import { CompanyIntro } from './compositions/CompanyIntro';
 import { WordShort } from './compositions/WordShort';
 import { InstaWordCard } from './compositions/InstaWordCard';
 import { InstaCompareCard } from './compositions/InstaCompareCard';
+import { InstaCTACard } from './components/InstaCTACard';
 import { VIDEO } from './styles';
 import { WORD_SETS } from './data/words';
 
@@ -356,6 +357,18 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[7].words[2],
+        }}
+      />
+
+      {/* CTA 카드 — 인스타 캐러셀 마지막 페이지 (공용) */}
+      <Still
+        id="InstaCard-CTA"
+        component={InstaCTACard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          message: '더 많은 단어 학습하기',
+          url: 'vocavision.kr',
         }}
       />
     </>
