@@ -125,6 +125,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-009: apathy, ambivalent, ardent (TEPS 빈출 - 감정의 온도) */}
+      <Composition
+        id="WordShort-set-009"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 8,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -369,6 +382,50 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           message: '더 많은 단어 학습하기',
           url: 'vocavision.kr',
+        }}
+      />
+
+      {/* set-009 비교 표지 카드 (TEPS 빈출 - 감정의 온도) */}
+      <Still
+        id="InstaCard-set009-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['apathy', 'ambivalent', 'ardent'],
+          title: '🌡️ 감정의 온도 — TEPS 빈출!',
+          subtitle: '0도 vs 50도 vs 100도',
+        }}
+      />
+
+      {/* set-009 개별 단어 카드 */}
+      <Still
+        id="InstaCard-apathy"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[8].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-ambivalent"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[8].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-ardent"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[8].words[2],
         }}
       />
     </>
