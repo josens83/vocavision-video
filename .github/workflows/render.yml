@@ -20,6 +20,7 @@ on:
           - WordShort-set-006
           - WordShort-set-007
           - WordShort-set-008
+          - WordShort-set-009
           # 인스타 카드 (이미지)
           - InstaCard-set004-cover
           - InstaCard-tampering
@@ -42,6 +43,10 @@ on:
           - InstaCard-reunion
           - InstaCard-gratitude
           - InstaCard-CTA
+          - InstaCard-set009-cover
+          - InstaCard-apathy
+          - InstaCard-ambivalent
+          - InstaCard-ardent
 
 jobs:
   render:

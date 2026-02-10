@@ -364,6 +364,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-009",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "apathy",
+        meaning: "무관심, 냉담",
+        pronunciation: "/ˈæp.ə.θi/",
+        koreanPron: "애-퍼-씨 (강세: 애)",
+        stress: "애",
+        rhymeCaption: "No sympathy for apathy — wake up and set your passion free.",
+        rhymeCaptionKo: "무관심에 동정은 없다 — 깨어나서 열정을 풀어놓아라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/apathy-rhyme-1770714506558.png",
+        example: "His apathy toward studying was so strong, even his textbook gave up on him.",
+        exampleKo: "공부에 대한 그의 무관심이 너무 강해서 교과서조차 그를 포기했다.",
+      },
+      {
+        word: "ambivalent",
+        meaning: "양가적인, 갈등하는",
+        pronunciation: "/æmˈbɪv.ə.lənt/",
+        koreanPron: "앰-비-벌-런트 (강세: 비)",
+        stress: "비",
+        rhymeCaption: "Feeling ambivalent? That's prevalent. Choose before it's irrelevant.",
+        rhymeCaptionKo: "갈등 중이야? 그건 흔한 일이야. 순간이 무의미해지기 전에 선택해.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ambivalent-rhyme-1770714442414.png",
+        example: "I'm ambivalent about dieting — I love being healthy, but I also love fried chicken.",
+        exampleKo: "다이어트에 대해 갈등 중이야 — 건강한 게 좋지만, 치킨도 사랑하거든.",
+      },
+      {
+        word: "ardent",
+        meaning: "열렬한, 열정적인",
+        pronunciation: "/ˈɑːr.dənt/",
+        koreanPron: "아-던트 (강세: 아)",
+        stress: "아",
+        rhymeCaption: "Be ardent, not dormant — your dreams are too important.",
+        rhymeCaptionKo: "열정적이어라, 잠들지 마라 — 네 꿈은 너무 소중하니까.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ardent-rhyme-1770714329858.png",
+        example: "She's such an ardent K-pop fan that she learned Korean in three months.",
+        exampleKo: "그녀는 너무 열렬한 케이팝 팬이라 3개월 만에 한국어를 배웠다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
