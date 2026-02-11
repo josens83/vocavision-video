@@ -490,6 +490,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-012",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "clandestine",
+        meaning: "비밀의, 은밀한",
+        pronunciation: "/klænˈdes.tɪn/",
+        koreanPron: "클랜-데스-틴 (강세: 데스)",
+        stress: "데스",
+        rhymeCaption: "A clandestine affair behind the shrine — that's how love began for Valentine.",
+        rhymeCaptionKo: "성당 뒤의 비밀스러운 일 — 그것이 발렌타인의 사랑이 시작된 방법이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/clandestine-rhyme-1770804775699.png",
+        example: "Saint Valentine performed clandestine marriages — the original wedding crasher, but in reverse.",
+        exampleKo: "성 발렌타인은 비밀 결혼식을 올려줬다 — 원조 웨딩크래셔, 단 반대 버전.",
+      },
+      {
+        word: "persecute",
+        meaning: "박해하다, 괴롭히다",
+        pronunciation: "/ˈpɜːr.sɪ.kjuːt/",
+        koreanPron: "퍼-시-큐트 (강세: 퍼)",
+        stress: "퍼",
+        rhymeCaption: "They persecute the ones who dare to execute what love declares.",
+        rhymeCaptionKo: "그들은 사랑이 선언한 것을 실행하는 자들을 박해한다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/persecute-rhyme-1770804885665.png",
+        example: "Emperor Claudius persecuted Valentine for performing secret marriages — love was literally a crime.",
+        exampleKo: "클라우디우스 황제는 비밀 결혼을 올려준 발렌타인을 박해했다 — 사랑이 말 그대로 범죄였다.",
+      },
+      {
+        word: "commemorate",
+        meaning: "기념하다, 추모하다",
+        pronunciation: "/kəˈmem.ə.reɪt/",
+        koreanPron: "커-멤-어-레이트 (강세: 멤)",
+        stress: "멤",
+        rhymeCaption: "We commemorate to appreciate — the love that time could not deflate.",
+        rhymeCaptionKo: "우리는 감사하기 위해 기념한다 — 시간도 줄일 수 없었던 사랑을.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/commemorate-rhyme-1770805114411.png",
+        example: "Valentine's Day commemorates a saint who believed love was worth dying for — and now we celebrate with chocolate.",
+        exampleKo: "발렌타인데이는 사랑이 죽을 가치가 있다고 믿은 성인을 기념한다 — 그리고 지금 우리는 초콜릿으로 축하한다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

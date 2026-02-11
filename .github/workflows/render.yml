@@ -57,6 +57,11 @@ on:
           - InstaCard-allure
           - InstaCard-captivate
           - InstaCard-cherish
+          - WordShort-set-012
+          - InstaCard-set012-cover
+          - InstaCard-clandestine
+          - InstaCard-persecute
+          - InstaCard-commemorate
 
 jobs:
   render:

@@ -164,6 +164,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-012: clandestine, persecute, commemorate (발렌타인데이 Part 2 - 성 발렌타인 이야기) */}
+      <Composition
+        id="WordShort-set-012"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 11,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -540,6 +553,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[10].words[2],
+        }}
+      />
+
+      {/* set-012 비교 표지 카드 (발렌타인데이 Part 2 - 성 발렌타인 이야기) */}
+      <Still
+        id="InstaCard-set012-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['clandestine', 'persecute', 'commemorate'],
+          title: '📜 발렌타인데이의 진짜 기원!',
+          subtitle: '비밀 결혼 → 박해 → 기념',
+        }}
+      />
+
+      {/* set-012 개별 단어 카드 */}
+      <Still
+        id="InstaCard-clandestine"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[11].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-persecute"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[11].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-commemorate"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[11].words[2],
         }}
       />
     </>
