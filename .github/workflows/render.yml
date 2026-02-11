@@ -22,6 +22,7 @@ on:
           - WordShort-set-008
           - WordShort-set-009
           - WordShort-set-010
+          - WordShort-set-011
           # 인스타 카드 (이미지)
           - InstaCard-set004-cover
           - InstaCard-tampering
@@ -52,6 +53,10 @@ on:
           - InstaCard-empathy
           - InstaCard-animosity
           - InstaCard-amiable
+          - InstaCard-set011-cover
+          - InstaCard-allure
+          - InstaCard-captivate
+          - InstaCard-cherish
 
 jobs:
   render:
