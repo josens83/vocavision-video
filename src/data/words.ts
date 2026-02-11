@@ -448,6 +448,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-011",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "allure",
+        meaning: "매력, 매혹하다",
+        pronunciation: "/əˈlʊr/",
+        koreanPron: "어-루어 (강세: 루어)",
+        stress: "루어",
+        rhymeCaption: "The allure of love is pure — once you feel it, there's no cure.",
+        rhymeCaptionKo: "사랑의 매력은 순수하다 — 한번 느끼면 치료법은 없다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/allure-concept-1770789818277.png",
+        example: "The allure of chocolate on Valentine's Day is scientifically impossible to resist.",
+        exampleKo: "발렌타인데이 초콜릿의 매력은 과학적으로 거부가 불가능하다.",
+      },
+      {
+        word: "captivate",
+        meaning: "사로잡다, 매료하다",
+        pronunciation: "/ˈkæp.tɪ.veɪt/",
+        koreanPron: "캡-티-베이트 (강세: 캡)",
+        stress: "캡",
+        rhymeCaption: "Once you captivate, there's no debate — even fate cannot separate.",
+        rhymeCaptionKo: "한번 사로잡으면 논쟁의 여지가 없다 — 운명조차 갈라놓을 수 없으니.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/captivate-concept-1770789876982.png",
+        example: "On Valentine's Day, she captivated him with a handwritten letter — no emoji needed.",
+        exampleKo: "발렌타인데이에 그녀는 손편지 하나로 그를 사로잡았다 — 이모지 따위 필요 없었다.",
+      },
+      {
+        word: "cherish",
+        meaning: "소중히 여기다, 아끼다",
+        pronunciation: "/ˈtʃer.ɪʃ/",
+        koreanPron: "체-리쉬 (강세: 체)",
+        stress: "체",
+        rhymeCaption: "What you cherish will never perish — let it flourish beyond what you imagined.",
+        rhymeCaptionKo: "소중히 여기는 것은 절대 사라지지 않는다 — 상상 이상으로 피어나게 하라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/cherish-rhyme-1770789673291.png",
+        example: "This Valentine's Day, cherish the one who remembers your coffee order — that's real love.",
+        exampleKo: "이번 발렌타인데이엔, 네 커피 주문을 기억하는 사람을 소중히 여겨라 — 그게 진짜 사랑이다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
