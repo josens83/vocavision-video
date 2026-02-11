@@ -406,6 +406,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-010",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "empathy",
+        meaning: "공감, 감정이입",
+        pronunciation: "/ˈem.pə.θi/",
+        koreanPron: "엠-퍼-씨 (강세: 엠)",
+        stress: "엠",
+        rhymeCaption: "Empathy is the remedy — feel what they feel, and set them free.",
+        rhymeCaptionKo: "공감은 치유제다 — 그들이 느끼는 걸 느끼고, 자유롭게 해줘라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/empathy-rhyme-1770771104644.png",
+        example: "His empathy was so strong, he cried watching a commercial about dog food.",
+        exampleKo: "그의 공감 능력이 너무 강해서 강아지 사료 광고를 보며 울었다.",
+      },
+      {
+        word: "animosity",
+        meaning: "적대감, 원한",
+        pronunciation: "/ˌæn.ɪˈmɒs.ə.ti/",
+        koreanPron: "애-니-마-서-티 (강세: 마)",
+        stress: "마",
+        rhymeCaption: "Animosity breeds no generosity — replace the hate with luminosity.",
+        rhymeCaptionKo: "적대감에선 관대함이 자라지 않는다 — 미움을 빛으로 바꿔라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/animosity-rhyme-1770771511464.png",
+        example: "There was so much animosity in the meeting that even the coffee turned bitter.",
+        exampleKo: "회의에 적대감이 너무 많아서 커피조차 쓰게 변했다.",
+      },
+      {
+        word: "amiable",
+        meaning: "다정한, 호감 가는",
+        pronunciation: "/ˈeɪ.mi.ə.bəl/",
+        koreanPron: "에이-미-어-블 (강세: 에이)",
+        stress: "에이",
+        rhymeCaption: "An amiable soul is admirable — kind, warm, and always comfortable.",
+        rhymeCaptionKo: "다정한 영혼은 존경받는다 — 친절하고, 따뜻하고, 언제나 편안한.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/amiable-rhyme-1770771329336.png",
+        example: "She's so amiable that even the office printer works for her without jamming.",
+        exampleKo: "그녀가 너무 다정해서 사무실 프린터조차 그녀를 위해선 안 막힌다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

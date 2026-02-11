@@ -138,6 +138,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-010: empathy, animosity, amiable (TEPS 빈출 - 사람 관계의 세 유형) */}
+      <Composition
+        id="WordShort-set-010"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 9,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -426,6 +439,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[8].words[2],
+        }}
+      />
+
+      {/* set-010 비교 표지 카드 (TEPS 빈출 - 사람 관계의 세 유형) */}
+      <Still
+        id="InstaCard-set010-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['empathy', 'animosity', 'amiable'],
+          title: '🤝 사람 관계의 세 유형 — TEPS 빈출!',
+          subtitle: '공감러 vs 적대러 vs 다정러',
+        }}
+      />
+
+      {/* set-010 개별 단어 카드 */}
+      <Still
+        id="InstaCard-empathy"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[9].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-animosity"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[9].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-amiable"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[9].words[2],
         }}
       />
     </>
