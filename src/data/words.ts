@@ -532,6 +532,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-013",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "scrutinize",
+        meaning: "면밀히 조사하다",
+        pronunciation: "/ˈskruː.tɪ.naɪz/",
+        koreanPron: "스크루-티-나이즈 (강세: 스크루)",
+        stress: "스크루",
+        rhymeCaption: "Scrutinize with careful eyes — the truth is hidden in disguise.",
+        rhymeCaptionKo: "신중한 눈으로 면밀히 살펴라 — 진실은 변장 속에 숨어 있다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/scrutinize-rhyme-1770856566361.png",
+        example: "My mom scrutinizes my report card like a detective at a crime scene.",
+        exampleKo: "엄마는 범죄 현장의 형사처럼 내 성적표를 면밀히 조사하신다.",
+      },
+      {
+        word: "contemplate",
+        meaning: "숙고하다, 깊이 생각하다",
+        pronunciation: "/ˈkɒn.təm.pleɪt/",
+        koreanPron: "콘-텀-플레이트 (강세: 콘)",
+        stress: "콘",
+        rhymeCaption: "Stop to contemplate before it's too late — the wisest minds deliberate.",
+        rhymeCaptionKo: "너무 늦기 전에 멈춰서 숙고하라 — 가장 현명한 마음은 심사숙고한다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/contemplate-rhyme-1770856896850.png",
+        example: "She contemplated quitting her job every Monday, then forgot about it by Friday.",
+        exampleKo: "그녀는 매주 월요일 퇴사를 숙고했다가, 금요일이면 잊어버렸다.",
+      },
+      {
+        word: "discern",
+        meaning: "분별하다, 식별하다",
+        pronunciation: "/dɪˈsɜːrn/",
+        koreanPron: "디-썬 (강세: 썬)",
+        stress: "썬",
+        rhymeCaption: "To discern is to learn — separate the real from false at every turn.",
+        rhymeCaptionKo: "분별한다는 건 배우는 것이다 — 매 순간 진짜와 가짜를 가려내는 것.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/discern-rhyme-1770856968644.png",
+        example: "I can't discern the difference between expensive wine and grape juice — don't judge me.",
+        exampleKo: "비싼 와인과 포도주스의 차이를 분별 못한다 — 비판하지 마라.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
