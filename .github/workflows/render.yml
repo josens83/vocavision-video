@@ -67,6 +67,11 @@ on:
           - InstaCard-scrutinize
           - InstaCard-contemplate
           - InstaCard-discern
+          - WordShort-set-014
+          - InstaCard-set014-cover
+          - InstaCard-aspire
+          - InstaCard-relentless
+          - InstaCard-persevere
 
 jobs:
   render:

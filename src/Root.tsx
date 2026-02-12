@@ -190,6 +190,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-014: aspire, relentless, persevere (동계올림픽 - 챔피언의 3단계) */}
+      <Composition
+        id="WordShort-set-014"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 13,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -654,6 +667,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[12].words[2],
+        }}
+      />
+
+      {/* set-014 비교 표지 카드 (동계올림픽 - 챔피언의 3단계) */}
+      <Still
+        id="InstaCard-set014-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['aspire', 'relentless', 'persevere'],
+          title: '🏔️ 동계올림픽 영단어!',
+          subtitle: '챔피언의 3단계 — 열망 → 훈련 → 인내',
+        }}
+      />
+
+      {/* set-014 개별 단어 카드 */}
+      <Still
+        id="InstaCard-aspire"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[13].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-relentless"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[13].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-persevere"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[13].words[2],
         }}
       />
     </>
