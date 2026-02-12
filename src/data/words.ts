@@ -574,6 +574,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-014",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "aspire",
+        meaning: "열망하다, 갈망하다",
+        pronunciation: "/əˈspaɪər/",
+        koreanPron: "어-스파이-어 (강세: 스파이)",
+        stress: "스파이",
+        rhymeCaption: "Those who aspire never tire — they reach for gold through ice and fire.",
+        rhymeCaptionKo: "열망하는 자는 절대 지치지 않는다 — 얼음과 불을 뚫고 금메달을 향해 뻗는다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/aspire-rhyme-1770876409255.png",
+        example: "Every Winter Olympic athlete once aspired to stand on that podium — some started dreaming at age five.",
+        exampleKo: "모든 동계올림픽 선수는 한때 시상대 위에 서기를 열망했다 — 어떤 이는 다섯 살 때부터 꿈꿨다.",
+      },
+      {
+        word: "relentless",
+        meaning: "끊임없는, 가차 없는",
+        pronunciation: "/rɪˈlent.ləs/",
+        koreanPron: "리-렌트-리스 (강세: 렌트)",
+        stress: "렌트",
+        rhymeCaption: "A relentless heart knows no rest — through every trial, it gives its best.",
+        rhymeCaptionKo: "끊임없는 마음은 쉼을 모른다 — 모든 시련 속에서 최선을 다한다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/relentless-rhyme-1770878848162.png",
+        example: "Olympic champions are built by relentless training — 4 AM alarms, frozen rinks, and zero excuses.",
+        exampleKo: "올림픽 챔피언은 끊임없는 훈련으로 만들어진다 — 새벽 4시 알람, 얼어붙은 링크, 변명 제로.",
+      },
+      {
+        word: "persevere",
+        meaning: "인내하다, 끝까지 해내다",
+        pronunciation: "/ˌpɜːr.sɪˈvɪr/",
+        koreanPron: "퍼-시-비어 (강세: 비어)",
+        stress: "비어",
+        rhymeCaption: "Persevere through pain and fear — the medal shines for those who're here.",
+        rhymeCaptionKo: "고통과 두려움을 뚫고 인내하라 — 메달은 끝까지 남은 자에게 빛난다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/persevere-rhyme-1770876558310.png",
+        example: "Korea's snowboarders persevered through years of training to win medals at Milano 2026.",
+        exampleKo: "한국 스노보드 선수들은 밀라노 2026에서 메달을 따기 위해 수년간의 훈련을 견뎠다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
