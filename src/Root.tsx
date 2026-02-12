@@ -177,6 +177,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-013: scrutinize, contemplate, discern (수능 빈출 - 생각과 판단의 3단계) */}
+      <Composition
+        id="WordShort-set-013"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 12,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -597,6 +610,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[11].words[2],
+        }}
+      />
+
+      {/* set-013 비교 표지 카드 (수능 빈출 - 생각과 판단의 3단계) */}
+      <Still
+        id="InstaCard-set013-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['scrutinize', 'contemplate', 'discern'],
+          title: '🧠 생각과 판단의 3단계!',
+          subtitle: '보고 → 생각하고 → 판단하는',
+        }}
+      />
+
+      {/* set-013 개별 단어 카드 */}
+      <Still
+        id="InstaCard-scrutinize"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[12].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-contemplate"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[12].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-discern"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[12].words[2],
         }}
       />
     </>

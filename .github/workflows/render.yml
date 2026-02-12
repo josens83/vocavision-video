@@ -62,6 +62,11 @@ on:
           - InstaCard-clandestine
           - InstaCard-persecute
           - InstaCard-commemorate
+          - WordShort-set-013
+          - InstaCard-set013-cover
+          - InstaCard-scrutinize
+          - InstaCard-contemplate
+          - InstaCard-discern
 
 jobs:
   render:
