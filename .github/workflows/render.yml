@@ -77,6 +77,11 @@ on:
           - InstaCard-adversity
           - InstaCard-resilience
           - InstaCard-triumph
+          - WordShort-set-016
+          - InstaCard-set016-cover
+          - InstaCard-procrastinate
+          - InstaCard-diligent
+          - InstaCard-tenacious
 
 jobs:
   render:

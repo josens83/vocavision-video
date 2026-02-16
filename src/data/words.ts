@@ -658,6 +658,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-016",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "procrastinate",
+        meaning: "미루다, 꾸물거리다",
+        pronunciation: "/prəˈkræs.tɪ.neɪt/",
+        koreanPron: "프러-크래-스티-네이트 (강세: 크래)",
+        stress: "크래",
+        rhymeCaption: "Don't procrastinate — tomorrow's too late, and deadlines never wait.",
+        rhymeCaptionKo: "미루지 마라 — 내일은 너무 늦고, 마감은 절대 기다려주지 않는다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/procrastinate-rhyme-1771229935229.png",
+        example: "I procrastinated all winter break and now March is here — where did 2 months go?",
+        exampleKo: "겨울방학 내내 미루다가 3월이 왔다 — 2달이 어디로 간 거지?",
+      },
+      {
+        word: "diligent",
+        meaning: "근면한, 부지런한",
+        pronunciation: "/ˈdɪl.ɪ.dʒənt/",
+        koreanPron: "딜-리-전트 (강세: 딜)",
+        stress: "딜",
+        rhymeCaption: "The diligent student is always prudent — effort today prevents a future accident.",
+        rhymeCaptionKo: "근면한 학생은 항상 신중하다 — 오늘의 노력이 미래의 사고를 막는다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/diligent-rhyme-1771236855927.png",
+        example: "The most diligent students in March are the ones who procrastinated the hardest in February.",
+        exampleKo: "3월에 가장 부지런한 학생들은 2월에 가장 열심히 미뤘던 학생들이다.",
+      },
+      {
+        word: "tenacious",
+        meaning: "끈질긴, 집요한",
+        pronunciation: "/tɪˈneɪ.ʃəs/",
+        koreanPron: "티-네이-셔스 (강세: 네이)",
+        stress: "네이",
+        rhymeCaption: "Be tenacious, not audacious — steady wins the race that's spacious.",
+        rhymeCaptionKo: "무모하지 말고 끈질겨라 — 넓은 경주에서는 꾸준한 자가 이긴다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/tenacious-rhyme-1771237018311.png",
+        example: "First I procrastinated all winter break, then I got diligent in March, and finally I became tenacious by midterms — that's the Korean student survival guide.",
+        exampleKo: "겨울방학 내내 미루고, 3월에 부지런해지고, 중간고사쯤 끈질겨졌다 — 이것이 한국 학생 생존 가이드다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

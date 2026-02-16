@@ -216,6 +216,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-016: procrastinate, diligent, tenacious (시험 기간 3단계) */}
+      <Composition
+        id="WordShort-set-016"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 15,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -768,6 +781,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[14].words[2],
+        }}
+      />
+
+      {/* set-016 비교 표지 카드 (시험 기간 3단계) */}
+      <Still
+        id="InstaCard-set016-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['procrastinate', 'diligent', 'tenacious'],
+          title: '📚 시험 기간 3단계!',
+          subtitle: '미루고 → 벼락치기 → 끝까지',
+        }}
+      />
+
+      {/* set-016 개별 단어 카드 */}
+      <Still
+        id="InstaCard-procrastinate"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[15].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-diligent"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[15].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-tenacious"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[15].words[2],
         }}
       />
     </>
