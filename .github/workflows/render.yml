@@ -72,6 +72,11 @@ on:
           - InstaCard-aspire
           - InstaCard-relentless
           - InstaCard-persevere
+          - WordShort-set-015
+          - InstaCard-set015-cover
+          - InstaCard-adversity
+          - InstaCard-resilience
+          - InstaCard-triumph
 
 jobs:
   render:

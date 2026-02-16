@@ -203,6 +203,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-015: adversity, resilience, triumph (동계올림픽 Part 2 - 넘어져도 다시 일어나는) */}
+      <Composition
+        id="WordShort-set-015"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 14,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -711,6 +724,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[13].words[2],
+        }}
+      />
+
+      {/* set-015 비교 표지 카드 (동계올림픽 Part 2 - 넘어져도 다시 일어나는) */}
+      <Still
+        id="InstaCard-set015-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['adversity', 'resilience', 'triumph'],
+          title: '🏔️ 넘어져도 다시 일어나는!',
+          subtitle: '역경 → 회복 → 승리',
+        }}
+      />
+
+      {/* set-015 개별 단어 카드 */}
+      <Still
+        id="InstaCard-adversity"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[14].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-resilience"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[14].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-triumph"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[14].words[2],
         }}
       />
     </>
