@@ -616,6 +616,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-015",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "adversity",
+        meaning: "역경, 시련",
+        pronunciation: "/ədˈvɜːr.sə.ti/",
+        koreanPron: "엗-버-서-티 (강세: 버)",
+        stress: "버",
+        rhymeCaption: "Through adversity we find our gravity — it grounds us in reality.",
+        rhymeCaptionKo: "역경을 통해 우리는 중심을 찾는다 — 그것이 우리를 현실에 단단히 세운다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/adversity-rhyme-1771201371007.png",
+        example: "Every Olympic athlete has faced adversity — injuries, defeats, and 4 AM alarm clocks.",
+        exampleKo: "모든 올림픽 선수는 역경에 맞서왔다 — 부상, 패배, 그리고 새벽 4시 알람.",
+      },
+      {
+        word: "resilience",
+        meaning: "회복력, 탄력성",
+        pronunciation: "/rɪˈzɪl.i.əns/",
+        koreanPron: "리-질-리-언스 (강세: 질)",
+        stress: "질",
+        rhymeCaption: "Resilience is the silent strength — it carries you the extra length.",
+        rhymeCaptionKo: "회복력은 조용한 힘이다 — 그것이 너를 한 걸음 더 나아가게 한다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/resilience-rhyme-1771201653557.png",
+        example: "Falling on the first run and still coming back to win — that's resilience on snow.",
+        exampleKo: "1차 시기에 넘어지고도 돌아와 우승하다 — 그것이 설원 위의 회복력이다.",
+      },
+      {
+        word: "triumph",
+        meaning: "승리, 쾌거",
+        pronunciation: "/ˈtraɪ.ʌmf/",
+        koreanPron: "트라이-엄프 (강세: 트라이)",
+        stress: "트라이",
+        rhymeCaption: "After every fall, the greatest triumph of all — is standing tall.",
+        rhymeCaptionKo: "모든 넘어짐 후, 가장 위대한 승리는 — 당당히 서 있는 것이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/triumph-rhyme-1771201786611.png",
+        example: "Scoring 90.25 after falling twice — that's not just a win, that's a triumph.",
+        exampleKo: "두 번 넘어진 후 90.25점 — 그건 단순한 승리가 아니라 쾌거다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
