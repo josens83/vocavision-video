@@ -229,6 +229,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-017: serenity, loyalty, bond (라부부 영단어) */}
+      <Composition
+        id="WordShort-set-017"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 16,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -825,6 +838,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[15].words[2],
+        }}
+      />
+
+      {/* set-017 비교 표지 카드 (라부부 영단어) */}
+      <Still
+        id="InstaCard-set017-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['serenity', 'loyalty', 'bond'],
+          title: '🧸 라부부 이름이 다 영단어?!',
+          subtitle: '평온 → 충성 → 유대',
+        }}
+      />
+
+      {/* set-017 개별 단어 카드 */}
+      <Still
+        id="InstaCard-serenity"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[16].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-loyalty"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[16].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-bond"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[16].words[2],
         }}
       />
     </>

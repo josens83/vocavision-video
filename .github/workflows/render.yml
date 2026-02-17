@@ -82,6 +82,11 @@ on:
           - InstaCard-procrastinate
           - InstaCard-diligent
           - InstaCard-tenacious
+          - WordShort-set-017
+          - InstaCard-set017-cover
+          - InstaCard-serenity
+          - InstaCard-loyalty
+          - InstaCard-bond
 
 jobs:
   render:
