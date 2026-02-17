@@ -700,6 +700,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-017",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "serenity",
+        meaning: "평온, 고요",
+        pronunciation: "/səˈren.ɪ.ti/",
+        koreanPron: "서-레-너-티 (강세: 레)",
+        stress: "레",
+        rhymeCaption: "Serenity kills anxiety — find clarity, escape severity.",
+        rhymeCaptionKo: "평온은 불안을 죽인다 — 명확함을 찾고, 가혹함에서 벗어나라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/serenity-rhyme-1771320152385.png",
+        example: "I bought a Labubu Serenity hoping it would cure my anxiety — now I have 12 figures and zero serenity.",
+        exampleKo: "불안감을 치유하려고 라부부 세레니티를 샀는데 — 이제 피규어는 12개고 평온함은 0이다.",
+      },
+      {
+        word: "loyalty",
+        meaning: "충성, 의리",
+        pronunciation: "/ˈlɔɪ.əl.ti/",
+        koreanPron: "로이-얼-티 (강세: 로이)",
+        stress: "로이",
+        rhymeCaption: "Loyalty over royalty — a true friend beats a crown of cruelty.",
+        rhymeCaptionKo: "충성이 왕족보다 낫다 — 진정한 친구가 잔인한 왕관을 이긴다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/loyalty-rhyme-1771319747473.png",
+        example: "She showed true loyalty by camping outside Pop Mart at 5 AM — for my birthday Labubu, not hers.",
+        exampleKo: "그녀는 새벽 5시에 팝마트 앞에서 노숙하며 진정한 의리를 보여줬다 — 내 생일 라부부를 위해, 자기 것도 아닌데.",
+      },
+      {
+        word: "bond",
+        meaning: "유대감, 결속",
+        pronunciation: "/bɑːnd/",
+        koreanPron: "본드 (강세: 본)",
+        stress: "본",
+        rhymeCaption: "A bond once formed grows fond and strong — beyond the distance, beyond how long.",
+        rhymeCaptionKo: "한번 맺은 유대는 더 깊어지고 강해진다 — 거리도, 시간도 넘어서.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/bond-rhyme-1771319874345.png",
+        example: "The bond between Labubu collectors is real — we camp outside Pop Mart together at 6 AM.",
+        exampleKo: "라부부 수집가들 사이의 유대감은 진짜다 — 우리는 새벽 6시에 함께 팝마트 앞에서 텐트를 친다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
