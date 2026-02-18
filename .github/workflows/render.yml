@@ -92,6 +92,11 @@ on:
           - InstaCard-introvert
           - InstaCard-extrovert
           - InstaCard-intuition
+          - WordShort-set-019
+          - InstaCard-set019-cover
+          - InstaCard-underdog
+          - InstaCard-breakthrough
+          - InstaCard-legacy
 
 jobs:
   render:

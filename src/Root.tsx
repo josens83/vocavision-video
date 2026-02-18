@@ -255,6 +255,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-019: underdog, breakthrough, legacy (동계올림픽 Part 3) */}
+      <Composition
+        id="WordShort-set-019"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 18,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -939,6 +952,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[17].words[2],
+        }}
+      />
+
+      {/* set-019 비교 표지 카드 (동계올림픽 Part 3) */}
+      <Still
+        id="InstaCard-set019-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['underdog', 'breakthrough', 'legacy'],
+          title: '🏆 무명에서 전설로 — 동계올림픽 Part 3',
+          subtitle: '약자 → 돌파구 → 유산',
+        }}
+      />
+
+      {/* set-019 개별 단어 카드 */}
+      <Still
+        id="InstaCard-underdog"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[18].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-breakthrough"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[18].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-legacy"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[18].words[2],
         }}
       />
     </>
