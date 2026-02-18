@@ -742,6 +742,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-018",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "introvert",
+        meaning: "내향적인 사람",
+        pronunciation: "/ˈɪn.trə.vɜːrt/",
+        koreanPron: "인-트러-버트 (강세: 인)",
+        stress: "인",
+        rhymeCaption: "The introvert won't convert — alone time is the best dessert.",
+        rhymeCaptionKo: "내향적인 사람은 변하지 않는다 — 혼자만의 시간이 최고의 디저트니까.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/introvert-rhyme-1771388223474.png",
+        example: "As an introvert, my idea of a perfect Friday night is canceling plans I never made.",
+        exampleKo: "내향형인 나에게 완벽한 금요일 밤이란, 애초에 잡지도 않은 약속을 취소하는 거다.",
+      },
+      {
+        word: "extrovert",
+        meaning: "외향적인 사람",
+        pronunciation: "/ˈek.strə.vɜːrt/",
+        koreanPron: "엑-스트러-버트 (강세: 엑)",
+        stress: "엑",
+        rhymeCaption: "The extrovert won't desert the party — social life keeps the heart hearty.",
+        rhymeCaptionKo: "외향형은 절대 파티를 떠나지 않는다 — 사교 생활이 마음을 건강하게 하니까.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/extrovert-rhyme-1771389258499.png",
+        example: "My extrovert friend recharged by talking to 47 strangers at the cafe — I lost energy just watching.",
+        exampleKo: "외향형 친구는 카페에서 낯선 사람 47명에게 말 걸며 충전했다 — 나는 구경만 해도 지쳤다.",
+      },
+      {
+        word: "intuition",
+        meaning: "직관, 직감",
+        pronunciation: "/ˌɪn.tjuˈɪʃ.ən/",
+        koreanPron: "인-튜-이-션 (강세: 이)",
+        stress: "이",
+        rhymeCaption: "Trust your intuition — it's the brain's ignition before cognition.",
+        rhymeCaptionKo: "직관을 믿어라 — 인지 전에 뇌가 먼저 켜는 점화 장치다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/intuition-rhyme-1771389665428.png",
+        example: "My MBTI says I'm an N type, so I trust my intuition — that's why I bought 3 Labubu blind boxes without checking.",
+        exampleKo: "내 MBTI가 N형이라 직관을 믿는다 — 그래서 라부부 블라인드 박스 3개를 안 보고 샀다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

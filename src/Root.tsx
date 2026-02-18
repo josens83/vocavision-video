@@ -242,6 +242,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-018: introvert, extrovert, intuition (MBTI 영단어 Part 1) */}
+      <Composition
+        id="WordShort-set-018"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 17,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -882,6 +895,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[16].words[2],
+        }}
+      />
+
+      {/* set-018 비교 표지 카드 (MBTI 영단어 Part 1) */}
+      <Still
+        id="InstaCard-set018-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['introvert', 'extrovert', 'intuition'],
+          title: '🧠 MBTI 영어로? I/E/N의 뜻',
+          subtitle: '내향 → 외향 → 직관',
+        }}
+      />
+
+      {/* set-018 개별 단어 카드 */}
+      <Still
+        id="InstaCard-introvert"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[17].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-extrovert"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[17].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-intuition"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[17].words[2],
         }}
       />
     </>
