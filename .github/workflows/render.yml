@@ -87,6 +87,11 @@ on:
           - InstaCard-serenity
           - InstaCard-loyalty
           - InstaCard-bond
+          - WordShort-set-018
+          - InstaCard-set018-cover
+          - InstaCard-introvert
+          - InstaCard-extrovert
+          - InstaCard-intuition
 
 jobs:
   render:
