@@ -784,6 +784,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-019",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "underdog",
+        meaning: "약자, 패배 예상자",
+        pronunciation: "/ˈʌn.dɚ.dɑːɡ/",
+        koreanPron: "언-더-독 (강세: 언)",
+        stress: "언",
+        rhymeCaption: "The underdog won't be bogged — through the fog, they rise and jog.",
+        rhymeCaptionKo: "약자는 수렁에 빠지지 않는다 — 안개 속에서도 일어나 달린다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/underdog-rhyme-1771408301079.png",
+        example: "Nobody expected Korea in snowboard cross — but the underdog showed up and made everyone rewrite the favorites list.",
+        exampleKo: "아무도 스노보드 크로스에서 한국을 기대하지 않았다 — 하지만 그 약자가 나타나 모두의 우승 후보 목록을 다시 쓰게 만들었다.",
+      },
+      {
+        word: "breakthrough",
+        meaning: "돌파구, 획기적 발전",
+        pronunciation: "/ˈbreɪk.θruː/",
+        koreanPron: "브레이크-쓰루 (강세: 브레)",
+        stress: "브레",
+        rhymeCaption: "A breakthrough won't come to you — you break walls and push right through.",
+        rhymeCaptionKo: "돌파구는 저절로 오지 않는다 — 벽을 부수고 밀고 나가야 한다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/breakthrough-rhyme-1771410516870.png",
+        example: "The underdog's breakthrough came in the final lap — from last place to gold in 0.01 seconds.",
+        exampleKo: "약자의 돌파구는 마지막 바퀴에서 왔다 — 꼴찌에서 0.01초 차로 금메달까지.",
+      },
+      {
+        word: "legacy",
+        meaning: "유산, 업적",
+        pronunciation: "/ˈleɡ.ə.si/",
+        koreanPron: "레-거-시 (강세: 레)",
+        stress: "레",
+        rhymeCaption: "Your legacy is not a fantasy — it's built through years of constancy.",
+        rhymeCaptionKo: "당신의 유산은 환상이 아니다 — 수년간의 꾸준함으로 쌓이는 것이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/legacy-rhyme-1771410592498.png",
+        example: "The underdog had a breakthrough in 2018 — and now her legacy inspires every Korean kid who steps on the ice.",
+        exampleKo: "그 약자는 2018년에 돌파구를 찾았다 — 이제 그녀의 유산은 빙판에 서는 모든 한국 아이들에게 영감을 준다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
