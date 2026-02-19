@@ -826,6 +826,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-020",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "perceive",
+        meaning: "인식하다, 감지하다",
+        pronunciation: "/pɚˈsiːv/",
+        koreanPron: "퍼-씨브 (강세: 씨)",
+        stress: "씨",
+        rhymeCaption: "Don't just believe what you perceive — your eyes can deceive, so use your brain.",
+        rhymeCaptionKo: "네가 인식하는 걸 그냥 믿지 마라 — 눈은 속일 수 있으니, 뇌를 써라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/perceive-rhyme-1771487958097.png",
+        example: "My MBTI is ENFP, so I perceive the world through vibes — my friend is ESTJ, so she perceives the world through spreadsheets.",
+        exampleKo: "내 MBTI는 ENFP라 세상을 분위기로 인식한다 — 내 친구는 ESTJ라 세상을 스프레드시트로 인식한다.",
+      },
+      {
+        word: "judgment",
+        meaning: "판단, 판결",
+        pronunciation: "/ˈdʒʌdʒ.mənt/",
+        koreanPron: "저지-먼트 (강세: 저)",
+        stress: "저",
+        rhymeCaption: "Use good judgment, not resentment — make decisions with contentment.",
+        rhymeCaptionKo: "분노가 아닌 좋은 판단을 써라 — 만족감으로 결정하라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/judgement-rhyme-1771492146473.png",
+        example: "J types trust their judgment so much — they plan their lunch at 7 AM and their retirement at 22.",
+        exampleKo: "J형은 자기 판단을 너무 믿어서 — 오전 7시에 점심을 계획하고, 22살에 은퇴를 계획한다.",
+      },
+      {
+        word: "sensation",
+        meaning: "감각, 느낌",
+        pronunciation: "/senˈseɪ.ʃən/",
+        koreanPron: "센-세이-션 (강세: 세이)",
+        stress: "세이",
+        rhymeCaption: "Sensation needs no explanation — it's the body's raw narration.",
+        rhymeCaptionKo: "감각은 설명이 필요 없다 — 몸이 들려주는 날것의 이야기다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/sensation-rhyme-1771492347720.png",
+        example: "S types trust sensation over intuition — \"I don't need a gut feeling, I need receipts.\"",
+        exampleKo: "S형은 직관보다 감각을 믿는다 — \"직감 따위 필요 없어, 영수증을 줘.\"",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
