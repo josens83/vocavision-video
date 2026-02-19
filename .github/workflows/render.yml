@@ -97,6 +97,11 @@ on:
           - InstaCard-underdog
           - InstaCard-breakthrough
           - InstaCard-legacy
+          - WordShort-set-020
+          - InstaCard-set020-cover
+          - InstaCard-perceive
+          - InstaCard-judgment
+          - InstaCard-sensation
 
 jobs:
   render:

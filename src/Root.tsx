@@ -268,6 +268,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-020: perceive, judgment, sensation (MBTI 영단어 Part 2) */}
+      <Composition
+        id="WordShort-set-020"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 19,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -996,6 +1009,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[18].words[2],
+        }}
+      />
+
+      {/* set-020 비교 표지 카드 (MBTI 영단어 Part 2) */}
+      <Still
+        id="InstaCard-set020-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['perceive', 'judgment', 'sensation'],
+          title: '🧠 MBTI 완전 정복! S/J/P의 뜻',
+          subtitle: '인식 → 판단 → 감각',
+        }}
+      />
+
+      {/* set-020 개별 단어 카드 */}
+      <Still
+        id="InstaCard-perceive"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[19].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-judgment"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[19].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-sensation"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[19].words[2],
         }}
       />
     </>
