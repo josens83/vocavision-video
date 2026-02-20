@@ -281,6 +281,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-021: viral, algorithm, influence (SNS 영단어) */}
+      <Composition
+        id="WordShort-set-021"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 20,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -1053,6 +1066,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[19].words[2],
+        }}
+      />
+
+      {/* set-021 비교 표지 카드 (SNS 영단어) */}
+      <Still
+        id="InstaCard-set021-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['viral', 'algorithm', 'influence'],
+          title: '📱 SNS를 지배하는 영단어!',
+          subtitle: '바이럴 → 알고리즘 → 영향력',
+        }}
+      />
+
+      {/* set-021 개별 단어 카드 */}
+      <Still
+        id="InstaCard-viral"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[20].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-algorithm"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[20].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-influence"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[20].words[2],
         }}
       />
     </>

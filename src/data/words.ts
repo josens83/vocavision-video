@@ -868,6 +868,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-021",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "viral",
+        meaning: "입소문을 타는, 바이럴의",
+        pronunciation: "/ˈvaɪ.rəl/",
+        koreanPron: "바이-럴 (강세: 바이)",
+        stress: "바이",
+        rhymeCaption: "My post went viral, it's a spiral — likes and shares in a survival trial.",
+        rhymeCaptionKo: "내 게시물이 바이럴 됐어, 소용돌이야 — 좋아요와 공유의 생존 시합.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/viral-rhyme-1771576689046.png",
+        example: "I posted a video of my cat judging me at 3 AM — it went viral and now my cat has more followers than I do.",
+        exampleKo: "새벽 3시에 나를 심판하는 고양이 영상을 올렸더니 — 바이럴이 되어서 이제 고양이가 나보다 팔로워가 많다.",
+      },
+      {
+        word: "algorithm",
+        meaning: "알고리즘, 연산 절차",
+        pronunciation: "/ˈæl.ɡə.rɪð.əm/",
+        koreanPron: "앨-거-리-듬 (강세: 앨)",
+        stress: "앨",
+        rhymeCaption: "The algorithm knows your rhythm — it feeds you content with precision.",
+        rhymeCaptionKo: "알고리즘은 네 리듬을 안다 — 정확하게 콘텐츠를 먹여준다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/algorithm-rhyme-1771576791733.png",
+        example: "I searched for running shoes once, and now the algorithm thinks my entire personality is running shoes.",
+        exampleKo: "런닝화를 한 번 검색했더니, 이제 알고리즘이 내 전체 인격이 런닝화인 줄 안다.",
+      },
+      {
+        word: "influence",
+        meaning: "영향, 영향력; 영향을 미치다",
+        pronunciation: "/ˈɪn.flu.əns/",
+        koreanPron: "인-플루-언스 (강세: 인)",
+        stress: "인",
+        rhymeCaption: "Under their influence, we lose our innocence — buying things that make no sense.",
+        rhymeCaptionKo: "그들의 영향 아래, 우리는 순수함을 잃는다 — 말도 안 되는 걸 사면서.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/influence-rhyme-1771576881461.png",
+        example: "Influencers have so much influence that they can make you buy a $40 water bottle by just holding it.",
+        exampleKo: "인플루언서는 영향력이 너무 커서, 물병을 그냥 들고만 있어도 4만원짜리를 사게 만든다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
