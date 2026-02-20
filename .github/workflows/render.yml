@@ -102,6 +102,11 @@ on:
           - InstaCard-perceive
           - InstaCard-judgment
           - InstaCard-sensation
+          - WordShort-set-021
+          - InstaCard-set021-cover
+          - InstaCard-viral
+          - InstaCard-algorithm
+          - InstaCard-influence
 
 jobs:
   render:
