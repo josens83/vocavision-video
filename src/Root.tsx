@@ -294,6 +294,19 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-022: respawn, nerf, grind (게임 영단어) */}
+      <Composition
+        id="WordShort-set-022"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 21,
+        }}
+      />
+
       {/* 기본 WordShort (하위 호환) */}
       <Composition
         id="WordShort"
@@ -1110,6 +1123,50 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[20].words[2],
+        }}
+      />
+
+      {/* set-022 비교 표지 카드 (게임 영단어) */}
+      <Still
+        id="InstaCard-set022-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['respawn', 'nerf', 'grind'],
+          title: '🎮 게이머라면 무조건 아는 영단어!',
+          subtitle: '리스폰 → 너프 → 노가다',
+        }}
+      />
+
+      {/* set-022 개별 단어 카드 */}
+      <Still
+        id="InstaCard-respawn"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[21].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-nerf"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[21].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-grind"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[21].words[2],
         }}
       />
     </>
