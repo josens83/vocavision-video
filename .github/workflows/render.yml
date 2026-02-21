@@ -139,13 +139,17 @@ jobs:
           # InstaCard로 시작하면 이미지 렌더링
           if [[ "$COMP" == InstaCard-* ]]; then
             npx remotion still "$COMP" "out/$COMP.png"
+            echo "OUTPUT_FILE=out/$COMP.png" >> $GITHUB_ENV
+            echo "ARTIFACT_NAME=$COMP.png" >> $GITHUB_ENV
           else
             npx remotion render "$COMP" "out/$COMP.mp4"
+            echo "OUTPUT_FILE=out/$COMP.mp4" >> $GITHUB_ENV
+            echo "ARTIFACT_NAME=$COMP.mp4" >> $GITHUB_ENV
           fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.inputs.composition }}
-          path: out/
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.OUTPUT_FILE }}
           retention-days: 7
