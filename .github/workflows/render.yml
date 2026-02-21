@@ -107,6 +107,11 @@ on:
           - InstaCard-viral
           - InstaCard-algorithm
           - InstaCard-influence
+          - WordShort-set-022
+          - InstaCard-set022-cover
+          - InstaCard-respawn
+          - InstaCard-nerf
+          - InstaCard-grind
 
 jobs:
   render:

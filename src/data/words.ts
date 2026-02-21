@@ -910,6 +910,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-022",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "respawn",
+        meaning: "리스폰하다, 다시 태어나다",
+        pronunciation: "/riːˈspɔːn/",
+        koreanPron: "리-스폰 (강세: 스폰)",
+        stress: "스폰",
+        rhymeCaption: "Respawn at dawn, the battle goes on — keep fighting till the victory's won.",
+        rhymeCaptionKo: "새벽에 리스폰, 전투는 계속 — 승리할 때까지 싸워라.",
+        rhymeImageUrl: "[RHYME 이미지 URL - Whisk 생성 후 교체]",
+        example: "I died 47 times in that boss fight, but thanks to the respawn system, I only cried 46 times.",
+        exampleKo: "보스전에서 47번 죽었지만, 리스폰 시스템 덕분에 운 건 46번뿐이었다.",
+      },
+      {
+        word: "nerf",
+        meaning: "약화시키다, 하향 조정하다",
+        pronunciation: "/nɜːrf/",
+        koreanPron: "너프 (1음절)",
+        stress: "너프",
+        rhymeCaption: "They nerfed the surf, now I'm on the turf — my character's lost all its worth.",
+        rhymeCaptionKo: "파도타기를 너프해서 이제 땅 위에 있다 — 내 캐릭터가 가치를 다 잃었다.",
+        rhymeImageUrl: "[RHYME 이미지 URL - Whisk 생성 후 교체]",
+        example: "The developers nerfed the sword so hard that now it does less damage than a wet napkin.",
+        exampleKo: "개발자들이 칼을 너무 너프해서 이제 젖은 냅킨보다 데미지가 낮다.",
+      },
+      {
+        word: "grind",
+        meaning: "노가다하다, 반복 작업; 갈다",
+        pronunciation: "/ɡraɪnd/",
+        koreanPron: "그라인드 (강세: 그라)",
+        stress: "그라",
+        rhymeCaption: "Grind through the night, keep your eyes on the light — the loot at the end makes the grind feel right.",
+        rhymeCaptionKo: "밤새 노가다, 빛을 향해 눈을 떼지 마 — 끝에 있는 보상이 노가다를 보람차게 만든다.",
+        rhymeImageUrl: "[RHYME 이미지 URL - Whisk 생성 후 교체]",
+        example: "I spent 200 hours grinding for a legendary sword, and my mom thinks I've been 'studying computer science.'",
+        exampleKo: "전설 무기 파밍하느라 200시간 노가다했는데, 엄마는 내가 '컴퓨터 공부'하는 줄 안다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
