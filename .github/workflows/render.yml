@@ -112,6 +112,11 @@ on:
           - InstaCard-respawn
           - InstaCard-nerf
           - InstaCard-grind
+          - WordShort-set-023
+          - InstaCard-set023-cover
+          - InstaCard-bias
+          - InstaCard-alignment
+          - InstaCard-ethical
 
 jobs:
   render:

@@ -952,6 +952,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-023",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "bias",
+        meaning: "편향, 편견; 편향시키다",
+        pronunciation: "/ˈbaɪ.əs/",
+        koreanPron: "바이-어스 (강세: 바이)",
+        stress: "바이",
+        rhymeCaption: "Siri tried to buy us pizza again — her bias says pepperoni is the only friend.",
+        rhymeCaptionKo: "시리가 또 피자를 시켜줬다 — 편향 때문에 페퍼로니만 친구란다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/bias-rhyme-1771676944040.png",
+        example: "The AI showed clear bias — it recommended pineapple pizza to everyone, which is a crime against both data science and Italian cuisine.",
+        exampleKo: "그 AI는 명백한 편향을 보였다 — 모든 사람에게 파인애플 피자를 추천했는데, 이는 데이터 과학과 이탈리아 요리 모두에 대한 범죄다.",
+      },
+      {
+        word: "alignment",
+        meaning: "정렬, 조율; (AI) 가치 정렬",
+        pronunciation: "/əˈlaɪn.mənt/",
+        koreanPron: "어-라인-먼트 (강세: 라인)",
+        stress: "라인",
+        rhymeCaption: "Teacher gave me an assignment — teach the robot proper alignment.",
+        rhymeCaptionKo: "선생님이 과제를 내줬다 — 로봇에게 올바른 정렬을 가르쳐라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/alignment-rhyme-1771734083758.png",
+        example: "The biggest challenge in AI isn't making it smarter — it's alignment, making sure it doesn't decide that humans are the bug in its system.",
+        exampleKo: "AI의 가장 큰 과제는 더 똑똑하게 만드는 것이 아니라 — 정렬이다, AI가 인간을 시스템의 버그로 판단하지 않도록 하는 것.",
+      },
+      {
+        word: "ethical",
+        meaning: "윤리적인, 도덕적인",
+        pronunciation: "/ˈeθ.ɪ.kəl/",
+        koreanPron: "에-씨-컬 (강세: 에)",
+        stress: "에",
+        rhymeCaption: "ChatGPT diagnosed my medical — but the real question is, was that ethical?",
+        rhymeCaptionKo: "ChatGPT가 내 건강을 진단했다 — 근데 진짜 질문은, 그게 윤리적이었나?",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ethical-rhyme-1771734899850.png",
+        example: "Is it ethical for AI to write your homework? The AI says yes, your teacher says no, and your conscience is still loading.",
+        exampleKo: "AI가 숙제를 대신 써주는 게 윤리적일까? AI는 된다고 하고, 선생님은 안 된다고 하고, 양심은 아직 로딩 중이다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
