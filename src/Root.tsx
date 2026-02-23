@@ -1,6 +1,6 @@
 import React from 'react';
 import { Composition, Still } from 'remotion';
-import { CompanyIntro } from './compositions/CompanyIntro';
+import { CompanyIntroNew } from './CompanyIntro/CompanyIntro';
 import { WordShort } from './compositions/WordShort';
 import { InstaWordCard } from './compositions/InstaWordCard';
 import { InstaCompareCard } from './compositions/InstaCompareCard';
@@ -11,11 +11,11 @@ import { WORD_SETS } from './data/words';
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* 회사 소개 영상 — 16:9, 75초 (기존 유지) */}
+      {/* 회사 소개 영상 — 16:9, 90초 (6 Scene 모션그래픽) */}
       <Composition
         id="CompanyIntro"
-        component={CompanyIntro}
-        durationInFrames={2250}
+        component={CompanyIntroNew}
+        durationInFrames={2700}
         fps={VIDEO.LANDSCAPE.fps}
         width={VIDEO.LANDSCAPE.width}
         height={VIDEO.LANDSCAPE.height}
