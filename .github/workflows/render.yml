@@ -10,7 +10,8 @@ on:
         type: choice
         options:
           # 영상
-          - CompanyIntro
+          - CompanyIntro-KR
+          - CompanyIntro-EN
           - WordShort
           - WordShort-set-001
           - WordShort-set-002
@@ -141,6 +142,28 @@ jobs:
 
       - name: Install Chrome dependencies
         run: npx remotion browser ensure
+
+      - name: Generate TTS audio
+        if: startsWith(github.event.inputs.composition, 'CompanyIntro-')
+        run: |
+          pip install edge-tts
+          mkdir -p public/audio
+
+          # 한국어
+          edge-tts --voice "ko-KR-SunHiNeural" --text "영단어, 외워도 외워도 까먹으시죠?" --write-media public/audio/kr-scene1.mp3
+          edge-tts --voice "ko-KR-SunHiNeural" --text "VocaVision AI는 AI 이미지와 재미있는 라임으로 영단어를 머릿속에 그려넣는 학습법입니다." --write-media public/audio/kr-scene2.mp3
+          edge-tts --voice "ko-KR-SunHiNeural" --text "AI 이미지로 시각적으로 기억하고, 어원 분석으로 뿌리부터 이해하고, 재미있는 라임으로 한번 들으면 잊을 수 없습니다." --write-media public/audio/kr-scene3.mp3
+          edge-tts --voice "ko-KR-SunHiNeural" --text "수능, 텝스, 토플까지 7,600개 이상의 단어를 커버합니다." --write-media public/audio/kr-scene4.mp3
+          edge-tts --voice "ko-KR-SunHiNeural" --text "일반 단어장은 뜻만 나열합니다. VocaVision은 여러분의 뇌가 기억하기 쉬운 방식으로 설계되었습니다." --write-media public/audio/kr-scene5.mp3
+          edge-tts --voice "ko-KR-SunHiNeural" --text "지금 무료로 시작하세요. VocaVision AI, 이미지로 기억하는 영단어." --write-media public/audio/kr-scene6.mp3
+
+          # 영어
+          edge-tts --voice "en-US-JennyNeural" --text "You study English vocabulary, but keep forgetting, right?" --write-media public/audio/en-scene1.mp3
+          edge-tts --voice "en-US-JennyNeural" --text "VocaVision AI uses AI-generated images and fun rhymes to paint words in your mind." --write-media public/audio/en-scene2.mp3
+          edge-tts --voice "en-US-JennyNeural" --text "Visually remember with AI images, understand roots through etymology, and never forget with catchy rhymes." --write-media public/audio/en-scene3.mp3
+          edge-tts --voice "en-US-JennyNeural" --text "Covering over seven thousand six hundred words across CSAT, TEPS, and TOEFL." --write-media public/audio/en-scene4.mp3
+          edge-tts --voice "en-US-JennyNeural" --text "Regular flashcards just list definitions. VocaVision is designed for how your brain actually remembers." --write-media public/audio/en-scene5.mp3
+          edge-tts --voice "en-US-JennyNeural" --text "Start for free today. VocaVision AI, vocabulary you can see." --write-media public/audio/en-scene6.mp3
 
       - name: Render
         run: |

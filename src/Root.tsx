@@ -11,14 +11,30 @@ import { WORD_SETS } from './data/words';
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* 회사 소개 영상 — 16:9, 90초 (6 Scene 모션그래픽) */}
+      {/* 회사 소개 영상 — 한국어 버전 */}
       <Composition
-        id="CompanyIntro"
+        id="CompanyIntro-KR"
         component={CompanyIntroNew}
         durationInFrames={2700}
         fps={VIDEO.LANDSCAPE.fps}
         width={VIDEO.LANDSCAPE.width}
         height={VIDEO.LANDSCAPE.height}
+        defaultProps={{
+          language: 'KR' as const,
+        }}
+      />
+
+      {/* 회사 소개 영상 — 영어 버전 */}
+      <Composition
+        id="CompanyIntro-EN"
+        component={CompanyIntroNew}
+        durationInFrames={2700}
+        fps={VIDEO.LANDSCAPE.fps}
+        width={VIDEO.LANDSCAPE.width}
+        height={VIDEO.LANDSCAPE.height}
+        defaultProps={{
+          language: 'EN' as const,
+        }}
       />
 
       {/* ===== 3단어 쇼츠 — 9:16, 55초 ===== */}
