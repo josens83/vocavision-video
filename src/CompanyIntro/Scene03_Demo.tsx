@@ -5,11 +5,11 @@ import { BRAND, FONT } from './styles';
 // Supabase 이미지 URL
 const IMAGES = {
   ubiquitousConcept:
-    'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ubiquitous-concept.png',
+    'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ubiquitous-concept-1770100671787.png',
   ubiquitousRhyme:
-    'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ubiquitous-rhyme.png',
+    'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ubiquitous-rhyme-1768381623510.png',
   biasConcept:
-    'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/bias-concept.png',
+    'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/bias-concept-1771676772210.png',
   bingeRhyme:
     'https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/binge-rhyme-1771813938130.png',
 };
