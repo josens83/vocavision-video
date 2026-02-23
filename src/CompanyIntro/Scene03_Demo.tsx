@@ -1,6 +1,7 @@
 import React from 'react';
-import { AbsoluteFill, Img, interpolate, Sequence, useCurrentFrame, spring, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Img, interpolate, Sequence, staticFile, useCurrentFrame, spring, useVideoConfig } from 'remotion';
 import { BRAND, FONT } from './styles';
+import { PhoneMockup } from './PhoneMockup';
 
 // Supabase 이미지 URL
 const IMAGES = {
@@ -363,40 +364,15 @@ const Part2_Etymology: React.FC = () => {
   );
 };
 
-// Part 3: 재미있는 라임 (225 frames = 7.5초)
-const Part3_Rhyme: React.FC = () => {
+// Part 3: 실제 학습 화면 (225 frames = 7.5초) — 폰 목업 + UX 녹화
+const Part3_UXDemo: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
   const titleOpacity = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
 
-  // 라임 이미지
-  const imgScale = spring({
-    frame: Math.max(0, frame - 30),
-    fps,
-    config: { damping: 12 },
-  });
-  const imgOpacity = interpolate(frame, [30, 50], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
-  // 타이핑 효과
-  const rhymeText = 'ubiquitous = you be with us';
-  const typingProgress = interpolate(frame, [80, 170], [0, rhymeText.length], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-  const displayText = rhymeText.slice(0, Math.floor(typingProgress));
-
-  const subOpacity = interpolate(frame, [170, 190], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
   return (
     <AbsoluteFill style={{ backgroundColor: BRAND.dark }}>
-      <SectionTitle text="재미있는 라임" />
+      <SectionTitle text="실제 학습 화면" />
       <div
         style={{
           position: 'absolute',
@@ -409,7 +385,7 @@ const Part3_Rhyme: React.FC = () => {
           opacity: titleOpacity,
         }}
       >
-        한번 들으면 잊을 수 없다!
+        플래시카드로 학습!
       </div>
 
       <div
@@ -419,66 +395,66 @@ const Part3_Rhyme: React.FC = () => {
           alignItems: 'center',
           height: '100%',
           gap: 60,
-          paddingTop: 80,
+          paddingTop: 60,
         }}
       >
-        {/* 라임 이미지 */}
-        <div
-          style={{
-            opacity: imgOpacity,
-            transform: `scale(${imgScale})`,
-            width: 480,
-            height: 480,
-            borderRadius: 24,
-            overflow: 'hidden',
-            boxShadow: `0 10px 40px rgba(0,0,0,0.5)`,
-            border: `3px solid ${BRAND.primary}44`,
-          }}
-        >
-          <Img
-            src={IMAGES.ubiquitousRhyme}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </div>
+        {/* 폰 목업 + 로그인 UX 영상 */}
+        <PhoneMockup
+          videoSrc={staticFile('video/ux-login.mp4')}
+          startFrom={10}
+        />
 
-        {/* 텍스트 영역 */}
+        {/* 설명 텍스트 */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 30,
-            maxWidth: 700,
+            gap: 24,
+            maxWidth: 600,
           }}
         >
-          {/* 타이핑 텍스트 */}
-          <div
-            style={{
-              fontSize: 44,
-              fontWeight: 700,
-              color: BRAND.accent,
-              fontFamily: FONT.english,
-              fontStyle: 'italic',
-              minHeight: 60,
-            }}
-          >
-            {displayText}
-            {frame >= 80 && frame <= 170 && (
-              <span style={{ opacity: frame % 16 < 8 ? 1 : 0, color: BRAND.white }}>|</span>
-            )}
-          </div>
-
-          {/* 한국어 해석 */}
-          <div
-            style={{
-              opacity: subOpacity,
-              fontSize: 30,
-              color: BRAND.gray,
-              fontFamily: FONT.korean,
-              lineHeight: 1.6,
-            }}
-          >
-            유비쿼터스 — 너 우리와 함께, 어디에나
-          </div>
+          {[
+            { text: 'AI 이미지로 시각 암기', delay: 30 },
+            { text: '어원 분석으로 깊이 이해', delay: 60 },
+            { text: '라임으로 재미있게 기억', delay: 90 },
+            { text: '8단계 플래시카드 학습', delay: 120 },
+          ].map((item, i) => {
+            const itemOpacity = interpolate(frame, [item.delay, item.delay + 20], [0, 1], {
+              extrapolateLeft: 'clamp',
+              extrapolateRight: 'clamp',
+            });
+            const itemX = interpolate(frame, [item.delay, item.delay + 20], [30, 0], {
+              extrapolateLeft: 'clamp',
+              extrapolateRight: 'clamp',
+            });
+            return (
+              <div
+                key={i}
+                style={{
+                  opacity: itemOpacity,
+                  transform: `translateX(${itemX}px)`,
+                  fontSize: 32,
+                  fontWeight: 600,
+                  color: BRAND.white,
+                  fontFamily: FONT.korean,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 16,
+                }}
+              >
+                <div
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    backgroundColor: BRAND.primary,
+                    flexShrink: 0,
+                  }}
+                />
+                {item.text}
+              </div>
+            );
+          })}
         </div>
       </div>
     </AbsoluteFill>
@@ -605,9 +581,9 @@ export const Scene03_Demo: React.FC = () => {
         <Part2_Etymology />
       </Sequence>
 
-      {/* Part 3: 라임 (450~675, 15~22.5초) */}
+      {/* Part 3: 실제 학습 화면 (450~675, 15~22.5초) */}
       <Sequence from={450} durationInFrames={225}>
-        <Part3_Rhyme />
+        <Part3_UXDemo />
       </Sequence>
 
       {/* Part 4: 8섹션 카드 (675~900, 22.5~30초) */}

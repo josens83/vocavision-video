@@ -63,6 +63,9 @@ export const CompanyIntroNew: React.FC<CompanyIntroProps> = ({
       {/* 자막 오버레이 */}
       <SubtitleOverlay language={language} />
 
+      {/* 배경음악 (BGM) — 전체 90초, 나레이션보다 낮은 볼륨 */}
+      <Audio src={staticFile('audio/bgm.mp3')} volume={0.15} />
+
       {/* 나레이션 오디오 (GitHub Actions에서 TTS 생성 후 public/audio/에 배치) */}
       {NARRATION_STARTS.map((startFrame, i) => (
         <Sequence key={i} from={startFrame}>
