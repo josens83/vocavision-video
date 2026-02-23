@@ -994,6 +994,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-024",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "binge",
+        meaning: "폭식하다, 몰아보다; 폭식",
+        pronunciation: "/bɪndʒ/",
+        koreanPron: "빈지",
+        stress: "빈",
+        rhymeCaption: "Three-day Netflix binge — every love scene made me cringe.",
+        rhymeCaptionKo: "3일 넷플릭스 정주행 — 사랑 장면마다 오글거렸다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/binge-rhyme-1771813938130.png",
+        example: "I told myself I'd only watch one episode, but six hours later I realized I'd gone on a full binge — and now I'm emotionally attached to fictional characters.",
+        exampleKo: "한 편만 보겠다고 했는데, 6시간 뒤 깨달았다 — 완전 정주행해버렸고, 이제 가상의 캐릭터에 감정이입까지 했다.",
+      },
+      {
+        word: "spoiler",
+        meaning: "스포일러, 흥을 깨는 것",
+        pronunciation: "/ˈspɔɪ.lər/",
+        koreanPron: "스포이-러 (강세: 스포이)",
+        stress: "스포이",
+        rhymeCaption: "One text from the spoiler — group chat burst like a boiler.",
+        rhymeCaptionKo: "스포일러의 문자 한 통에 — 단톡방이 보일러처럼 터졌다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/spoiler-rhyme-1771814283466.png",
+        example: "Spoiler alert: the real villain of every K-drama is the second lead who seems nice at first.",
+        exampleKo: "스포일러 주의: 모든 한국 드라마의 진짜 악역은 처음에 착해 보이는 두 번째 남자주인공이다.",
+      },
+      {
+        word: "cliffhanger",
+        meaning: "궁금증 유발 결말, 긴장감 넘치는 장면",
+        pronunciation: "/ˈklɪf.hæŋ.ər/",
+        koreanPron: "클리프-행-어 (강세: 클리프)",
+        stress: "클리프",
+        rhymeCaption: "Season one ended on a cliffhanger — season two was a total game changer.",
+        rhymeCaptionKo: "시즌1이 클리프행어로 끝났다 — 시즌2는 완전한 게임 체인저였다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/cliffhanger-rhyme-1771814415352.png",
+        example: "The season ended on the biggest cliffhanger I've ever seen — now I have to wait a whole year to find out what happens. This should be illegal.",
+        exampleKo: "시즌이 역대급 클리프행어로 끝났다 — 이제 무슨 일이 일어나는지 알려면 1년을 기다려야 한다. 이건 불법이어야 해.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지

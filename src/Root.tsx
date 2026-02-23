@@ -1226,6 +1226,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[22].words[2],
         }}
       />
+
+      {/* set-024: binge, spoiler, cliffhanger (넷플릭스 영단어) */}
+      <Composition
+        id="WordShort-set-024"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 23,
+        }}
+      />
+
+      {/* set-024 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set024-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['binge', 'spoiler', 'cliffhanger'],
+          title: '🎬 넷플릭스 중독자 필수 영단어!',
+          subtitle: '정주행 → 스포 → 다음 시즌',
+        }}
+      />
+
+      {/* set-024 개별 단어 카드 */}
+      <Still
+        id="InstaCard-binge"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[23].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-spoiler"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[23].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-cliffhanger"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[23].words[2],
+        }}
+      />
     </>
   );
 };
