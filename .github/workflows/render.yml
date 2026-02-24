@@ -123,6 +123,11 @@ on:
           - InstaCard-binge
           - InstaCard-spoiler
           - InstaCard-cliffhanger
+          - WordShort-set-025
+          - InstaCard-set025-cover
+          - InstaCard-lag
+          - InstaCard-buff
+          - InstaCard-meta
 
 jobs:
   render:

@@ -1299,6 +1299,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[23].words[2],
         }}
       />
+
+      {/* set-025: lag, buff, meta (게임 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-025"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 24,
+        }}
+      />
+
+      {/* set-025 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set025-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['lag', 'buff', 'meta'],
+          title: '🎮 게이머 필수 영단어 Part 2!',
+          subtitle: '렉 → 버프 → 메타',
+        }}
+      />
+
+      {/* set-025 개별 단어 카드 */}
+      <Still
+        id="InstaCard-lag"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[24].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-buff"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[24].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-meta"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[24].words[2],
+        }}
+      />
     </>
   );
 };
