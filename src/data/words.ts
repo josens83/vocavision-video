@@ -1036,6 +1036,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-025",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "lag",
+        meaning: "뒤처짐, 지연; 뒤처지다",
+        pronunciation: "/læɡ/",
+        koreanPron: "래그",
+        stress: "래",
+        rhymeCaption: "The lag made me drag — now I'm in a body bag.",
+        rhymeCaptionKo: "렉 때문에 느려졌다 — 이제 난 시체 가방 속이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/lag-rhyme-1771899029468.png",
+        example: "The server lag was so bad that I died three times before I could even move.",
+        exampleKo: "서버 렉이 너무 심해서 움직이기도 전에 세 번이나 죽었다.",
+      },
+      {
+        word: "buff",
+        meaning: "강화, 버프; 강화하다 / 매니아, 열광자",
+        pronunciation: "/bʌf/",
+        koreanPron: "버프",
+        stress: "버",
+        rhymeCaption: "The healer cast a buff — now the boss fight won't be tough — but our gear's still not enough.",
+        rhymeCaptionKo: "힐러가 버프를 걸었다 — 이제 보스전이 어렵진 않겠지 — 근데 장비는 아직 부족해.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/buff-rhyme-1771899290480.png",
+        example: "As a film buff, she has watched over 500 movies and can discuss cinematography for hours.",
+        exampleKo: "영화 매니아인 그녀는 500편 이상을 봤고 촬영 기법에 대해 몇 시간이고 토론할 수 있다.",
+      },
+      {
+        word: "meta",
+        meaning: "(게임) 최적 전략; 초월적인, 자기 참조적인",
+        pronunciation: "/ˈmetə/",
+        koreanPron: "메터",
+        stress: "메",
+        rhymeCaption: "Don't just blindly follow the meta — be the one who sets a new era.",
+        rhymeCaptionKo: "무작정 메타를 따르지 마라 — 새로운 시대를 여는 사람이 되어라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/meta-rhyme-1771900315043.png",
+        example: "The researcher conducted a meta-analysis of over 200 studies to determine the effectiveness of the new treatment.",
+        exampleKo: "연구자는 200개 이상의 연구에 대한 메타 분석을 수행하여 새 치료법의 효과를 판단했다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
