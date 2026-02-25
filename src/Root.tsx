@@ -1356,6 +1356,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[24].words[2],
         }}
       />
+
+      {/* set-026: semester, curriculum, scholarship (새학기 대학생활) */}
+      <Composition
+        id="WordShort-set-026"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 25,
+        }}
+      />
+
+      {/* set-026 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set026-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['semester', 'curriculum', 'scholarship'],
+          title: '🎓 3월 개강! 대학생 필수 영단어!',
+          subtitle: '학기 → 커리큘럼 → 장학금',
+        }}
+      />
+
+      {/* set-026 개별 단어 카드 */}
+      <Still
+        id="InstaCard-semester"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[25].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-curriculum"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[25].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-scholarship"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[25].words[2],
+        }}
+      />
     </>
   );
 };
