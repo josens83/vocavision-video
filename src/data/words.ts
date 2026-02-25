@@ -1078,6 +1078,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-026",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "semester",
+        meaning: "학기 (1년을 2등분)",
+        pronunciation: "/sɪˈmestər/",
+        koreanPron: "서메스터 (강세: 메)",
+        stress: "메",
+        rhymeCaption: "Every semester I get closer to master — learning faster, dodging every disaster.",
+        rhymeCaptionKo: "매 학기 마스터에 가까워진다 — 더 빠르게 배우고, 모든 재앙을 피하며.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/semester-rhyme-1771981513564.png",
+        example: "The educational reform divided the academic year into three semesters instead of two.",
+        exampleKo: "교육 개혁은 학년을 2학기 대신 3학기로 나누었다.",
+      },
+      {
+        word: "curriculum",
+        meaning: "교육 과정, 커리큘럼",
+        pronunciation: "/kəˈrɪkjələm/",
+        koreanPron: "커리큘럼 (강세: 리)",
+        stress: "리",
+        rhymeCaption: "Follow the curriculum, never be ridiculous — study hard, stay meticulous.",
+        rhymeCaptionKo: "커리큘럼을 따라가, 우습게 굴지 마 — 열심히 공부해, 꼼꼼하게.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/curriculum-rhyme-1771981581839.png",
+        example: "Critics argue that the current curriculum fails to adequately prepare students for the demands of the modern workforce.",
+        exampleKo: "비평가들은 현재 교육 과정이 현대 노동 시장의 요구에 학생들을 적절히 대비시키지 못한다고 주장한다.",
+      },
+      {
+        word: "scholarship",
+        meaning: "장학금; 학문, 학식",
+        pronunciation: "/ˈskɑːlərʃɪp/",
+        koreanPron: "스칼러쉽 (강세: 스칼)",
+        stress: "스칼",
+        rhymeCaption: "Earned a scholarship through the hardship — now the whole world is my internship.",
+        rhymeCaptionKo: "고난을 통해 장학금을 땄다 — 이제 온 세상이 나의 인턴십이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/scholarship-rhyme-1771981979528.png",
+        example: "Recent scholarship on climate change suggests that the effects of global warming are accelerating faster than previously predicted.",
+        exampleKo: "기후 변화에 대한 최근 학술 연구는 지구 온난화의 영향이 이전 예측보다 빠르게 가속화되고 있음을 시사한다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
