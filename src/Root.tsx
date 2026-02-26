@@ -1413,6 +1413,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[25].words[2],
         }}
       />
+
+      {/* set-027: engagement, trending, follower (SNS 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-027"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 26,
+        }}
+      />
+
+      {/* set-027 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set027-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['engagement', 'trending', 'follower'],
+          title: '📱 SNS 필수 영단어 Part 2!',
+          subtitle: '팔로워 → 트렌딩 → 인게이지먼트',
+        }}
+      />
+
+      {/* set-027 개별 단어 카드 */}
+      <Still
+        id="InstaCard-engagement"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[26].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-trending"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[26].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-follower"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[26].words[2],
+        }}
+      />
     </>
   );
 };

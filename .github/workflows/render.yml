@@ -133,6 +133,11 @@ on:
           - InstaCard-semester
           - InstaCard-curriculum
           - InstaCard-scholarship
+          - WordShort-set-027
+          - InstaCard-set027-cover
+          - InstaCard-engagement
+          - InstaCard-trending
+          - InstaCard-follower
 
 jobs:
   render:

@@ -1120,6 +1120,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-027",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "engagement",
+        meaning: "참여, 관여; 약혼",
+        pronunciation: "/ɪnˈɡeɪdʒmənt/",
+        koreanPron: "인게이지먼트 (강세: 게이지)",
+        stress: "게이지",
+        rhymeCaption: "Boost your engagement with the right arrangement — every comment, every share, that's real entertainment.",
+        rhymeCaptionKo: "올바른 배치로 인게이지먼트를 높여라 — 모든 댓글, 모든 공유, 그게 진짜 엔터테인먼트다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/engagement-rhyme-1772080622928.png",
+        example: "Active civic engagement is essential for a healthy democracy, as it ensures that citizens' voices are heard.",
+        exampleKo: "적극적인 시민 참여는 건강한 민주주의에 필수적인데, 시민의 목소리가 반영되도록 보장하기 때문이다.",
+      },
+      {
+        word: "trending",
+        meaning: "유행하는, 인기 급상승 중인",
+        pronunciation: "/ˈtrendɪŋ/",
+        koreanPron: "트렌딩 (강세: 트렌)",
+        stress: "트렌",
+        rhymeCaption: "Your content is trending, the algorithm is lending — likes and shares never ending.",
+        rhymeCaptionKo: "콘텐츠가 트렌딩, 알고리즘이 밀어주고 — 좋아요와 공유가 끝없이 쏟아진다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/trending-rhyme-1772080871442.png",
+        example: "Data shows a trending increase in remote work adoption across all industries since the pandemic.",
+        exampleKo: "데이터는 팬데믹 이후 모든 산업에서 원격 근무 채택이 증가 추세를 보이고 있음을 나타낸다.",
+      },
+      {
+        word: "follower",
+        meaning: "팔로워, 추종자; 따르는 사람",
+        pronunciation: "/ˈfɑːloʊər/",
+        koreanPron: "팔로워 (강세: 팔)",
+        stress: "팔",
+        rhymeCaption: "Ten thousand followers but who's a true believer — numbers don't matter without a real achiever.",
+        rhymeCaptionKo: "만 명의 팔로워, 하지만 진짜 믿는 사람은? — 진짜 성취자 없이 숫자는 의미 없다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/follower-rhyme-1772092202350.png",
+        example: "A true leader inspires followers not through authority, but through vision and integrity.",
+        exampleKo: "진정한 리더는 권위가 아닌 비전과 진실성으로 추종자들에게 영감을 준다.",
+      },
+    ],
+  },
 ];
 
 // 하위 호환: 기존 SAMPLE_WORDS 유지
