@@ -1162,7 +1162,48 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-028",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "recipe",
+        meaning: "조리법, 레시피; 비결",
+        pronunciation: "/ˈresɪpi/",
+        koreanPron: "레서피 (강세: 레)",
+        stress: "레",
+        rhymeCaption: "Follow the recipe, keep it crispy — one wrong step and the whole dish gets risky.",
+        rhymeCaptionKo: "레시피를 따라가, 바삭하게 유지해 — 한 단계 틀리면 요리 전체가 위험해진다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/recipe-rhyme-1772157253753.png",
+        example: "Experts argue that there is no single recipe for economic growth, as each country faces unique challenges.",
+        exampleKo: "전문가들은 경제 성장의 단일 비결은 없다고 주장하는데, 각 나라가 고유한 도전에 직면하기 때문이다.",
+      },
+      {
+        word: "ingredient",
+        meaning: "재료, 성분; 요소",
+        pronunciation: "/ɪnˈɡriːdiənt/",
+        koreanPron: "인그리디언트 (강세: 그리)",
+        stress: "그리",
+        rhymeCaption: "Mix every ingredient with patience and commitment — that's the secret to a dish that's truly magnificent.",
+        rhymeCaptionKo: "모든 재료를 인내와 헌신으로 섞어라 — 그게 진짜 훌륭한 요리의 비결이다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/ingredient-rhyme-1772099135793.png",
+        example: "Trust is a key ingredient in building lasting relationships, whether in business or personal life.",
+        exampleKo: "신뢰는 비즈니스든 개인 생활이든, 지속적인 관계를 구축하는 데 핵심 요소이다.",
+      },
+      {
+        word: "flavor",
+        meaning: "맛, 풍미; 특색, 분위기",
+        pronunciation: "/ˈfleɪvər/",
+        koreanPron: "플레이버 (강세: 플레이)",
+        stress: "플레이",
+        rhymeCaption: "Add a little flavor, do yourself a favor — be the chef, not just a waiter.",
+        rhymeCaptionKo: "풍미를 더해라, 자신에게 호의를 베풀어라 — 웨이터가 아니라 셰프가 되어라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/flavor-rhyme-1772157555917.png",
+        example: "The novel captures the authentic flavor of 1920s Paris, immersing readers in the art and culture of the era.",
+        exampleKo: "그 소설은 1920년대 파리의 진정한 분위기를 포착하여 독자들을 그 시대의 예술과 문화에 몰입시킨다.",
+      },
+    ],
+  },
 ];
-
 // 하위 호환: 기존 SAMPLE_WORDS 유지
 export const SAMPLE_WORDS = WORD_SETS[0].words;

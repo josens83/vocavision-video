@@ -138,6 +138,11 @@ on:
           - InstaCard-engagement
           - InstaCard-trending
           - InstaCard-follower
+          - WordShort-set-028
+          - InstaCard-set028-cover
+          - InstaCard-recipe
+          - InstaCard-ingredient
+          - InstaCard-flavor
 
 jobs:
   render:

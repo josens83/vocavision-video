@@ -1470,6 +1470,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[26].words[2],
         }}
       />
+
+      {/* set-028: recipe, ingredient, flavor (요리 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-028"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 27,
+        }}
+      />
+
+      {/* set-028 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set028-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['recipe', 'ingredient', 'flavor'],
+          title: '🍳 요리사 필수 영단어 Part 1!',
+          subtitle: '재료 → 레시피 → 맛의 완성',
+        }}
+      />
+
+      {/* set-028 개별 단어 카드 */}
+      <Still
+        id="InstaCard-recipe"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[27].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-ingredient"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[27].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-flavor"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[27].words[2],
+        }}
+      />
     </>
   );
 };
