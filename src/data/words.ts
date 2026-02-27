@@ -1204,6 +1204,47 @@ export const WORD_SETS: WordSet[] = [
       },
     ],
   },
+  {
+    id: "set-029",
+    title: "오늘의 영단어",
+    words: [
+      {
+        word: "bullish",
+        meaning: "강세의, 상승 전망의; 낙관적인",
+        pronunciation: "/ˈbʊlɪʃ/",
+        koreanPron: "불리쉬 (강세: 불)",
+        stress: "불",
+        rhymeCaption: "The market's bullish, don't be foolish — buy the dip before the finish.",
+        rhymeCaptionKo: "시장이 강세다, 멍청하게 굴지 마 — 끝나기 전에 저점에서 사라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/bullish-rhyme-1772178966434.png",
+        example: "The CEO expressed a bullish outlook on the company's future, citing strong quarterly earnings and expanding global markets.",
+        exampleKo: "CEO는 강력한 분기 실적과 확대되는 글로벌 시장을 근거로 회사의 미래에 대해 낙관적인 전망을 밝혔다.",
+      },
+      {
+        word: "bearish",
+        meaning: "약세의, 하락 전망의; 비관적인",
+        pronunciation: "/ˈberɪʃ/",
+        koreanPron: "베어리쉬 (강세: 베어)",
+        stress: "베어",
+        rhymeCaption: "When it turns bearish, watch your cherished — portfolios can quickly perish.",
+        rhymeCaptionKo: "약세로 돌아서면, 소중한 것을 지켜라 — 포트폴리오가 순식간에 사라질 수 있다.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/bearish-rhyme-1772181185841.png",
+        example: "Despite the bearish economic forecast, some analysts argue that certain sectors may still offer significant growth opportunities.",
+        exampleKo: "비관적인 경제 전망에도 불구하고, 일부 애널리스트들은 특정 부문이 여전히 상당한 성장 기회를 제공할 수 있다고 주장한다.",
+      },
+      {
+        word: "portfolio",
+        meaning: "포트폴리오, 투자 목록; 작품집",
+        pronunciation: "/pɔːrtˈfoʊlioʊ/",
+        koreanPron: "포트폴리오 (강세: 폴)",
+        stress: "폴",
+        rhymeCaption: "Build your portfolio, watch it grow — diversify the risk and steal the show.",
+        rhymeCaptionKo: "포트폴리오를 만들어, 성장을 지켜봐 — 리스크를 분산하고 주인공이 되어라.",
+        rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/portfolio-rhyme-1772181665226.png",
+        example: "The young architect impressed the firm with a portfolio that showcased innovative designs blending sustainability with modern aesthetics.",
+        exampleKo: "그 젊은 건축가는 지속가능성과 현대적 미학을 결합한 혁신적인 디자인을 보여주는 작품집으로 회사에 깊은 인상을 남겼다.",
+      },
+    ],
+  },
 ];
-// 하위 호환: 기존 SAMPLE_WORDS 유지
 export const SAMPLE_WORDS = WORD_SETS[0].words;

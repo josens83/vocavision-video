@@ -143,6 +143,11 @@ on:
           - InstaCard-recipe
           - InstaCard-ingredient
           - InstaCard-flavor
+          - WordShort-set-029
+          - InstaCard-set029-cover
+          - InstaCard-bullish
+          - InstaCard-bearish
+          - InstaCard-portfolio
 
 jobs:
   render:

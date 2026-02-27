@@ -1527,6 +1527,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[27].words[2],
         }}
       />
+
+      {/* set-029: bullish, bearish, portfolio (주식 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-029"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 28,
+        }}
+      />
+
+      {/* set-029 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set029-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['bullish', 'bearish', 'portfolio'],
+          title: '📈 주식 필수 영단어 Part 1!',
+          subtitle: '🐂 강세 → 🐻 약세 → 📁 포트폴리오',
+        }}
+      />
+
+      {/* set-029 개별 단어 카드 */}
+      <Still
+        id="InstaCard-bullish"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[28].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-bearish"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[28].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-portfolio"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[28].words[2],
+        }}
+      />
     </>
   );
 };
