@@ -148,6 +148,11 @@ on:
           - InstaCard-bullish
           - InstaCard-bearish
           - InstaCard-portfolio
+          - WordShort-set-030
+          - InstaCard-set030-cover
+          - InstaCard-dividend
+          - InstaCard-volatility
+          - InstaCard-hedge
 
 jobs:
   render:
