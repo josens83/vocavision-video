@@ -153,6 +153,11 @@ on:
           - InstaCard-dividend
           - InstaCard-volatility
           - InstaCard-hedge
+          - WordShort-set-031
+          - InstaCard-set031-cover
+          - InstaCard-recession
+          - InstaCard-inflation
+          - InstaCard-commodity
 
 jobs:
   render:

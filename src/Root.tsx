@@ -1641,6 +1641,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[29].words[2],
         }}
       />
+
+      {/* set-031: recession, inflation, commodity (주식 영어 Part 3) */}
+      <Composition
+        id="WordShort-set-031"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 30,
+        }}
+      />
+
+      {/* set-031 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set031-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['recession', 'inflation', 'commodity'],
+          title: '📰 경제 뉴스 영단어 Part 3!',
+          subtitle: '📉 침체 → 🎈 물가 → 📦 원자재',
+        }}
+      />
+
+      {/* set-031 개별 단어 카드 */}
+      <Still
+        id="InstaCard-recession"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[30].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-inflation"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[30].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-commodity"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[30].words[2],
+        }}
+      />
     </>
   );
 };
