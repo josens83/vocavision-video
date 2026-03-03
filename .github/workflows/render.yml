@@ -158,6 +158,11 @@ on:
           - InstaCard-recession
           - InstaCard-inflation
           - InstaCard-commodity
+          - WordShort-set-033
+          - InstaCard-set033-cover
+          - InstaCard-diplomacy
+          - InstaCard-sanction
+          - InstaCard-negotiation
 
 jobs:
   render:
