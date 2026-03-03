@@ -1698,6 +1698,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[30].words[2],
         }}
       />
+
+      {/* set-033: diplomacy, sanction, negotiation (국제 정세 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-033"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 31,
+        }}
+      />
+
+      {/* set-033 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set033-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['diplomacy', 'sanction', 'negotiation'],
+          title: '🤝 국제 정세 영단어 Part 1!',
+          subtitle: '📜 외교 → ⚖️ 제재 → 💼 협상',
+        }}
+      />
+
+      {/* set-033 개별 단어 카드 */}
+      <Still
+        id="InstaCard-diplomacy"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[31].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-sanction"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[31].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-negotiation"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[31].words[2],
+        }}
+      />
     </>
   );
 };
