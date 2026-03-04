@@ -158,6 +158,11 @@ on:
           - InstaCard-recession
           - InstaCard-inflation
           - InstaCard-commodity
+          - WordShort-set-032
+          - InstaCard-set032-cover
+          - InstaCard-prejudice
+          - InstaCard-cognitive
+          - InstaCard-stereotype
           - WordShort-set-033
           - InstaCard-set033-cover
           - InstaCard-diplomacy
