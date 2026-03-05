@@ -168,6 +168,11 @@ on:
           - InstaCard-diplomacy
           - InstaCard-sanction
           - InstaCard-negotiation
+          - WordShort-set-034
+          - InstaCard-set034-cover
+          - InstaCard-conflict
+          - InstaCard-ceasefire
+          - InstaCard-alliance
 
 jobs:
   render:

@@ -1812,6 +1812,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[32].words[2],
         }}
       />
+
+      {/* set-034: conflict, ceasefire, alliance (국제 정세 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-034"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 33,
+        }}
+      />
+
+      {/* set-034 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set034-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['conflict', 'ceasefire', 'alliance'],
+          title: '⚔️ 국제 정세 영단어 Part 2!',
+          subtitle: '💥 분쟁 → 🕊️ 휴전 → 🤝 동맹',
+        }}
+      />
+
+      {/* set-034 개별 단어 카드 */}
+      <Still
+        id="InstaCard-conflict"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[33].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-ceasefire"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[33].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-alliance"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[33].words[2],
+        }}
+      />
     </>
   );
 };
