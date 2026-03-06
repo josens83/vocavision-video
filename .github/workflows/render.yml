@@ -173,6 +173,11 @@ on:
           - InstaCard-conflict
           - InstaCard-ceasefire
           - InstaCard-alliance
+          - WordShort-set-035
+          - InstaCard-set035-cover
+          - InstaCard-sovereignty
+          - InstaCard-humanitarian
+          - InstaCard-refugee
 
 jobs:
   render:

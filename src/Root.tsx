@@ -1869,6 +1869,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[33].words[2],
         }}
       />
+
+      {/* set-035: sovereignty, humanitarian, refugee (국제 정세 영어 Part 3) */}
+      <Composition
+        id="WordShort-set-035"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 34,
+        }}
+      />
+
+      {/* set-035 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set035-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['sovereignty', 'humanitarian', 'refugee'],
+          title: '🌐 국제 정세 영단어 Part 3!',
+          subtitle: '👑 주권 → 🤲 인도주의 → 🏃 난민',
+        }}
+      />
+
+      {/* set-035 개별 단어 카드 */}
+      <Still
+        id="InstaCard-sovereignty"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[34].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-humanitarian"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[34].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-refugee"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[34].words[2],
+        }}
+      />
     </>
   );
 };
