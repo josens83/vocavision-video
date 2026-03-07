@@ -1926,6 +1926,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[34].words[2],
         }}
       />
+
+      {/* set-036: stimulus, subconscious, placebo (심리학 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-036"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 35,
+        }}
+      />
+
+      {/* set-036 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set036-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['stimulus', 'subconscious', 'placebo'],
+          title: '💊 심리학 영단어 Part 2!',
+          subtitle: '🐂 자극 → 🧊 잠재의식 → 💊 플라시보',
+        }}
+      />
+
+      {/* set-036 개별 단어 카드 */}
+      <Still
+        id="InstaCard-stimulus"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[35].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-subconscious"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[35].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-placebo"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[35].words[2],
+        }}
+      />
     </>
   );
 };
