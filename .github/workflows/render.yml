@@ -178,6 +178,11 @@ on:
           - InstaCard-sovereignty
           - InstaCard-humanitarian
           - InstaCard-refugee
+          - WordShort-set-036
+          - InstaCard-set036-cover
+          - InstaCard-stimulus
+          - InstaCard-subconscious
+          - InstaCard-placebo
 
 jobs:
   render:
