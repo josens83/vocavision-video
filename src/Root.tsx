@@ -1983,6 +1983,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[35].words[2],
         }}
       />
+
+      {/* set-037: pitch, strike, rally (야구 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-037"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 36,
+        }}
+      />
+
+      {/* set-037 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set037-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['pitch', 'strike', 'rally'],
+          title: '⚾ 야구 영단어 Part 1!',
+          subtitle: '🎯 투구 → 🥊 스트라이크 → 🔥 반격',
+        }}
+      />
+
+      {/* set-037 개별 단어 카드 */}
+      <Still
+        id="InstaCard-pitch"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[36].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-strike"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[36].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-rally"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[36].words[2],
+        }}
+      />
     </>
   );
 };
