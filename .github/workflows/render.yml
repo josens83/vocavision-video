@@ -183,6 +183,11 @@ on:
           - InstaCard-stimulus
           - InstaCard-subconscious
           - InstaCard-placebo
+          - WordShort-set-037
+          - InstaCard-set037-cover
+          - InstaCard-pitch
+          - InstaCard-strike
+          - InstaCard-rally
 
 jobs:
   render:
