@@ -27,8 +27,8 @@ export const SUBTITLES: SubtitleEntry[] = [
   {
     startFrame: 1680,  // 56초
     endFrame: 1920,    // 64초
-    textKR: '수능, 텝스, 토플까지\n7,600개 이상의 단어를 커버합니다.',
-    textEN: 'Covering over 7,600 words\nacross CSAT, TEPS, and TOEFL.',
+    textKR: '수능, 텝스, 토플, 토익까지\n12,000개 이상의 단어를 커버합니다.',
+    textEN: 'Covering over 12,000 words\nacross CSAT, TEPS, TOEFL, and TOEIC.',
   },
   {
     startFrame: 1980,  // 66초
