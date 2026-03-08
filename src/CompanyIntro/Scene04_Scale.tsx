@@ -6,6 +6,7 @@ const BADGES = [
   { label: '수능', emoji: '\uD83C\uDFAF' },
   { label: 'TEPS', emoji: '\uD83D\uDCDA' },
   { label: 'TOEFL', emoji: '\uD83C\uDF0D' },
+  { label: 'TOEIC', emoji: '\uD83D\uDCBC' },
   { label: 'EBS', emoji: '\uD83D\uDCFA' },
 ];
 
@@ -14,7 +15,7 @@ export const Scene04_Scale: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // 숫자 카운트업 (0~120 frames)
-  const countProgress = interpolate(frame, [10, 120], [0, 7600], {
+  const countProgress = interpolate(frame, [10, 120], [0, 12000], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
