@@ -2040,6 +2040,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[36].words[2],
         }}
       />
+
+      {/* set-038: sacrifice, steal, clutch (야구 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-038"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 37,
+        }}
+      />
+
+      {/* set-038 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set038-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['sacrifice', 'steal', 'clutch'],
+          title: '🏟️ 야구 영단어 Part 2!',
+          subtitle: '⛪ 희생 → 🏃 도루 → ✊ 결정적',
+        }}
+      />
+
+      {/* set-038 개별 단어 카드 */}
+      <Still
+        id="InstaCard-sacrifice"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[37].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-steal"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[37].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-clutch"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[37].words[2],
+        }}
+      />
     </>
   );
 };

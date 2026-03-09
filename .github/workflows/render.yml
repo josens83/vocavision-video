@@ -188,6 +188,11 @@ on:
           - InstaCard-pitch
           - InstaCard-strike
           - InstaCard-rally
+          - WordShort-set-038
+          - InstaCard-set038-cover
+          - InstaCard-sacrifice
+          - InstaCard-steal
+          - InstaCard-clutch
 
 jobs:
   render:
