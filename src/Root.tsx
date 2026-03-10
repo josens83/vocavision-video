@@ -2097,6 +2097,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[37].words[2],
         }}
       />
+
+      {/* set-039: grand slam, underdog, MVP (야구 영어 Part 3) */}
+      <Composition
+        id="WordShort-set-039"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 38,
+        }}
+      />
+
+      {/* set-039 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set039-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['grand slam', 'underdog', 'MVP'],
+          title: '🏆 야구 영단어 Part 3!',
+          subtitle: '💥 만루홈런 → 🐕 약체 → 🏆 MVP',
+        }}
+      />
+
+      {/* set-039 개별 단어 카드 */}
+      <Still
+        id="InstaCard-grandslam"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[38].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-underdog"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[38].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-mvp"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[38].words[2],
+        }}
+      />
     </>
   );
 };
