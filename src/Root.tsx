@@ -2098,7 +2098,7 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* set-039: grand slam, underdog, MVP (야구 영어 Part 3) */}
+      {/* set-039: grand slam, rookie, MVP (야구 영어 Part 3) */}
       <Composition
         id="WordShort-set-039"
         component={WordShort}
@@ -2118,9 +2118,9 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1080}
         defaultProps={{
-          words: ['grand slam', 'underdog', 'MVP'],
+          words: ['grand slam', 'rookie', 'MVP'],
           title: '🏆 야구 영단어 Part 3!',
-          subtitle: '💥 만루홈런 → 🐕 약체 → 🏆 MVP',
+          subtitle: '💥 만루홈런 → 🌟 루키 → 🏆 MVP',
         }}
       />
 
@@ -2136,7 +2136,7 @@ export const RemotionRoot: React.FC = () => {
       />
 
       <Still
-        id="InstaCard-underdog"
+        id="InstaCard-rookie"
         component={InstaWordCard}
         width={1080}
         height={1080}
