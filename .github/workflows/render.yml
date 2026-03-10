@@ -193,6 +193,11 @@ on:
           - InstaCard-sacrifice
           - InstaCard-steal
           - InstaCard-clutch
+          - WordShort-set-039
+          - InstaCard-set039-cover
+          - InstaCard-grandslam
+          - InstaCard-underdog
+          - InstaCard-mvp
 
 jobs:
   render:
