@@ -403,7 +403,7 @@ const Part3_UXDemo: React.FC = () => {
           startFrom={0}
         />
         <PhoneMockup
-          videoSrc={staticFile('video/ux-learn.mp4')}
+          videoSrc={staticFile('video/ux-nologin.mp4')}
           startFrom={0}
         />
       </div>
