@@ -8,6 +8,7 @@ const BADGES = [
   { label: 'TOEFL', emoji: '\uD83C\uDF0D' },
   { label: 'TOEIC', emoji: '\uD83D\uDCBC' },
   { label: 'EBS', emoji: '\uD83D\uDCFA' },
+  { label: 'SAT', emoji: '\uD83C\uDF93' },
 ];
 
 export const Scene04_Scale: React.FC = () => {
