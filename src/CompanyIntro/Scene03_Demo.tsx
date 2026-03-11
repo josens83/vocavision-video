@@ -17,9 +17,9 @@ const IMAGES = {
 
 // 8섹션 플래시카드 라벨
 const FLASHCARD_SECTIONS = [
+  { label: '이미지', icon: '\uD83D\uDCF8', color: '#10B981' },
   { label: '발음', icon: '\uD83D\uDD0A', color: '#818CF8' },
   { label: '뜻', icon: '\uD83D\uDCCA', color: '#F59E0B' },
-  { label: '이미지', icon: '\uD83D\uDCF8', color: '#10B981' },
   { label: '어원', icon: '\uD83D\uDCD6', color: '#06B6D4' },
   { label: '암기법', icon: '\uD83D\uDCA1', color: '#F472B6' },
   { label: '라임', icon: '\uD83C\uDFB5', color: '#A78BFA' },
@@ -394,68 +394,18 @@ const Part3_UXDemo: React.FC = () => {
           justifyContent: 'center',
           alignItems: 'center',
           height: '100%',
-          gap: 60,
+          gap: 80,
           paddingTop: 60,
         }}
       >
-        {/* 폰 목업 + 로그인 UX 영상 */}
         <PhoneMockup
           videoSrc={staticFile('video/ux-login.mp4')}
-          startFrom={10}
+          startFrom={0}
         />
-
-        {/* 설명 텍스트 */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 24,
-            maxWidth: 600,
-          }}
-        >
-          {[
-            { text: 'AI 이미지로 시각 암기', delay: 30 },
-            { text: '어원 분석으로 깊이 이해', delay: 60 },
-            { text: '라임으로 재미있게 기억', delay: 90 },
-            { text: '8단계 플래시카드 학습', delay: 120 },
-          ].map((item, i) => {
-            const itemOpacity = interpolate(frame, [item.delay, item.delay + 20], [0, 1], {
-              extrapolateLeft: 'clamp',
-              extrapolateRight: 'clamp',
-            });
-            const itemX = interpolate(frame, [item.delay, item.delay + 20], [30, 0], {
-              extrapolateLeft: 'clamp',
-              extrapolateRight: 'clamp',
-            });
-            return (
-              <div
-                key={i}
-                style={{
-                  opacity: itemOpacity,
-                  transform: `translateX(${itemX}px)`,
-                  fontSize: 32,
-                  fontWeight: 600,
-                  color: BRAND.white,
-                  fontFamily: FONT.korean,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 16,
-                }}
-              >
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: '50%',
-                    backgroundColor: BRAND.primary,
-                    flexShrink: 0,
-                  }}
-                />
-                {item.text}
-              </div>
-            );
-          })}
-        </div>
+        <PhoneMockup
+          videoSrc={staticFile('video/ux-learn.mp4')}
+          startFrom={0}
+        />
       </div>
     </AbsoluteFill>
   );
@@ -532,8 +482,8 @@ const Part4_Flashcard: React.FC = () => {
                 style={{
                   opacity: cardOpacity,
                   transform: `scale(${cardScale * (isActive ? 1.1 : 1)})`,
-                  width: 280,
-                  height: 200,
+                  width: i === 0 ? 360 : 280,
+                  height: i === 0 ? 260 : 200,
                   borderRadius: 20,
                   background: isActive
                     ? `linear-gradient(135deg, ${section.color}, ${section.color}88)`
