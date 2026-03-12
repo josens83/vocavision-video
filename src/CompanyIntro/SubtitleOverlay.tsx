@@ -10,6 +10,9 @@ interface Props {
 export const SubtitleOverlay: React.FC<Props> = ({ language }) => {
   const frame = useCurrentFrame();
 
+  // Scene03 Part3 "실제 학습 화면" 구간 자막 숨김 (frame 1200~1425)
+  if (frame >= 1200 && frame <= 1425) return null;
+
   const currentSub = SUBTITLES.find(
     (s) => frame >= s.startFrame && frame <= s.endFrame,
   );
