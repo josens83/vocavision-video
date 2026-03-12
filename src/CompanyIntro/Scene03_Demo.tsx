@@ -546,7 +546,11 @@ const Part4_Flashcard: React.FC = () => {
 };
 
 // 메인 Scene 3 — 4파트 조합 (900 frames = 30초)
-export const Scene03_Demo: React.FC = () => {
+interface Scene03Props {
+  language?: 'KR' | 'EN';
+}
+
+export const Scene03_Demo: React.FC<Scene03Props> = ({ language = 'KR' }) => {
   return (
     <AbsoluteFill>
       {/* Part 1: AI CONCEPT (0~225, 0~7.5초) */}
@@ -555,14 +559,16 @@ export const Scene03_Demo: React.FC = () => {
       </Sequence>
 
       {/* Part 2: 어원 분석 (225~450, 7.5~15초) */}
-      <Sequence from={225} durationInFrames={225}>
+      <Sequence from={225} durationInFrames={language === 'EN' ? 450 : 225}>
         <Part2_Etymology />
       </Sequence>
 
-      {/* Part 3: 실제 학습 화면 (450~675, 15~22.5초) */}
-      <Sequence from={450} durationInFrames={225}>
-        <Part3_UXDemo />
-      </Sequence>
+      {/* Part 3: 실제 학습 화면 — KR 전용 (한국어 앱 화면) */}
+      {language === 'KR' && (
+        <Sequence from={450} durationInFrames={225}>
+          <Part3_UXDemo />
+        </Sequence>
+      )}
 
       {/* Part 4: 8섹션 카드 (675~900, 22.5~30초) */}
       <Sequence from={675} durationInFrames={225}>

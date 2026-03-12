@@ -42,7 +42,7 @@ export const CompanyIntroNew: React.FC<CompanyIntroProps> = ({
 
       {/* Scene 3: 핵심 기능 시연 (25~55초, 900프레임) */}
       <Sequence from={750} durationInFrames={900}>
-        <Scene03_Demo />
+        <Scene03_Demo language={language} />
       </Sequence>
 
       {/* Scene 4: 콘텐츠 규모 (55~65초, 300프레임) */}
