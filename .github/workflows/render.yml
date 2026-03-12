@@ -236,7 +236,7 @@ jobs:
           edge-tts --voice "en-US-JennyNeural" --text "You study English vocabulary, but keep forgetting, right?" --write-media public/audio/en-scene1.mp3
           edge-tts --voice "en-US-JennyNeural" --text "VocaVision AI uses AI-generated images and fun rhymes to paint words in your mind." --write-media public/audio/en-scene2.mp3
           edge-tts --voice "en-US-JennyNeural" --text "Visually remember with AI images, understand roots through etymology, and never forget with catchy rhymes." --write-media public/audio/en-scene3.mp3
-          edge-tts --voice "en-US-JennyNeural" --text "Covering over twelve thousand words across CSAT, TEPS, TOEFL, and TOEIC." --write-media public/audio/en-scene4.mp3
+          edge-tts --voice "en-US-JennyNeural" --text "Covering over twelve thousand words across Korean SAT, Teps, Toefl, and Toeic." --write-media public/audio/en-scene4.mp3
           edge-tts --voice "en-US-JennyNeural" --text "Regular flashcards just list definitions. VocaVision is designed for how your brain actually remembers." --write-media public/audio/en-scene5.mp3
           edge-tts --voice "en-US-JennyNeural" --text "Start for free today. VocaVision AI, vocabulary you can see." --write-media public/audio/en-scene6.mp3
 
