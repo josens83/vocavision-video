@@ -37,14 +37,14 @@ const SectionTitle: React.FC<{ text: string }> = ({ text }) => {
     <div
       style={{
         position: 'absolute',
-        top: 60,
+        top: 80,
         left: 0,
         right: 0,
         textAlign: 'center',
         opacity,
         transform: `translateY(${y}px)`,
-        fontSize: 48,
-        fontWeight: 700,
+        fontSize: 64,
+        fontWeight: 800,
         color: BRAND.white,
         fontFamily: FONT.korean,
       }}
@@ -73,7 +73,7 @@ const Part1_Concept: React.FC = () => {
           position: 'absolute',
           top: 60,
           right: 100,
-          fontSize: 22,
+          fontSize: 30,
           color: BRAND.primary,
           fontFamily: FONT.korean,
           fontWeight: 600,
@@ -211,7 +211,7 @@ const Part2_Etymology: React.FC = () => {
           position: 'absolute',
           top: 60,
           right: 100,
-          fontSize: 22,
+          fontSize: 30,
           color: BRAND.primary,
           fontFamily: FONT.korean,
           fontWeight: 600,
@@ -378,7 +378,7 @@ const Part3_UXDemo: React.FC = () => {
           position: 'absolute',
           top: 60,
           right: 100,
-          fontSize: 22,
+          fontSize: 30,
           color: BRAND.primary,
           fontFamily: FONT.korean,
           fontWeight: 600,
@@ -391,21 +391,49 @@ const Part3_UXDemo: React.FC = () => {
       <div
         style={{
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           height: '100%',
-          gap: 80,
-          paddingTop: 60,
+          gap: 40,
+          paddingTop: 80,
         }}
       >
-        <PhoneMockup
-          videoSrc={staticFile('video/ux-login.mp4')}
-          startFrom={0}
-        />
-        <PhoneMockup
-          videoSrc={staticFile('video/ux-nologin.mp4')}
-          startFrom={0}
-        />
+        <div style={{ display: 'flex', gap: 80, justifyContent: 'center', alignItems: 'center' }}>
+          <PhoneMockup
+            videoSrc={staticFile('video/ux-login.mp4')}
+            startFrom={0}
+          />
+          <PhoneMockup
+            videoSrc={staticFile('video/ux-nologin.mp4')}
+            startFrom={0}
+          />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            gap: 48,
+            opacity: interpolate(frame, [60, 90], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }),
+          }}
+        >
+          {['AI 이미지로 시각 암기', '어원 분석으로 깊이 이해', '라임으로 재미있게 기억', '8단계 플래시카드'].map((text, i) => (
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+                fontSize: 26,
+                fontWeight: 600,
+                color: BRAND.white,
+                fontFamily: FONT.korean,
+              }}
+            >
+              <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#06B6D4' }} />
+              {text}
+            </div>
+          ))}
+        </div>
       </div>
     </AbsoluteFill>
   );
@@ -426,7 +454,7 @@ const Part4_Flashcard: React.FC = () => {
           position: 'absolute',
           top: 60,
           right: 100,
-          fontSize: 22,
+          fontSize: 30,
           color: BRAND.primary,
           fontFamily: FONT.korean,
           fontWeight: 600,
@@ -482,8 +510,8 @@ const Part4_Flashcard: React.FC = () => {
                 style={{
                   opacity: cardOpacity,
                   transform: `scale(${cardScale * (isActive ? 1.1 : 1)})`,
-                  width: i === 0 ? 360 : 280,
-                  height: i === 0 ? 260 : 200,
+                  width: 300,
+                  height: 220,
                   borderRadius: 20,
                   background: isActive
                     ? `linear-gradient(135deg, ${section.color}, ${section.color}88)`

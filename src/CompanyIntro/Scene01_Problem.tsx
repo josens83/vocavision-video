@@ -93,7 +93,7 @@ export const Scene01_Problem: React.FC = () => {
       {/* 사라지는 단어들 (배경 효과) */}
       <FadingWord word="abandon" startFrame={10} yPos={150} />
       <FadingWord word="abstract" startFrame={30} yPos={280} />
-      <FadingWord word="accumulate" startFrame={50} yPos={620} />
+      <FadingWord word="accumulate" startFrame={50} yPos={700} />
 
       {/* 메인 텍스트 */}
       <div
@@ -101,7 +101,7 @@ export const Scene01_Problem: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 80,
+          gap: 60,
           zIndex: 10,
         }}
       >

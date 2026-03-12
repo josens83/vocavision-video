@@ -58,7 +58,7 @@ export const Scene02_Solution: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(135deg, ${BRAND.primary} 0%, ${BRAND.secondary} 50%, ${BRAND.primaryDark} 100%)`,
+        background: `linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)`,
         justifyContent: 'center',
         alignItems: 'center',
         opacity: sceneOut,
@@ -93,8 +93,8 @@ export const Scene02_Solution: React.FC = () => {
             width: 160,
             height: 160,
             borderRadius: 32,
-            background: 'rgba(255,255,255,0.25)',
-            border: '3px solid rgba(255,255,255,0.6)',
+            background: 'rgba(6,182,212,0.25)',
+            border: '3px solid #06B6D4',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
