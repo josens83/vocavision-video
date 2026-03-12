@@ -151,7 +151,7 @@ export const Scene04_Scale: React.FC = () => {
                     fontSize: 28,
                     fontWeight: 700,
                     color: BRAND.primaryDark,
-                    fontFamily: FONT.english,
+                    fontFamily: badge.label === '수능' ? FONT.korean : FONT.english,
                   }}
                 >
                   {badge.label}
