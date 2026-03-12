@@ -198,6 +198,11 @@ on:
           - InstaCard-grandslam
           - InstaCard-rookie
           - InstaCard-mvp
+          - WordShort-set-040
+          - InstaCard-set040-cover
+          - InstaCard-trauma
+          - InstaCard-phobia
+          - InstaCard-narcissism
 
 jobs:
   render:
