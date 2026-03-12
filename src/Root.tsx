@@ -2154,6 +2154,63 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[38].words[2],
         }}
       />
+
+      {/* set-040: trauma, phobia, narcissism (심리학 영어 Part 3) */}
+      <Composition
+        id="WordShort-set-040"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 39,
+        }}
+      />
+
+      {/* set-040 비교 표지 카드 */}
+      <Still
+        id="InstaCard-set040-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['trauma', 'phobia', 'narcissism'],
+          title: '😰 심리학 영단어 Part 3!',
+          subtitle: '🩹 트라우마 → 😱 공포증 → 🪞 자기도취',
+        }}
+      />
+
+      {/* set-040 개별 단어 카드 */}
+      <Still
+        id="InstaCard-trauma"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[39].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-phobia"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[39].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-narcissism"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[39].words[2],
+        }}
+      />
     </>
   );
 };
