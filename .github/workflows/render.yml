@@ -203,6 +203,11 @@ on:
           - InstaCard-trauma
           - InstaCard-phobia
           - InstaCard-narcissism
+          - WordShort-set-041
+          - InstaCard-set041-cover
+          - InstaCard-crude
+          - InstaCard-barrel
+          - InstaCard-refinery
 
 jobs:
   render:
