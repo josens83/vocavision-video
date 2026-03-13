@@ -2211,6 +2211,61 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[39].words[2],
         }}
       />
+
+      {/* set-041: crude, barrel, refinery (에너지·유가 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-041"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 40,
+        }}
+      />
+
+      <Still
+        id="InstaCard-set041-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['crude', 'barrel', 'refinery'],
+          title: '⛽ 에너지 영단어 Part 1!',
+          subtitle: '🛢️ 원유 → 🪵 배럴 → 🏭 정유소',
+        }}
+      />
+
+      <Still
+        id="InstaCard-crude"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[40].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-barrel"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[40].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-refinery"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[40].words[2],
+        }}
+      />
     </>
   );
 };
