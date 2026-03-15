@@ -2272,7 +2272,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="StoryShort-ephemeral"
         component={StoryShort}
-        durationInFrames={450}
+        durationInFrames={600}
         fps={30}
         width={1080}
         height={1920}
