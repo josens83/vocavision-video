@@ -3,11 +3,11 @@ import {
   AbsoluteFill,
   useCurrentFrame,
   useVideoConfig,
-  Img,
+  Video,
+  staticFile,
   interpolate,
   spring,
   Audio,
-  staticFile,
 } from 'remotion';
 import { STORY_WORDS, StoryScene } from '../data/story-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
@@ -70,37 +70,11 @@ const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
 };
 
 // ─── ImageScene ───
-const getMotionStyle = (
-  frame: number,
-  start: number,
-  end: number,
-  motion: StoryScene['motion'],
-): React.CSSProperties => {
-  const progress = interpolate(frame, [start, end], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
-  switch (motion) {
-    case 'zoomIn':
-      return { transform: `scale(${1 + progress * 0.08})` };
-    case 'zoomOut':
-      return { transform: `scale(${1.08 - progress * 0.08})` };
-    case 'panLeft':
-      return { transform: `translateX(${-progress * 40}px) scale(1.05)` };
-    case 'panRight':
-      return { transform: `translateX(${progress * 40}px) scale(1.05)` };
-  }
-};
-
 const ImageScene: React.FC<{
   frame: number;
   scene: StoryScene;
   section: Section;
-  prevEnd?: number;
-  nextStart?: number;
 }> = ({ frame, scene, section }) => {
-  // Crossfade: fade in over first 9 frames, fade out over last 9 frames
   const fadeIn = interpolate(frame, [section.start, section.start + 9], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -109,8 +83,6 @@ const ImageScene: React.FC<{
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-
-  // Caption slide up + fade in
   const captionProgress = interpolate(
     frame,
     [section.start + 10, section.start + 25],
@@ -120,20 +92,22 @@ const ImageScene: React.FC<{
 
   if (frame < section.start || frame >= section.end) return null;
 
-  const motionStyle = getMotionStyle(frame, section.start, section.end, scene.motion);
+  // 이 장면이 시작할 때 영상의 몇 프레임부터 재생할지 (항상 0부터)
+  const videoStartFrame = 0;
 
   return (
     <AbsoluteFill style={{ opacity: fadeIn * fadeOut }}>
-      {/* Image with Ken Burns */}
+      {/* Video clip */}
       <AbsoluteFill style={{ overflow: 'hidden' }}>
-        <Img
-          src={scene.imageUrl}
+        <Video
+          src={staticFile(scene.videoFile)}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            ...motionStyle,
           }}
+          startFrom={videoStartFrame}
+          muted
         />
       </AbsoluteFill>
 
