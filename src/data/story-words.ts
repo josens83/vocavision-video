@@ -1,8 +1,7 @@
 export interface StoryScene {
   description: string;
   descriptionKo: string;
-  imageUrl: string;
-  motion: 'zoomIn' | 'zoomOut' | 'panLeft' | 'panRight';
+  videoFile: string;
 }
 
 export interface StoryWord {
@@ -33,20 +32,17 @@ export const STORY_WORDS: StoryWord[] = [
       {
         description: "A father holds his baby daughter for the first time.",
         descriptionKo: "아버지가 처음으로 딸을 안는다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene1.jpeg",
-        motion: "zoomIn",
+        videoFile: "videos/stories/ephemeral-scene1.mp4",
       },
       {
         description: "She takes her first steps. He blinks — she's already running.",
         descriptionKo: "첫 걸음을 뗀다. 눈 깜짝할 사이 — 벌써 달리고 있다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene2.jpeg",
-        motion: "panRight",
+        videoFile: "videos/stories/ephemeral-scene2.mp4",
       },
       {
         description: "Graduation day. She lets go of his hand.",
         descriptionKo: "졸업식 날. 그녀가 아버지의 손을 놓는다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene3.jpeg",
-        motion: "zoomOut",
+        videoFile: "videos/stories/ephemeral-scene3.mp4",
       },
     ],
     emotion: "Everything beautiful disappears too fast.",
