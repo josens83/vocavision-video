@@ -6,19 +6,21 @@ import {
   Img,
   interpolate,
   spring,
+  Audio,
+  staticFile,
 } from 'remotion';
 import { STORY_WORDS, StoryScene } from '../data/story-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
 
-// 15초 = 450프레임 (30fps)
+// 20초 = 600프레임 (30fps)
 const SECTIONS = {
-  hook:    { start: 0,   end: 30 },   // 0-1초
-  scene1:  { start: 30,  end: 90 },   // 1-3초
-  scene2:  { start: 90,  end: 150 },  // 3-5초
-  scene3:  { start: 150, end: 195 },  // 5-6.5초
-  emotion: { start: 195, end: 300 },  // 6.5-10초
-  word:    { start: 300, end: 405 },  // 10-13.5초
-  outro:   { start: 405, end: 450 },  // 13.5-15초
+  hook:    { start: 0,   end: 75 },   // 0-2.5초
+  scene1:  { start: 75,  end: 140 },  // 2.5-4.7초
+  scene2:  { start: 140, end: 205 },  // 4.7-6.8초
+  scene3:  { start: 205, end: 270 },  // 6.8-9초
+  emotion: { start: 270, end: 390 },  // 9-13초
+  word:    { start: 390, end: 540 },  // 13-18초
+  outro:   { start: 540, end: 600 },  // 18-20초
 };
 
 type Section = { start: number; end: number };
@@ -51,13 +53,14 @@ const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
     >
       <div
         style={{
-          fontSize: 52,
-          fontWeight: 700,
+          fontSize: 72,
+          fontWeight: 900,
           color: '#FFFFFF',
           textAlign: 'center',
           fontFamily: englishFontFamily,
-          textShadow: '0 4px 20px rgba(0,0,0,0.6)',
-          lineHeight: 1.4,
+          textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+          lineHeight: 1.3,
+          padding: '0 40px',
         }}
       >
         {text}
@@ -96,7 +99,7 @@ const ImageScene: React.FC<{
   section: Section;
   prevEnd?: number;
   nextStart?: number;
-}> = ({ frame, scene, section, prevEnd, nextStart }) => {
+}> = ({ frame, scene, section }) => {
   // Crossfade: fade in over first 9 frames, fade out over last 9 frames
   const fadeIn = interpolate(frame, [section.start, section.start + 9], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -138,7 +141,7 @@ const ImageScene: React.FC<{
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(to bottom, transparent 60%, rgba(15, 23, 42, 0.8) 100%)',
+            'linear-gradient(to bottom, transparent 40%, rgba(15, 23, 42, 0.85) 100%)',
         }}
       />
 
@@ -154,13 +157,13 @@ const ImageScene: React.FC<{
       >
         <div
           style={{
-            fontSize: 36,
-            fontWeight: 400,
+            fontSize: 48,
+            fontWeight: 700,
             color: '#FFFFFF',
             textAlign: 'center',
             fontFamily: englishFontFamily,
-            textShadow: '0 2px 12px rgba(0,0,0,0.7)',
-            lineHeight: 1.5,
+            textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+            lineHeight: 1.4,
             opacity: captionProgress,
             transform: `translateY(${(1 - captionProgress) * 20}px)`,
           }}
@@ -169,13 +172,13 @@ const ImageScene: React.FC<{
         </div>
         <div
           style={{
-            fontSize: 28,
-            fontWeight: 400,
+            fontSize: 38,
+            fontWeight: 600,
             color: '#CBD5E1',
             textAlign: 'center',
             fontFamily: koreanFontFamily,
-            textShadow: '0 2px 12px rgba(0,0,0,0.7)',
-            lineHeight: 1.5,
+            textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+            lineHeight: 1.4,
             marginTop: 12,
             opacity: captionProgress,
             transform: `translateY(${(1 - captionProgress) * 20}px)`,
@@ -223,14 +226,15 @@ const EmotionText: React.FC<{ frame: number; text: string; textKo: string; secti
       />
       <div
         style={{
-          fontSize: 40,
-          fontWeight: 500,
+          fontSize: 56,
+          fontWeight: 600,
           fontStyle: 'italic',
           color: '#E2E8F0',
           textAlign: 'center',
           fontFamily: englishFontFamily,
-          textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-          lineHeight: 1.5,
+          textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+          lineHeight: 1.4,
+          padding: '0 50px',
           zIndex: 1,
         }}
       >
@@ -238,14 +242,15 @@ const EmotionText: React.FC<{ frame: number; text: string; textKo: string; secti
       </div>
       <div
         style={{
-          fontSize: 32,
-          fontWeight: 500,
+          fontSize: 44,
+          fontWeight: 600,
           fontStyle: 'italic',
           color: '#94A3B8',
           textAlign: 'center',
           fontFamily: koreanFontFamily,
-          textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-          lineHeight: 1.5,
+          textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+          lineHeight: 1.4,
+          padding: '0 50px',
           marginTop: 20,
           zIndex: 1,
         }}
@@ -315,12 +320,12 @@ const WordReveal: React.FC<{
       >
         <div
           style={{
-            fontSize: 72,
-            fontWeight: 700,
+            fontSize: 96,
+            fontWeight: 900,
             color: '#06B6D4',
             fontFamily: englishFontFamily,
             textAlign: 'center',
-            textShadow: '0 4px 30px rgba(6, 182, 212, 0.3)',
+            textShadow: '0 4px 30px rgba(6, 182, 212, 0.5)',
             transform: `scale(${wordScale})`,
           }}
         >
@@ -328,7 +333,7 @@ const WordReveal: React.FC<{
         </div>
         <div
           style={{
-            fontSize: 28,
+            fontSize: 36,
             fontWeight: 300,
             color: '#94A3B8',
             fontFamily: englishFontFamily,
@@ -341,7 +346,7 @@ const WordReveal: React.FC<{
         </div>
         <div
           style={{
-            fontSize: 32,
+            fontSize: 44,
             fontWeight: 400,
             color: '#FFFFFF',
             fontFamily: englishFontFamily,
@@ -355,7 +360,7 @@ const WordReveal: React.FC<{
         </div>
         <div
           style={{
-            fontSize: 26,
+            fontSize: 36,
             fontWeight: 400,
             color: '#CBD5E1',
             fontFamily: koreanFontFamily,
@@ -381,7 +386,7 @@ const WordReveal: React.FC<{
       >
         <div
           style={{
-            fontSize: 30,
+            fontSize: 40,
             fontWeight: 400,
             fontStyle: 'italic',
             color: '#94A3B8',
@@ -396,7 +401,7 @@ const WordReveal: React.FC<{
         </div>
         <div
           style={{
-            fontSize: 24,
+            fontSize: 34,
             fontWeight: 400,
             fontStyle: 'italic',
             color: '#64748B',
@@ -476,6 +481,43 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0F172A' }}>
+      {/* BGM */}
+      <Audio
+        src={staticFile('audio/story-emotional.mp3')}
+        volume={(f) => {
+          if (f < 30) return interpolate(f, [0, 30], [0, 0.3], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+          if (f > 540) return interpolate(f, [540, 600], [0.3, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+          return 0.3;
+        }}
+      />
+
+      {/* Watermark */}
+      <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: 60,
+            left: 40,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            opacity: 0.7,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 20,
+              fontWeight: 700,
+              color: '#06B6D4',
+              letterSpacing: 1,
+              fontFamily: englishFontFamily,
+            }}
+          >
+            VocaVision AI
+          </span>
+        </div>
+      </AbsoluteFill>
+
       {/* Background gradient */}
       <AbsoluteFill
         style={{
@@ -483,10 +525,10 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         }}
       />
 
-      {/* HOOK: 0-1초 */}
+      {/* HOOK: 0-2.5초 */}
       <HookText frame={frame} text={data.hook} section={SECTIONS.hook} />
 
-      {/* SCENES: 1-6.5초 */}
+      {/* SCENES: 2.5-9초 */}
       {data.scenes.map((scene, i) => {
         const sectionKey = `scene${i + 1}` as keyof typeof SECTIONS;
         return (
@@ -499,7 +541,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         );
       })}
 
-      {/* EMOTION: 6.5-10초 */}
+      {/* EMOTION: 9-13초 */}
       <EmotionText
         frame={frame}
         text={data.emotion}
@@ -507,7 +549,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         section={SECTIONS.emotion}
       />
 
-      {/* WORD REVEAL: 10-13.5초 */}
+      {/* WORD REVEAL: 13-18초 */}
       <WordReveal
         frame={frame}
         fps={fps}
@@ -520,7 +562,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         section={SECTIONS.word}
       />
 
-      {/* OUTRO: 13.5-15초 */}
+      {/* OUTRO: 18-20초 */}
       <Outro frame={frame} section={SECTIONS.outro} />
     </AbsoluteFill>
   );
