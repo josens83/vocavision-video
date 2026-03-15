@@ -208,6 +208,7 @@ on:
           - InstaCard-crude
           - InstaCard-barrel
           - InstaCard-refinery
+          - StoryShort-ephemeral
 
 jobs:
   render:

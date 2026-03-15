@@ -7,6 +7,7 @@ import { InstaCompareCard } from './compositions/InstaCompareCard';
 import { InstaCTACard } from './components/InstaCTACard';
 import { VIDEO } from './styles';
 import { WORD_SETS } from './data/words';
+import { StoryShort } from './StoryShort/StoryShort';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -2264,6 +2265,19 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[40].words[2],
+        }}
+      />
+
+      {/* === StoryShort === */}
+      <Composition
+        id="StoryShort-ephemeral"
+        component={StoryShort}
+        durationInFrames={450}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          wordIndex: 0,
         }}
       />
     </>
