@@ -2272,7 +2272,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="StoryShort-ephemeral-ko-image"
         component={StoryShort}
-        durationInFrames={600}
+        durationInFrames={1500}
         fps={30}
         width={1080}
         height={1920}
@@ -2285,7 +2285,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="StoryShort-ephemeral-en-image"
         component={StoryShort}
-        durationInFrames={600}
+        durationInFrames={1500}
         fps={30}
         width={1080}
         height={1920}
@@ -2298,7 +2298,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="StoryShort-ephemeral-ko-clip"
         component={StoryShort}
-        durationInFrames={600}
+        durationInFrames={1500}
         fps={30}
         width={1080}
         height={1920}
@@ -2311,7 +2311,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="StoryShort-ephemeral-en-clip"
         component={StoryShort}
-        durationInFrames={600}
+        durationInFrames={1500}
         fps={30}
         width={1080}
         height={1920}
