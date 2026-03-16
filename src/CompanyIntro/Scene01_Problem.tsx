@@ -57,7 +57,11 @@ const useShake = (frame: number, startFrame: number, intensity: number = 4) => {
   return shake;
 };
 
-export const Scene01_Problem: React.FC = () => {
+interface Scene01Props {
+  language?: 'KR' | 'EN';
+}
+
+export const Scene01_Problem: React.FC<Scene01Props> = ({ language = 'KR' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -115,7 +119,7 @@ export const Scene01_Problem: React.FC = () => {
             fontFamily: FONT.korean,
           }}
         >
-          영단어, 외워도 외워도...
+          {language === 'EN' ? 'You study vocab... but keep forgetting?' : '영단어, 외워도 외워도...'}
         </div>
 
         <div
@@ -128,7 +132,7 @@ export const Scene01_Problem: React.FC = () => {
             fontFamily: FONT.korean,
           }}
         >
-          또 까먹었다
+          {language === 'EN' ? 'Forgot it again.' : '또 까먹었다'}
         </div>
       </div>
     </AbsoluteFill>

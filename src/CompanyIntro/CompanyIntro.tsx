@@ -32,7 +32,7 @@ export const CompanyIntroNew: React.FC<CompanyIntroProps> = ({
     <AbsoluteFill>
       {/* Scene 1: 문제 제기 (0~10초, 300프레임) */}
       <Sequence from={0} durationInFrames={300}>
-        <Scene01_Problem />
+        <Scene01_Problem language={language} />
       </Sequence>
 
       {/* Scene 2: 솔루션 소개 (10~25초, 450프레임) */}
