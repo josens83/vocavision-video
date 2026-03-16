@@ -2,7 +2,11 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from 'remotion';
 import { BRAND, FONT } from './styles';
 
-export const Scene06_CTA: React.FC = () => {
+interface Scene06Props {
+  language?: 'KR' | 'EN';
+}
+
+export const Scene06_CTA: React.FC<Scene06Props> = ({ language = 'KR' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -125,7 +129,7 @@ export const Scene06_CTA: React.FC = () => {
             marginTop: 10,
           }}
         >
-          지금 무료로 시작하세요
+          {language === 'EN' ? 'Start for free today' : '지금 무료로 시작하세요'}
         </div>
 
         {/* URL 박스 */}
@@ -162,7 +166,7 @@ export const Scene06_CTA: React.FC = () => {
             marginTop: 10,
           }}
         >
-          이미지로 기억하는 영단어
+          {language === 'EN' ? 'Vocabulary you can see' : '이미지로 기억하는 영단어'}
         </div>
       </div>
     </AbsoluteFill>

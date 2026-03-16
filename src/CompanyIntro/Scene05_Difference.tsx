@@ -2,21 +2,41 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from 'remotion';
 import { BRAND, FONT } from './styles';
 
-const LEFT_ITEMS = [
+const LEFT_ITEMS_KR = [
   { text: '뜻만 나열', icon: '\uD83D\uDE10' },
   { text: '무작정 암기', icon: '\uD83D\uDCD6' },
   { text: '금방 까먹음', icon: '\uD83D\uDE1E' },
   { text: '재미없음', icon: '\uD83D\uDE34' },
 ];
 
-const RIGHT_ITEMS = [
+const RIGHT_ITEMS_KR = [
   { text: 'AI 이미지', icon: '\uD83D\uDDBC\uFE0F' },
   { text: '어원 분석', icon: '\uD83D\uDD2C' },
   { text: '라임 암기법', icon: '\uD83C\uDFB5' },
   { text: '재미있는 학습', icon: '\uD83C\uDFAE' },
 ];
 
-export const Scene05_Difference: React.FC = () => {
+const LEFT_ITEMS_EN = [
+  { text: 'Just definitions', icon: '\uD83D\uDE10' },
+  { text: 'Rote memorization', icon: '\uD83D\uDCD6' },
+  { text: 'Forget quickly', icon: '\uD83D\uDE1E' },
+  { text: 'Boring', icon: '\uD83D\uDE34' },
+];
+
+const RIGHT_ITEMS_EN = [
+  { text: 'AI Images', icon: '\uD83D\uDDBC\uFE0F' },
+  { text: 'Etymology', icon: '\uD83D\uDD2C' },
+  { text: 'Rhyme method', icon: '\uD83C\uDFB5' },
+  { text: 'Fun learning', icon: '\uD83C\uDFAE' },
+];
+
+interface Scene05Props {
+  language?: 'KR' | 'EN';
+}
+
+export const Scene05_Difference: React.FC<Scene05Props> = ({ language = 'KR' }) => {
+  const LEFT_ITEMS = language === 'EN' ? LEFT_ITEMS_EN : LEFT_ITEMS_KR;
+  const RIGHT_ITEMS = language === 'EN' ? RIGHT_ITEMS_EN : RIGHT_ITEMS_KR;
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -84,7 +104,7 @@ export const Scene05_Difference: React.FC = () => {
           fontFamily: FONT.korean,
         }}
       >
-        뭐가 다를까?
+        {language === 'EN' ? "What's different?" : '뭐가 다를까?'}
       </div>
 
       <div
@@ -117,7 +137,7 @@ export const Scene05_Difference: React.FC = () => {
               textAlign: 'center',
             }}
           >
-            일반 단어장
+            {language === 'EN' ? 'Regular flashcards' : '일반 단어장'}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {LEFT_ITEMS.map((item, i) => {
