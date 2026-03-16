@@ -3,13 +3,14 @@ import {
   AbsoluteFill,
   useCurrentFrame,
   useVideoConfig,
+  Img,
   Video,
-  staticFile,
   interpolate,
   spring,
   Audio,
+  staticFile,
 } from 'remotion';
-import { STORY_WORDS, StoryScene } from '../data/story-words';
+import { STORY_WORDS, StoryScene, StoryWord } from '../data/story-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
 
 // 20초 = 600프레임 (30fps)
@@ -24,6 +25,86 @@ const SECTIONS = {
 };
 
 type Section = { start: number; end: number };
+
+// ─── Ken Burns (image mode only) ───
+const getKenBurnsStyle = (
+  frame: number,
+  start: number,
+  end: number,
+  sceneIndex: number,
+): React.CSSProperties => {
+  const progress = interpolate(frame, [start, end], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const motions = ['zoomIn', 'panRight', 'zoomOut'] as const;
+  const motion = motions[sceneIndex % motions.length];
+
+  switch (motion) {
+    case 'zoomIn':
+      return { transform: `scale(${1 + progress * 0.08})` };
+    case 'zoomOut':
+      return { transform: `scale(${1.08 - progress * 0.08})` };
+    case 'panRight':
+      return { transform: `translateX(${progress * 40}px) scale(1.05)` };
+  }
+};
+
+// ─── CherryBlossomOverlay ───
+const CherryBlossomOverlay: React.FC<{ frame: number }> = ({ frame }) => {
+  const petals = Array.from({ length: 10 }, (_, i) => ({
+    x: (i * 97 + 50) % 1080,
+    delay: i * 18,
+    speed: 0.8 + (i % 3) * 0.3,
+    size: 18 + (i % 4) * 6,
+  }));
+
+  return (
+    <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 50 }}>
+      {petals.map((petal, i) => {
+        const localFrame = Math.max(0, frame - petal.delay);
+        const y = (localFrame * petal.speed * 3) % 2200 - 100;
+        const rotate = localFrame * 2 * (i % 2 === 0 ? 1 : -1);
+        const opacity = interpolate(frame, [0, 30], [0, 0.7], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        });
+
+        return (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              left: petal.x,
+              top: y,
+              width: petal.size,
+              height: petal.size,
+              opacity,
+              transform: `rotate(${rotate}deg)`,
+              fontSize: petal.size,
+            }}
+          >
+            🌸
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
+// ─── SymbolOverlay dispatcher ───
+const SymbolOverlay: React.FC<{ frame: number; type?: StoryWord['symbolOverlay'] }> = ({
+  frame,
+  type,
+}) => {
+  if (!type) return null;
+  switch (type) {
+    case 'cherryBlossom':
+      return <CherryBlossomOverlay frame={frame} />;
+    default:
+      return null;
+  }
+};
 
 // ─── HookText ───
 const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
@@ -69,12 +150,15 @@ const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
   );
 };
 
-// ─── ImageScene ───
-const ImageScene: React.FC<{
+// ─── SceneView (image or clip) ───
+const SceneView: React.FC<{
   frame: number;
   scene: StoryScene;
   section: Section;
-}> = ({ frame, scene, section }) => {
+  mode: 'image' | 'clip';
+  sceneIndex: number;
+  lang: 'ko' | 'en';
+}> = ({ frame, scene, section, mode, sceneIndex, lang }) => {
   const fadeIn = interpolate(frame, [section.start, section.start + 9], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -92,23 +176,28 @@ const ImageScene: React.FC<{
 
   if (frame < section.start || frame >= section.end) return null;
 
-  // 이 장면이 시작할 때 영상의 몇 프레임부터 재생할지 (항상 0부터)
-  const videoStartFrame = 0;
-
   return (
     <AbsoluteFill style={{ opacity: fadeIn * fadeOut }}>
-      {/* Video clip */}
+      {/* Media */}
       <AbsoluteFill style={{ overflow: 'hidden' }}>
-        <Video
-          src={staticFile(scene.videoFile)}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-          startFrom={videoStartFrame}
-          muted
-        />
+        {mode === 'clip' ? (
+          <Video
+            src={scene.videoUrl}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            startFrom={0}
+            muted
+          />
+        ) : (
+          <Img
+            src={scene.imageUrl}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              ...getKenBurnsStyle(frame, section.start, section.end, sceneIndex),
+            }}
+          />
+        )}
       </AbsoluteFill>
 
       {/* Bottom gradient overlay */}
@@ -135,43 +224,46 @@ const ImageScene: React.FC<{
             fontWeight: 700,
             color: '#FFFFFF',
             textAlign: 'center',
-            fontFamily: englishFontFamily,
+            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
             textShadow: '0 4px 30px rgba(0,0,0,0.9)',
             lineHeight: 1.4,
             opacity: captionProgress,
             transform: `translateY(${(1 - captionProgress) * 20}px)`,
           }}
         >
-          {scene.description}
+          {lang === 'ko' ? scene.descriptionKo : scene.description}
         </div>
-        <div
-          style={{
-            fontSize: 38,
-            fontWeight: 600,
-            color: '#CBD5E1',
-            textAlign: 'center',
-            fontFamily: koreanFontFamily,
-            textShadow: '0 4px 30px rgba(0,0,0,0.9)',
-            lineHeight: 1.4,
-            marginTop: 12,
-            opacity: captionProgress,
-            transform: `translateY(${(1 - captionProgress) * 20}px)`,
-          }}
-        >
-          {scene.descriptionKo}
-        </div>
+        {lang === 'ko' && (
+          <div
+            style={{
+              fontSize: 32,
+              fontWeight: 400,
+              color: '#94A3B8',
+              textAlign: 'center',
+              fontFamily: englishFontFamily,
+              textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+              lineHeight: 1.4,
+              marginTop: 12,
+              opacity: captionProgress,
+              transform: `translateY(${(1 - captionProgress) * 20}px)`,
+            }}
+          >
+            {scene.description}
+          </div>
+        )}
       </AbsoluteFill>
     </AbsoluteFill>
   );
 };
 
 // ─── EmotionText ───
-const EmotionText: React.FC<{ frame: number; text: string; textKo: string; section: Section }> = ({
-  frame,
-  text,
-  textKo,
-  section,
-}) => {
+const EmotionText: React.FC<{
+  frame: number;
+  text: string;
+  textKo: string;
+  section: Section;
+  lang: 'ko' | 'en';
+}> = ({ frame, text, textKo, section, lang }) => {
   const fadeIn = interpolate(frame, [section.start, section.start + 15], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -193,11 +285,7 @@ const EmotionText: React.FC<{ frame: number; text: string; textKo: string; secti
       }}
     >
       {/* Blur overlay */}
-      <AbsoluteFill
-        style={{
-          backgroundColor: 'rgba(15, 23, 42, 0.6)',
-        }}
-      />
+      <AbsoluteFill style={{ backgroundColor: 'rgba(15, 23, 42, 0.6)' }} />
       <div
         style={{
           fontSize: 56,
@@ -205,32 +293,34 @@ const EmotionText: React.FC<{ frame: number; text: string; textKo: string; secti
           fontStyle: 'italic',
           color: '#E2E8F0',
           textAlign: 'center',
-          fontFamily: englishFontFamily,
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
           textShadow: '0 4px 30px rgba(0,0,0,0.9)',
           lineHeight: 1.4,
           padding: '0 50px',
           zIndex: 1,
         }}
       >
-        {text}
+        {lang === 'ko' ? textKo : text}
       </div>
-      <div
-        style={{
-          fontSize: 44,
-          fontWeight: 600,
-          fontStyle: 'italic',
-          color: '#94A3B8',
-          textAlign: 'center',
-          fontFamily: koreanFontFamily,
-          textShadow: '0 4px 30px rgba(0,0,0,0.9)',
-          lineHeight: 1.4,
-          padding: '0 50px',
-          marginTop: 20,
-          zIndex: 1,
-        }}
-      >
-        {textKo}
-      </div>
+      {lang === 'ko' && (
+        <div
+          style={{
+            fontSize: 38,
+            fontWeight: 500,
+            fontStyle: 'italic',
+            color: '#94A3B8',
+            textAlign: 'center',
+            fontFamily: englishFontFamily,
+            textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+            lineHeight: 1.4,
+            padding: '0 50px',
+            marginTop: 20,
+            zIndex: 1,
+          }}
+        >
+          {text}
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -246,37 +336,33 @@ const WordReveal: React.FC<{
   closingLine: string;
   closingLineKo: string;
   section: Section;
-}> = ({ frame, fps, word, pronunciation, meaning, meaningKo, closingLine, closingLineKo, section }) => {
+  lang: 'ko' | 'en';
+}> = ({ frame, fps, word, pronunciation, meaning, meaningKo, closingLine, closingLineKo, section, lang }) => {
   if (frame < section.start || frame >= section.end) return null;
 
   const localFrame = frame - section.start;
 
-  // Word spring bounce
   const wordScale = spring({
     frame: localFrame,
     fps,
     config: { damping: 12, stiffness: 120, mass: 0.8 },
   });
 
-  // Pronunciation fade in
   const pronOpacity = interpolate(localFrame, [8, 20], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Meaning fade in (0.5s delay = 15 frames)
   const meaningOpacity = interpolate(localFrame, [15, 30], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Closing line slide up (after 2s = 60 frames)
   const closingProgress = interpolate(localFrame, [60, 80], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Fade out at end
   const fadeOut = interpolate(frame, [section.end - 10, section.end], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -284,7 +370,7 @@ const WordReveal: React.FC<{
 
   return (
     <AbsoluteFill style={{ opacity: fadeOut }}>
-      {/* Word + pronunciation + meaning - centered */}
+      {/* Word + pronunciation + meaning */}
       <AbsoluteFill
         style={{
           justifyContent: 'center',
@@ -323,32 +409,36 @@ const WordReveal: React.FC<{
             fontSize: 44,
             fontWeight: 400,
             color: '#FFFFFF',
-            fontFamily: englishFontFamily,
+            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
             textAlign: 'center',
             marginTop: 24,
             opacity: meaningOpacity,
             lineHeight: 1.4,
+            padding: '0 40px',
           }}
         >
-          {meaning}
+          {lang === 'ko' ? meaningKo : meaning}
         </div>
-        <div
-          style={{
-            fontSize: 36,
-            fontWeight: 400,
-            color: '#CBD5E1',
-            fontFamily: koreanFontFamily,
-            textAlign: 'center',
-            marginTop: 12,
-            opacity: meaningOpacity,
-            lineHeight: 1.4,
-          }}
-        >
-          {meaningKo}
-        </div>
+        {lang === 'ko' && (
+          <div
+            style={{
+              fontSize: 32,
+              fontWeight: 400,
+              color: '#CBD5E1',
+              fontFamily: englishFontFamily,
+              textAlign: 'center',
+              marginTop: 12,
+              opacity: meaningOpacity,
+              lineHeight: 1.4,
+              padding: '0 40px',
+            }}
+          >
+            {meaning}
+          </div>
+        )}
       </AbsoluteFill>
 
-      {/* Closing line - bottom */}
+      {/* Closing line */}
       <AbsoluteFill
         style={{
           justifyContent: 'flex-end',
@@ -364,31 +454,33 @@ const WordReveal: React.FC<{
             fontWeight: 400,
             fontStyle: 'italic',
             color: '#94A3B8',
-            fontFamily: englishFontFamily,
+            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
             textAlign: 'center',
             lineHeight: 1.5,
             opacity: closingProgress,
             transform: `translateY(${(1 - closingProgress) * 20}px)`,
           }}
         >
-          {closingLine}
+          {lang === 'ko' ? closingLineKo : closingLine}
         </div>
-        <div
-          style={{
-            fontSize: 34,
-            fontWeight: 400,
-            fontStyle: 'italic',
-            color: '#64748B',
-            fontFamily: koreanFontFamily,
-            textAlign: 'center',
-            lineHeight: 1.5,
-            marginTop: 8,
-            opacity: closingProgress,
-            transform: `translateY(${(1 - closingProgress) * 20}px)`,
-          }}
-        >
-          {closingLineKo}
-        </div>
+        {lang === 'ko' && (
+          <div
+            style={{
+              fontSize: 30,
+              fontWeight: 400,
+              fontStyle: 'italic',
+              color: '#64748B',
+              fontFamily: englishFontFamily,
+              textAlign: 'center',
+              lineHeight: 1.5,
+              marginTop: 8,
+              opacity: closingProgress,
+              transform: `translateY(${(1 - closingProgress) * 20}px)`,
+            }}
+          >
+            {closingLine}
+          </div>
+        )}
       </AbsoluteFill>
     </AbsoluteFill>
   );
@@ -446,9 +538,11 @@ const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
 // ─── Main Component ───
 interface Props {
   wordIndex: number;
+  lang: 'ko' | 'en';
+  mode: 'image' | 'clip';
 }
 
-export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
+export const StoryShort: React.FC<Props> = ({ wordIndex, lang, mode }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const data = STORY_WORDS[wordIndex];
@@ -474,7 +568,6 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
             left: 40,
             display: 'flex',
             alignItems: 'center',
-            gap: 8,
             opacity: 0.7,
           }}
         >
@@ -492,6 +585,9 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         </div>
       </AbsoluteFill>
 
+      {/* Symbol Overlay */}
+      <SymbolOverlay frame={frame} type={data.symbolOverlay} />
+
       {/* Background gradient */}
       <AbsoluteFill
         style={{
@@ -500,17 +596,24 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
       />
 
       {/* HOOK: 0-2.5초 */}
-      <HookText frame={frame} text={data.hook} section={SECTIONS.hook} />
+      <HookText
+        frame={frame}
+        text={lang === 'ko' ? data.hookKo : data.hook}
+        section={SECTIONS.hook}
+      />
 
       {/* SCENES: 2.5-9초 */}
       {data.scenes.map((scene, i) => {
         const sectionKey = `scene${i + 1}` as keyof typeof SECTIONS;
         return (
-          <ImageScene
+          <SceneView
             key={i}
             frame={frame}
             scene={scene}
             section={SECTIONS[sectionKey]}
+            mode={mode}
+            sceneIndex={i}
+            lang={lang}
           />
         );
       })}
@@ -521,6 +624,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         text={data.emotion}
         textKo={data.emotionKo}
         section={SECTIONS.emotion}
+        lang={lang}
       />
 
       {/* WORD REVEAL: 13-18초 */}
@@ -534,6 +638,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex }) => {
         closingLine={data.closingLine}
         closingLineKo={data.closingLineKo}
         section={SECTIONS.word}
+        lang={lang}
       />
 
       {/* OUTRO: 18-20초 */}
