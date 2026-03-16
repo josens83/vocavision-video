@@ -16,7 +16,7 @@ const IMAGES = {
 };
 
 // 8섹션 플래시카드 라벨
-const FLASHCARD_SECTIONS = [
+const FLASHCARD_SECTIONS_KR = [
   { label: '이미지', icon: '\uD83D\uDCF8', color: '#10B981' },
   { label: '발음', icon: '\uD83D\uDD0A', color: '#818CF8' },
   { label: '뜻', icon: '\uD83D\uDCCA', color: '#F59E0B' },
@@ -25,6 +25,17 @@ const FLASHCARD_SECTIONS = [
   { label: '라임', icon: '\uD83C\uDFB5', color: '#A78BFA' },
   { label: '콜로케이션', icon: '\uD83D\uDD17', color: '#34D399' },
   { label: '예문', icon: '\uD83D\uDCDD', color: '#FB923C' },
+];
+
+const FLASHCARD_SECTIONS_EN = [
+  { label: 'Image', icon: '\uD83D\uDCF8', color: '#10B981' },
+  { label: 'Pronunciation', icon: '\uD83D\uDD0A', color: '#818CF8' },
+  { label: 'Meaning', icon: '\uD83D\uDCCA', color: '#F59E0B' },
+  { label: 'Etymology', icon: '\uD83D\uDCD6', color: '#06B6D4' },
+  { label: 'Mnemonic', icon: '\uD83D\uDCA1', color: '#F472B6' },
+  { label: 'Rhyme', icon: '\uD83C\uDFB5', color: '#A78BFA' },
+  { label: 'Collocation', icon: '\uD83D\uDD17', color: '#34D399' },
+  { label: 'Example', icon: '\uD83D\uDCDD', color: '#FB923C' },
 ];
 
 // 섹션 제목 컴포넌트
@@ -55,19 +66,19 @@ const SectionTitle: React.FC<{ text: string }> = ({ text }) => {
 };
 
 // Part 1: AI CONCEPT 이미지 (225 frames = 7.5초)
-const Part1_Concept: React.FC = () => {
+const Part1_Concept: React.FC<{ language?: 'KR' | 'EN' }> = ({ language = 'KR' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   const concepts = [
-    { word: 'ubiquitous', url: IMAGES.ubiquitousConcept, meaning: '어디에나 있는' },
-    { word: 'bias', url: IMAGES.biasConcept, meaning: '편향, 편견' },
-    { word: 'binge', url: IMAGES.bingeRhyme, meaning: '폭식, 정주행' },
+    { word: 'ubiquitous', url: IMAGES.ubiquitousConcept, meaning: language === 'EN' ? 'existing everywhere' : '어디에나 있는' },
+    { word: 'bias', url: IMAGES.biasConcept, meaning: language === 'EN' ? 'prejudice, partiality' : '편향, 편견' },
+    { word: 'binge', url: IMAGES.bingeRhyme, meaning: language === 'EN' ? 'excessive indulgence' : '폭식, 정주행' },
   ];
 
   return (
     <AbsoluteFill style={{ backgroundColor: BRAND.dark }}>
-      <SectionTitle text="AI CONCEPT 이미지" />
+      <SectionTitle text={language === 'EN' ? 'AI CONCEPT Images' : 'AI CONCEPT 이미지'} />
       <div
         style={{
           position: 'absolute',
@@ -80,7 +91,7 @@ const Part1_Concept: React.FC = () => {
           opacity: interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' }),
         }}
       >
-        단어 의미가 그림으로!
+        {language === 'EN' ? 'Word meanings in pictures!' : '단어 의미가 그림으로!'}
       </div>
 
       <div
@@ -161,7 +172,7 @@ const Part1_Concept: React.FC = () => {
 };
 
 // Part 2: 어원 분석 (225 frames = 7.5초)
-const Part2_Etymology: React.FC = () => {
+const Part2_Etymology: React.FC<{ language?: 'KR' | 'EN' }> = ({ language = 'KR' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -205,7 +216,7 @@ const Part2_Etymology: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: BRAND.dark }}>
-      <SectionTitle text="어원 분석" />
+      <SectionTitle text={language === 'EN' ? 'Etymology Analysis' : '어원 분석'} />
       <div
         style={{
           position: 'absolute',
@@ -218,7 +229,7 @@ const Part2_Etymology: React.FC = () => {
           opacity: interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' }),
         }}
       >
-        뿌리부터 이해!
+        {language === 'EN' ? 'Understand from the root!' : '뿌리부터 이해!'}
       </div>
 
       <div
@@ -284,7 +295,7 @@ const Part2_Etymology: React.FC = () => {
                 fontFamily: FONT.korean,
               }}
             >
-              라틴어: 어디에나
+              {language === 'EN' ? 'Latin: everywhere' : '라틴어: 어디에나'}
             </div>
           </div>
 
@@ -331,7 +342,7 @@ const Part2_Etymology: React.FC = () => {
                 fontFamily: FONT.korean,
               }}
             >
-              ~한 (형용사 접미사)
+              {language === 'EN' ? 'adjective suffix' : '~한 (형용사 접미사)'}
             </div>
           </div>
         </div>
@@ -357,7 +368,7 @@ const Part2_Etymology: React.FC = () => {
             fontFamily: FONT.korean,
           }}
         >
-          &quot;어디에나 있는&quot; = ubiquitous
+          {language === 'EN' ? '"existing everywhere" = ubiquitous' : '"어디에나 있는" = ubiquitous'}
         </div>
       </div>
     </AbsoluteFill>
@@ -440,7 +451,8 @@ const Part3_UXDemo: React.FC = () => {
 };
 
 // Part 4: 8섹션 플래시카드 (225 frames = 7.5초)
-const Part4_Flashcard: React.FC = () => {
+const Part4_Flashcard: React.FC<{ language?: 'KR' | 'EN' }> = ({ language = 'KR' }) => {
+  const FLASHCARD_SECTIONS = language === 'EN' ? FLASHCARD_SECTIONS_EN : FLASHCARD_SECTIONS_KR;
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -448,7 +460,7 @@ const Part4_Flashcard: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: BRAND.dark }}>
-      <SectionTitle text="8섹션 플래시카드" />
+      <SectionTitle text={language === 'EN' ? '8-Section Flashcard' : '8섹션 플래시카드'} />
       <div
         style={{
           position: 'absolute',
@@ -461,7 +473,7 @@ const Part4_Flashcard: React.FC = () => {
           opacity: titleOpacity,
         }}
       >
-        완벽한 학습!
+        {language === 'EN' ? 'Perfect learning!' : '완벽한 학습!'}
       </div>
 
       <div
@@ -555,12 +567,12 @@ export const Scene03_Demo: React.FC<Scene03Props> = ({ language = 'KR' }) => {
     <AbsoluteFill>
       {/* Part 1: AI CONCEPT (0~225, 0~7.5초) */}
       <Sequence from={0} durationInFrames={225}>
-        <Part1_Concept />
+        <Part1_Concept language={language} />
       </Sequence>
 
       {/* Part 2: 어원 분석 (225~450, 7.5~15초) */}
       <Sequence from={225} durationInFrames={language === 'EN' ? 450 : 225}>
-        <Part2_Etymology />
+        <Part2_Etymology language={language} />
       </Sequence>
 
       {/* Part 3: 실제 학습 화면 — KR 전용 (한국어 앱 화면) */}
@@ -572,7 +584,7 @@ export const Scene03_Demo: React.FC<Scene03Props> = ({ language = 'KR' }) => {
 
       {/* Part 4: 8섹션 카드 (675~900, 22.5~30초) */}
       <Sequence from={675} durationInFrames={225}>
-        <Part4_Flashcard />
+        <Part4_Flashcard language={language} />
       </Sequence>
     </AbsoluteFill>
   );

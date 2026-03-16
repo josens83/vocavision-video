@@ -37,7 +37,7 @@ export const CompanyIntroNew: React.FC<CompanyIntroProps> = ({
 
       {/* Scene 2: 솔루션 소개 (10~25초, 450프레임) */}
       <Sequence from={300} durationInFrames={450}>
-        <Scene02_Solution />
+        <Scene02_Solution language={language} />
       </Sequence>
 
       {/* Scene 3: 핵심 기능 시연 (25~55초, 900프레임) */}
@@ -47,17 +47,17 @@ export const CompanyIntroNew: React.FC<CompanyIntroProps> = ({
 
       {/* Scene 4: 콘텐츠 규모 (55~65초, 300프레임) */}
       <Sequence from={1650} durationInFrames={300}>
-        <Scene04_Scale />
+        <Scene04_Scale language={language} />
       </Sequence>
 
       {/* Scene 5: 차별점 (65~80초, 450프레임) */}
       <Sequence from={1950} durationInFrames={450}>
-        <Scene05_Difference />
+        <Scene05_Difference language={language} />
       </Sequence>
 
       {/* Scene 6: CTA (80~90초, 300프레임) */}
       <Sequence from={2400} durationInFrames={300}>
-        <Scene06_CTA />
+        <Scene06_CTA language={language} />
       </Sequence>
 
       {/* 자막 오버레이 */}

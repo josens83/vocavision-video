@@ -2,7 +2,7 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, spring, useVideoConfig } from 'remotion';
 import { BRAND, FONT } from './styles';
 
-const SECTIONS = [
+const SECTIONS_KR = [
   { icon: '\uD83D\uDCF8', label: '이미지' },
   { icon: '\uD83D\uDCD6', label: '어원' },
   { icon: '\uD83C\uDFB5', label: '라임' },
@@ -13,9 +13,25 @@ const SECTIONS = [
   { icon: '\uD83D\uDCCA', label: '뜻' },
 ];
 
-export const Scene02_Solution: React.FC = () => {
+const SECTIONS_EN = [
+  { icon: '\uD83D\uDCF8', label: 'Image' },
+  { icon: '\uD83D\uDCD6', label: 'Etymology' },
+  { icon: '\uD83C\uDFB5', label: 'Rhyme' },
+  { icon: '\uD83D\uDCA1', label: 'Mnemonic' },
+  { icon: '\uD83D\uDCDD', label: 'Example' },
+  { icon: '\uD83D\uDD17', label: 'Collocation' },
+  { icon: '\uD83D\uDD0A', label: 'Pronunciation' },
+  { icon: '\uD83D\uDCCA', label: 'Meaning' },
+];
+
+interface Scene02Props {
+  language?: 'KR' | 'EN';
+}
+
+export const Scene02_Solution: React.FC<Scene02Props> = ({ language = 'KR' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const SECTIONS = language === 'EN' ? SECTIONS_EN : SECTIONS_KR;
 
   // 로고 줌인 (0~40)
   const logoScale = spring({
@@ -136,7 +152,7 @@ export const Scene02_Solution: React.FC = () => {
             fontFamily: FONT.korean,
           }}
         >
-          AI 이미지로 기억하는 영단어
+          {language === 'EN' ? 'Vocabulary you can visualize' : 'AI 이미지로 기억하는 영단어'}
         </div>
       </div>
 

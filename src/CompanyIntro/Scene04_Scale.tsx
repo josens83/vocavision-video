@@ -11,7 +11,11 @@ const BADGES = [
   { label: 'SAT', emoji: '\uD83C\uDF93' },
 ];
 
-export const Scene04_Scale: React.FC = () => {
+interface Scene04Props {
+  language?: 'KR' | 'EN';
+}
+
+export const Scene04_Scale: React.FC<Scene04Props> = ({ language = 'KR' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -106,7 +110,7 @@ export const Scene04_Scale: React.FC = () => {
             fontFamily: FONT.korean,
           }}
         >
-          AI가 만든 단어 콘텐츠
+          {language === 'EN' ? 'AI-generated word content' : 'AI가 만든 단어 콘텐츠'}
         </div>
 
         {/* 시험 배지 */}
