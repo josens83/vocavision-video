@@ -208,6 +208,11 @@ on:
           - InstaCard-crude
           - InstaCard-barrel
           - InstaCard-refinery
+          - WordShort-set-042
+          - InstaCard-set042-cover
+          - InstaCard-surge
+          - InstaCard-embargo
+          - InstaCard-renewable
           - StoryShort-ephemeral-ko-image
           - StoryShort-ephemeral-en-image
           - StoryShort-ephemeral-ko-clip

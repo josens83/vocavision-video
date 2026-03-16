@@ -2321,6 +2321,61 @@ export const RemotionRoot: React.FC = () => {
           mode: 'clip' as const,
         }}
       />
+
+      {/* set-042: surge, embargo, renewable (에너지·유가 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-042"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 41,
+        }}
+      />
+
+      <Still
+        id="InstaCard-set042-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['surge', 'embargo', 'renewable'],
+          title: '📈 에너지 영단어 Part 2!',
+          subtitle: '🌊 급등 → 🚧 금수조치 → 🌱 재생에너지',
+        }}
+      />
+
+      <Still
+        id="InstaCard-surge"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[41].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-embargo"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[41].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-renewable"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[41].words[2],
+        }}
+      />
     </>
   );
 };
