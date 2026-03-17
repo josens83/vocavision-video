@@ -213,6 +213,11 @@ on:
           - InstaCard-surge
           - InstaCard-embargo
           - InstaCard-renewable
+          - WordShort-set-043
+          - InstaCard-set043-cover
+          - InstaCard-verdict
+          - InstaCard-testimony
+          - InstaCard-defendant
           - StoryShort-ephemeral-ko-image
           - StoryShort-ephemeral-en-image
           - StoryShort-ephemeral-ko-clip

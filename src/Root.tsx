@@ -2376,6 +2376,60 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[41].words[2],
         }}
       />
+      {/* set-043: verdict, testimony, defendant (법률·범죄 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-043"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 42,
+        }}
+      />
+
+      <Still
+        id="InstaCard-set043-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['verdict', 'testimony', 'defendant'],
+          title: '⚖️ 법률 영단어 Part 1!',
+          subtitle: '⚖️ 판결 → 🗣️ 증언 → 😰 피고인',
+        }}
+      />
+
+      <Still
+        id="InstaCard-verdict"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[42].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-testimony"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[42].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-defendant"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[42].words[2],
+        }}
+      />
     </>
   );
 };
