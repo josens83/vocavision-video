@@ -180,10 +180,11 @@ const Intro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
 };
 
 // ─── HookText ───
-const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
+const HookText: React.FC<{ frame: number; text: string; section: Section; lang: 'ko' | 'en' }> = ({
   frame,
   text,
   section,
+  lang,
 }) => {
   const opacity = interpolate(frame, [section.start, section.start + 15], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -211,7 +212,7 @@ const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
           fontWeight: 900,
           color: '#FFFFFF',
           textAlign: 'center',
-          fontFamily: englishFontFamily,
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
           textShadow: '0 4px 30px rgba(0,0,0,0.9)',
           lineHeight: 1.3,
           padding: '0 40px',
@@ -709,7 +710,7 @@ const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
           fontSize: 32,
           fontWeight: 400,
           color: '#64748B',
-          fontFamily: englishFontFamily,
+          fontFamily: koreanFontFamily,
           letterSpacing: 1,
           marginTop: 8,
         }}>
@@ -804,6 +805,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex, lang }) => {
         frame={frame}
         text={lang === 'ko' ? data.hookKo : data.hook}
         section={SECTIONS.hook}
+        lang={lang}
       />
 
       {/* SCENES: 7-28초 */}
