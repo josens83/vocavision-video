@@ -13,16 +13,19 @@ import {
 import { STORY_WORDS, StoryScene, StoryWord } from '../data/story-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
 
-// 50초 = 1500프레임 (30fps)
+// 55초 = 1650프레임 (30fps)
 const SECTIONS = {
-  intro:   { start: 0,    end: 90 },   // 0-3초   인트로 로고
-  hook:    { start: 90,   end: 210 },  // 3-7초   훅 텍스트
-  scene1:  { start: 210,  end: 420 },  // 7-14초  장면1
-  scene2:  { start: 420,  end: 630 },  // 14-21초 장면2
-  scene3:  { start: 630,  end: 840 },  // 21-28초 장면3
-  emotion: { start: 840,  end: 1050 }, // 28-35초 감정문장
-  word:    { start: 1050, end: 1380 }, // 35-46초 단어 리빌
-  outro:   { start: 1380, end: 1500 }, // 46-50초 아웃트로
+  intro:   { start: 0,    end: 90 },    // 0-3초   인트로 로고
+  hook:    { start: 90,   end: 210 },   // 3-7초   훅 텍스트
+  scene1:  { start: 210,  end: 360 },   // 7-12초  장면1
+  scene2:  { start: 360,  end: 510 },   // 12-17초 장면2
+  scene3:  { start: 510,  end: 660 },   // 17-22초 장면3
+  scene4:  { start: 660,  end: 810 },   // 22-27초 장면4
+  scene5:  { start: 810,  end: 960 },   // 27-32초 장면5
+  emotion: { start: 960,  end: 1140 },  // 32-38초 감정문장
+  word:    { start: 1140, end: 1410 },  // 38-47초 단어 리빌
+  cta:     { start: 1410, end: 1530 },  // 47-51초 구독/좋아요
+  outro:   { start: 1530, end: 1650 },  // 51-55초 아웃트로
 };
 
 type Section = { start: number; end: number };
@@ -82,10 +85,22 @@ const CherryBlossomOverlay: React.FC<{ frame: number }> = ({ frame }) => {
               height: petal.size,
               opacity,
               transform: `rotate(${rotate}deg)`,
-              fontSize: petal.size,
             }}
           >
-            🌸
+            <svg
+              width={petal.size}
+              height={petal.size}
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* 5장 꽃잎 */}
+              <ellipse cx="12" cy="6" rx="3.5" ry="5.5" fill="#FFB7C5" transform="rotate(0 12 12)" />
+              <ellipse cx="12" cy="6" rx="3.5" ry="5.5" fill="#FFB7C5" transform="rotate(72 12 12)" />
+              <ellipse cx="12" cy="6" rx="3.5" ry="5.5" fill="#FFB7C5" transform="rotate(144 12 12)" />
+              <ellipse cx="12" cy="6" rx="3.5" ry="5.5" fill="#FFB7C5" transform="rotate(216 12 12)" />
+              <ellipse cx="12" cy="6" rx="3.5" ry="5.5" fill="#FFB7C5" transform="rotate(288 12 12)" />
+              <circle cx="12" cy="12" r="2.5" fill="#FFC0CB" />
+            </svg>
           </div>
         );
       })}
@@ -131,13 +146,14 @@ const Intro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
       style={{
         justifyContent: 'center',
         alignItems: 'center',
+        paddingBottom: 300,
         opacity: fadeOut,
       }}
     >
       <div style={{ transform: `scale(${logoScale})`, textAlign: 'center' }}>
         <div
           style={{
-            fontSize: 52,
+            fontSize: 68,
             fontWeight: 900,
             color: '#06B6D4',
             fontFamily: englishFontFamily,
@@ -149,12 +165,12 @@ const Intro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
         </div>
         <div
           style={{
-            fontSize: 28,
+            fontSize: 36,
             fontWeight: 400,
-            color: '#64748B',
+            color: '#94A3B8',
             fontFamily: englishFontFamily,
-            marginTop: 12,
-            letterSpacing: 2,
+            marginTop: 16,
+            letterSpacing: 1,
           }}
         >
           Words you feel, not memorize.
@@ -341,11 +357,10 @@ const EmotionText: React.FC<{
   return (
     <AbsoluteFill
       style={{
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: 500,
-        opacity: fadeIn * fadeOut,
         padding: '0 50px',
+        opacity: fadeIn * fadeOut,
       }}
     >
       {/* Blur overlay */}
@@ -513,7 +528,7 @@ const WordReveal: React.FC<{
         style={{
           justifyContent: 'flex-end',
           alignItems: 'center',
-          paddingBottom: 200,
+          paddingBottom: 420,
           paddingLeft: 50,
           paddingRight: 50,
         }}
@@ -559,50 +574,158 @@ const WordReveal: React.FC<{
   );
 };
 
-// ─── Outro ───
-const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }) => {
-  const fadeIn = interpolate(frame, [section.start, section.start + 10], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
+// ─── CTA ───
+const CTA: React.FC<{ frame: number; section: Section }> = ({ frame, section }) => {
+  const fadeIn = interpolate(frame, [section.start, section.start + 20], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
-  const fadeOut = interpolate(frame, [section.end - 10, section.end], [1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
+  const fadeOut = interpolate(frame, [section.end - 15, section.end], [1, 0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
   if (frame < section.start || frame >= section.end) return null;
 
   return (
-    <AbsoluteFill
-      style={{
-        justifyContent: 'center',
+    <AbsoluteFill style={{
+      justifyContent: 'center',
+      alignItems: 'center',
+      opacity: fadeIn * fadeOut,
+      padding: '0 60px',
+    }}>
+      {/* 반투명 배경 */}
+      <AbsoluteFill style={{ backgroundColor: 'rgba(15,23,42,0.7)' }} />
+
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
-        opacity: fadeIn * fadeOut,
-      }}
-    >
-      <div
-        style={{
-          fontSize: 36,
-          fontWeight: 700,
+        gap: 36,
+        zIndex: 1,
+      }}>
+        {/* 메인 메시지 */}
+        <div style={{
+          fontSize: 52,
+          fontWeight: 800,
+          color: '#FFFFFF',
+          fontFamily: koreanFontFamily,
+          textAlign: 'center',
+          lineHeight: 1.4,
+          wordBreak: 'keep-all',
+          textShadow: '0 4px 20px rgba(0,0,0,0.5)',
+        }}>
+          더 많은 단어가<br />
+          <span style={{ color: '#06B6D4' }}>느껴지고 싶다면?</span>
+        </div>
+
+        {/* 구독 버튼 스타일 */}
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 20,
+        }}>
+          <div style={{
+            fontSize: 44,
+            fontWeight: 700,
+            color: '#FFFFFF',
+            fontFamily: koreanFontFamily,
+            backgroundColor: '#FF0000',
+            padding: '16px 48px',
+            borderRadius: 50,
+            textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+          }}>
+            구독 👍 좋아요
+          </div>
+
+          <div style={{
+            fontSize: 34,
+            fontWeight: 500,
+            color: '#94A3B8',
+            fontFamily: koreanFontFamily,
+            textAlign: 'center',
+            lineHeight: 1.5,
+            wordBreak: 'keep-all',
+          }}>
+            매일 새로운 단어를 느껴보세요
+          </div>
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ─── Outro ───
+const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }) => {
+  const { fps } = useVideoConfig();
+
+  const fadeIn = interpolate(frame, [section.start, section.start + 20], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+  const fadeOut = interpolate(frame, [section.end - 20, section.end], [1, 0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
+  const logoScale = spring({
+    frame: frame - section.start,
+    fps,
+    config: { damping: 14, stiffness: 100, mass: 0.8 },
+  });
+
+  if (frame < section.start || frame >= section.end) return null;
+
+  return (
+    <AbsoluteFill style={{
+      justifyContent: 'center',
+      alignItems: 'center',
+      opacity: fadeIn * fadeOut,
+      paddingBottom: 200,
+    }}>
+      <div style={{
+        transform: `scale(${logoScale})`,
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 20,
+      }}>
+        {/* 브랜드명 */}
+        <div style={{
+          fontSize: 72,
+          fontWeight: 900,
           color: '#06B6D4',
           fontFamily: englishFontFamily,
-          textAlign: 'center',
-          letterSpacing: 4,
-        }}
-      >
-        VocaVision AI
-      </div>
-      <div
-        style={{
-          fontSize: 20,
+          letterSpacing: 3,
+          textShadow: '0 0 60px rgba(6,182,212,0.6)',
+        }}>
+          VocaVision AI
+        </div>
+
+        {/* URL — 강조 */}
+        <div style={{
+          fontSize: 52,
+          fontWeight: 800,
+          color: '#FFFFFF',
+          fontFamily: englishFontFamily,
+          letterSpacing: 2,
+          backgroundColor: 'rgba(6,182,212,0.15)',
+          border: '2px solid rgba(6,182,212,0.4)',
+          borderRadius: 16,
+          padding: '12px 36px',
+        }}>
+          vocavision.kr
+        </div>
+
+        {/* 태그라인 */}
+        <div style={{
+          fontSize: 32,
           fontWeight: 400,
           color: '#64748B',
           fontFamily: englishFontFamily,
-          textAlign: 'center',
-          marginTop: 12,
-        }}
-      >
-        vocavision.kr
+          letterSpacing: 1,
+          marginTop: 8,
+        }}>
+          AI 영단어 학습 플랫폼
+        </div>
       </div>
     </AbsoluteFill>
   );
@@ -627,7 +750,7 @@ export const StoryShort: React.FC<Props> = ({ wordIndex, lang, mode }) => {
         src={staticFile('audio/story-emotional.mp3')}
         volume={(f) => {
           if (f < 30) return interpolate(f, [0, 30], [0, 0.3], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-          if (f > 1380) return interpolate(f, [1380, 1500], [0.3, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+          if (f > 1530) return interpolate(f, [1530, 1650], [0.3, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
           return 0.3;
         }}
       />
@@ -644,14 +767,14 @@ export const StoryShort: React.FC<Props> = ({ wordIndex, lang, mode }) => {
             alignItems: 'center',
             gap: 8,
             backgroundColor: 'rgba(0,0,0,0.35)',
-            padding: '8px 16px',
+            padding: '10px 20px',
             borderRadius: 20,
           }}
         >
           <span
             style={{
-              fontSize: 26,
-              fontWeight: 800,
+              fontSize: 32,
+              fontWeight: 900,
               color: '#06B6D4',
               letterSpacing: 1,
               fontFamily: englishFontFamily,
@@ -734,7 +857,10 @@ export const StoryShort: React.FC<Props> = ({ wordIndex, lang, mode }) => {
         lang={lang}
       />
 
-      {/* OUTRO: 46-50초 */}
+      {/* CTA: 47-51초 */}
+      <CTA frame={frame} section={SECTIONS.cta} />
+
+      {/* OUTRO: 51-55초 */}
       <Outro frame={frame} section={SECTIONS.outro} />
     </AbsoluteFill>
   );
