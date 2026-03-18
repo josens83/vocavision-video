@@ -2293,6 +2293,30 @@ export const RemotionRoot: React.FC = () => {
           lang: 'en' as const,
         }}
       />
+      <Composition
+        id="StoryShort-hesitation-ko"
+        component={StoryShort}
+        durationInFrames={1650}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          wordIndex: 1,
+          lang: 'ko' as const,
+        }}
+      />
+      <Composition
+        id="StoryShort-hesitation-en"
+        component={StoryShort}
+        durationInFrames={1650}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          wordIndex: 1,
+          lang: 'en' as const,
+        }}
+      />
 
       {/* set-042: surge, embargo, renewable (에너지·유가 영어 Part 2) */}
       <Composition

@@ -63,4 +63,45 @@ export const STORY_WORDS: StoryWord[] = [
     closingLine: "Some moments are ephemeral. Hold them while you can.",
     closingLineKo: "어떤 순간은 덧없다. 가능할 때 붙잡아라.",
   },
+  {
+    id: "hesitation",
+    word: "hesitation",
+    pronunciation: "/ˌhezɪˈteɪʃən/",
+    meaning: "a pause before doing something uncertain",
+    meaningKo: "불확실한 것 앞에서 멈추는 순간",
+    hook: "The moment before you say 'I love you.'",
+    hookKo: "\"사랑해\"를 말하기 직전, 그 순간.",
+    scenes: [
+      {
+        description: "A message typed. The send button — untouched.",
+        descriptionKo: "문자는 써졌다. 전송 버튼 — 누르지 못했다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/hesitation/hesitation-scene1.jpeg",
+      },
+      {
+        description: "The first time they met. Everything felt possible.",
+        descriptionKo: "처음 만났던 날. 모든 것이 가능해 보였다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/hesitation/hesitation-scene2.jpeg",
+      },
+      {
+        description: "He opened his mouth. Then looked away.",
+        descriptionKo: "그가 입을 열었다. 그리고 시선을 피했다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/hesitation/hesitation-scene3.jpeg",
+      },
+      {
+        description: "She walked away. His hand — half raised, too late.",
+        descriptionKo: "그녀가 걸어갔다. 그의 손 — 반쯤 들렸다가, 내려졌다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/hesitation/hesitation-scene4.jpeg",
+      },
+      {
+        description: "An empty chair. The message still unsent.",
+        descriptionKo: "빈 의자. 문자는 아직도 전송되지 않았다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/hesitation/hesitation-scene5.jpeg",
+      },
+    ],
+    emotion: "The words you never said live the longest.",
+    emotionKo: "말하지 못한 말이 가장 오래 남는다.",
+    symbolOverlay: undefined,
+    closingLine: "Hesitation costs more than the risk itself.",
+    closingLineKo: "망설임의 대가는 위험보다 크다.",
+  },
 ];
