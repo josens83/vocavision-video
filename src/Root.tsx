@@ -2270,7 +2270,7 @@ export const RemotionRoot: React.FC = () => {
 
       {/* === StoryShort === */}
       <Composition
-        id="StoryShort-ephemeral-ko-image"
+        id="StoryShort-ephemeral-ko"
         component={StoryShort}
         durationInFrames={1650}
         fps={30}
@@ -2279,11 +2279,10 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           wordIndex: 0,
           lang: 'ko' as const,
-          mode: 'image' as const,
         }}
       />
       <Composition
-        id="StoryShort-ephemeral-en-image"
+        id="StoryShort-ephemeral-en"
         component={StoryShort}
         durationInFrames={1650}
         fps={30}
@@ -2292,33 +2291,6 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           wordIndex: 0,
           lang: 'en' as const,
-          mode: 'image' as const,
-        }}
-      />
-      <Composition
-        id="StoryShort-ephemeral-ko-clip"
-        component={StoryShort}
-        durationInFrames={1650}
-        fps={30}
-        width={1080}
-        height={1920}
-        defaultProps={{
-          wordIndex: 0,
-          lang: 'ko' as const,
-          mode: 'clip' as const,
-        }}
-      />
-      <Composition
-        id="StoryShort-ephemeral-en-clip"
-        component={StoryShort}
-        durationInFrames={1650}
-        fps={30}
-        width={1080}
-        height={1920}
-        defaultProps={{
-          wordIndex: 0,
-          lang: 'en' as const,
-          mode: 'clip' as const,
         }}
       />
 
