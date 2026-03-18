@@ -50,6 +50,18 @@ export const STORY_WORDS: StoryWord[] = [
         imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene3.jpeg",
         videoUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/clips/ephemeral-scene3.mp4",
       },
+      {
+        description: "Time passes. The baby becomes a child.",
+        descriptionKo: "시간이 흐른다. 아기가 아이가 된다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene4.jpeg",
+        videoUrl: "",
+      },
+      {
+        description: "One day, you realize — this moment too will pass.",
+        descriptionKo: "어느 날, 깨닫는다 — 이 순간도 지나간다는 것을.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene5.jpeg",
+        videoUrl: "",
+      },
     ],
     emotion: "Everything beautiful disappears too fast.",
     emotionKo: "아름다운 모든 것은 너무 빨리 사라진다.",
