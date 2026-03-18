@@ -2,7 +2,7 @@ export interface StoryScene {
   description: string;
   descriptionKo: string;
   imageUrl: string;
-  videoUrl: string;
+  videoUrl?: string;
 }
 
 export interface StoryWord {
@@ -33,34 +33,29 @@ export const STORY_WORDS: StoryWord[] = [
     symbolOverlay: "cherryBlossom",
     scenes: [
       {
-        description: "A father holds his baby daughter for the first time.",
+        description: "A father holds his newborn daughter for the very first time.",
         descriptionKo: "아버지가 처음으로 딸을 안는다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene1.jpeg",
-        videoUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/clips/ephemeral-scene1.mp4",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral/ephemeral-scene1.jpeg",
       },
       {
-        description: "She takes her first steps. He blinks — she's already running.",
-        descriptionKo: "첫 걸음을 뗀다. 눈 깜짝할 사이 — 벌써 달리고 있다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene2.jpeg",
-        videoUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/clips/ephemeral-scene2.mp4",
+        description: "He sits by the window. The house is quiet now.",
+        descriptionKo: "창가에 혼자 앉는다. 집이 조용해졌다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral/ephemeral-scene2.jpeg",
+      },
+      {
+        description: "She takes her first steps toward him.",
+        descriptionKo: "아장아장, 그에게로 걸어온다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral/ephemeral-scene3.jpeg",
+      },
+      {
+        description: "She laughs. He catches her. Cherry blossoms fall.",
+        descriptionKo: "딸이 웃는다. 아버지가 받아 안는다. 벚꽃이 진다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral/ephemeral-scene4.jpeg",
       },
       {
         description: "Graduation day. She lets go of his hand.",
         descriptionKo: "졸업식 날. 그녀가 아버지의 손을 놓는다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene3.jpeg",
-        videoUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/clips/ephemeral-scene3.mp4",
-      },
-      {
-        description: "Time passes. The baby becomes a child.",
-        descriptionKo: "시간이 흐른다. 아기가 아이가 된다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene4.jpeg",
-        videoUrl: "",
-      },
-      {
-        description: "One day, you realize — this moment too will pass.",
-        descriptionKo: "어느 날, 깨닫는다 — 이 순간도 지나간다는 것을.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral-scene5.jpeg",
-        videoUrl: "",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ephemeral/ephemeral-scene5.jpeg",
       },
     ],
     emotion: "Everything beautiful disappears too fast.",

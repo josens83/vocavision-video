@@ -218,10 +218,8 @@ on:
           - InstaCard-verdict
           - InstaCard-testimony
           - InstaCard-defendant
-          - StoryShort-ephemeral-ko-image
-          - StoryShort-ephemeral-en-image
-          - StoryShort-ephemeral-ko-clip
-          - StoryShort-ephemeral-en-clip
+          - StoryShort-ephemeral-ko
+          - StoryShort-ephemeral-en
 
 jobs:
   render:

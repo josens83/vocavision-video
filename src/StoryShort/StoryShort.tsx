@@ -4,7 +4,6 @@ import {
   useCurrentFrame,
   useVideoConfig,
   Img,
-  Video,
   interpolate,
   spring,
   Audio,
@@ -226,15 +225,14 @@ const HookText: React.FC<{ frame: number; text: string; section: Section }> = ({
   );
 };
 
-// ─── SceneView (image or clip) ───
+// ─── SceneView (Ken Burns image) ───
 const SceneView: React.FC<{
   frame: number;
   scene: StoryScene;
   section: Section;
-  mode: 'image' | 'clip';
   sceneIndex: number;
   lang: 'ko' | 'en';
-}> = ({ frame, scene, section, mode, sceneIndex, lang }) => {
+}> = ({ frame, scene, section, sceneIndex, lang }) => {
   const fadeIn = interpolate(frame, [section.start, section.start + 9], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -254,26 +252,17 @@ const SceneView: React.FC<{
 
   return (
     <AbsoluteFill style={{ opacity: fadeIn * fadeOut }}>
-      {/* Media */}
+      {/* Media — Ken Burns */}
       <AbsoluteFill style={{ overflow: 'hidden' }}>
-        {mode === 'clip' ? (
-          <Video
-            src={scene.videoUrl}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            startFrom={0}
-            muted
-          />
-        ) : (
-          <Img
-            src={scene.imageUrl}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              ...getKenBurnsStyle(frame, section.start, section.end, sceneIndex),
-            }}
-          />
-        )}
+        <Img
+          src={scene.imageUrl}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            ...getKenBurnsStyle(frame, section.start, section.end, sceneIndex),
+          }}
+        />
       </AbsoluteFill>
 
       {/* Bottom gradient overlay */}
@@ -735,10 +724,9 @@ const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
 interface Props {
   wordIndex: number;
   lang: 'ko' | 'en';
-  mode: 'image' | 'clip';
 }
 
-export const StoryShort: React.FC<Props> = ({ wordIndex, lang, mode }) => {
+export const StoryShort: React.FC<Props> = ({ wordIndex, lang }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const data = STORY_WORDS[wordIndex];
@@ -827,7 +815,6 @@ export const StoryShort: React.FC<Props> = ({ wordIndex, lang, mode }) => {
             frame={frame}
             scene={scene}
             section={SECTIONS[sectionKey]}
-            mode={mode}
             sceneIndex={i}
             lang={lang}
           />
