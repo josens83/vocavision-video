@@ -220,6 +220,8 @@ on:
           - InstaCard-defendant
           - StoryShort-ephemeral-ko
           - StoryShort-ephemeral-en
+          - StoryShort-hesitation-ko
+          - StoryShort-hesitation-en
 
 jobs:
   render:
