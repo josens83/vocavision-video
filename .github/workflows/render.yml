@@ -227,6 +227,8 @@ on:
           - StoryShort-ephemeral-en
           - StoryShort-hesitation-ko
           - StoryShort-hesitation-en
+          - StoryShort-resilience-ko
+          - StoryShort-resilience-en
 
 jobs:
   render:

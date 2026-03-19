@@ -104,4 +104,45 @@ export const STORY_WORDS: StoryWord[] = [
     closingLine: "Hesitation costs more than the risk itself.",
     closingLineKo: "망설임의 대가는 위험보다 크다.",
   },
+  {
+    id: "resilience",
+    word: "resilience",
+    pronunciation: "/rɪˈzɪliəns/",
+    meaning: "the ability to recover from difficult situations",
+    meaningKo: "힘든 상황에서 다시 회복하는 능력",
+    hook: "Some people break. Others get back up.",
+    hookKo: "어떤 사람은 부러진다. 어떤 사람은 다시 선다.",
+    scenes: [
+      {
+        description: "Sitting in the rain. Everything has fallen apart.",
+        descriptionKo: "빗속에 주저앉는다. 모든 것이 무너졌다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene1.jpeg",
+      },
+      {
+        description: "There was a time — when everything felt light.",
+        descriptionKo: "한때는 — 모든 것이 가벼웠던 때가 있었다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene2.jpeg",
+      },
+      {
+        description: "The night no one sees. The tears no one knows.",
+        descriptionKo: "아무도 모르는 밤. 아무도 모르는 눈물.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene3.jpeg",
+      },
+      {
+        description: "One knee on the ground. The decision to stand.",
+        descriptionKo: "한쪽 무릎을 딛고. 일어서기로 한다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene4.jpeg",
+      },
+      {
+        description: "The rain has stopped. One step forward.",
+        descriptionKo: "비가 그쳤다. 한 걸음 내딛는다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene5.jpeg",
+      },
+    ],
+    emotion: "Falling is not failure. Staying down is.",
+    emotionKo: "쓰러지는 것이 실패가 아니다. 일어나지 않는 것이 실패다.",
+    symbolOverlay: undefined,
+    closingLine: "Resilience is not about never breaking. It's about always rising.",
+    closingLineKo: "회복탄력성은 부러지지 않는 것이 아니다. 언제나 다시 일어서는 것이다.",
+  },
 ];
