@@ -565,7 +565,7 @@ const WordReveal: React.FC<{
 };
 
 // ─── CTA ───
-const CTA: React.FC<{ frame: number; section: Section }> = ({ frame, section }) => {
+const CTA: React.FC<{ frame: number; section: Section; lang: 'ko' | 'en' }> = ({ frame, section, lang }) => {
   const fadeIn = interpolate(frame, [section.start, section.start + 20], [0, 1], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
@@ -593,19 +593,35 @@ const CTA: React.FC<{ frame: number; section: Section }> = ({ frame, section }) 
         zIndex: 1,
       }}>
         {/* 메인 메시지 */}
-        <div style={{
-          fontSize: 52,
-          fontWeight: 800,
-          color: '#FFFFFF',
-          fontFamily: koreanFontFamily,
-          textAlign: 'center',
-          lineHeight: 1.4,
-          wordBreak: 'keep-all',
-          textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-        }}>
-          더 많은 단어가<br />
-          <span style={{ color: '#06B6D4' }}>느껴지고 싶다면?</span>
-        </div>
+        {lang === 'ko' ? (
+          <div style={{
+            fontSize: 52,
+            fontWeight: 800,
+            color: '#FFFFFF',
+            fontFamily: koreanFontFamily,
+            textAlign: 'center',
+            lineHeight: 1.4,
+            wordBreak: 'keep-all',
+            textShadow: '0 4px 20px rgba(0,0,0,0.5)',
+          }}>
+            더 많은 단어가<br />
+            <span style={{ color: '#06B6D4' }}>느껴지고 싶다면?</span>
+          </div>
+        ) : (
+          <div style={{
+            fontSize: 52,
+            fontWeight: 800,
+            color: '#FFFFFF',
+            fontFamily: englishFontFamily,
+            textAlign: 'center',
+            lineHeight: 1.4,
+            wordBreak: 'keep-all',
+            textShadow: '0 4px 20px rgba(0,0,0,0.5)',
+          }}>
+            Want to feel<br />
+            <span style={{ color: '#06B6D4' }}>more words?</span>
+          </div>
+        )}
 
         {/* 구독 버튼 스타일 */}
         <div style={{
@@ -618,25 +634,25 @@ const CTA: React.FC<{ frame: number; section: Section }> = ({ frame, section }) 
             fontSize: 44,
             fontWeight: 700,
             color: '#FFFFFF',
-            fontFamily: koreanFontFamily,
+            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
             backgroundColor: '#FF0000',
             padding: '16px 48px',
             borderRadius: 50,
             textShadow: '0 2px 8px rgba(0,0,0,0.3)',
           }}>
-            구독 👍 좋아요
+            {lang === 'ko' ? '구독 👍 좋아요' : 'Subscribe 👍 Like'}
           </div>
 
           <div style={{
             fontSize: 34,
             fontWeight: 500,
             color: '#94A3B8',
-            fontFamily: koreanFontFamily,
+            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
             textAlign: 'center',
             lineHeight: 1.5,
             wordBreak: 'keep-all',
           }}>
-            매일 새로운 단어를 느껴보세요
+            {lang === 'ko' ? '매일 새로운 단어를 느껴보세요' : 'Feel a new word every day'}
           </div>
         </div>
       </div>
@@ -645,7 +661,7 @@ const CTA: React.FC<{ frame: number; section: Section }> = ({ frame, section }) 
 };
 
 // ─── Outro ───
-const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }) => {
+const Outro: React.FC<{ frame: number; section: Section; lang: 'ko' | 'en' }> = ({ frame, section, lang }) => {
   const { fps } = useVideoConfig();
 
   const fadeIn = interpolate(frame, [section.start, section.start + 20], [0, 1], {
@@ -710,11 +726,11 @@ const Outro: React.FC<{ frame: number; section: Section }> = ({ frame, section }
           fontSize: 32,
           fontWeight: 400,
           color: '#64748B',
-          fontFamily: koreanFontFamily,
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
           letterSpacing: 1,
           marginTop: 8,
         }}>
-          AI 영단어 학습 플랫폼
+          {lang === 'ko' ? 'AI 영단어 학습 플랫폼' : 'AI Vocabulary Learning Platform'}
         </div>
       </div>
     </AbsoluteFill>
@@ -847,10 +863,10 @@ export const StoryShort: React.FC<Props> = ({ wordIndex, lang }) => {
       />
 
       {/* CTA: 47-51초 */}
-      <CTA frame={frame} section={SECTIONS.cta} />
+      <CTA frame={frame} section={SECTIONS.cta} lang={lang} />
 
       {/* OUTRO: 51-55초 */}
-      <Outro frame={frame} section={SECTIONS.outro} />
+      <Outro frame={frame} section={SECTIONS.outro} lang={lang} />
     </AbsoluteFill>
   );
 };
