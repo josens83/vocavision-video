@@ -2426,6 +2426,61 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[42].words[2],
         }}
       />
+
+      {/* set-044: forensic, alibi, surveillance (법률·범죄 영어 Part 2) */}
+      <Composition
+        id="WordShort-set-044"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 43,
+        }}
+      />
+
+      <Still
+        id="InstaCard-set044-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['forensic', 'alibi', 'surveillance'],
+          title: '🔍 법률 영단어 Part 2!',
+          subtitle: '🔬 법의학 → 📍 알리바이 → 👁️ 감시',
+        }}
+      />
+
+      <Still
+        id="InstaCard-forensic"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[43].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-alibi"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[43].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-surveillance"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[43].words[2],
+        }}
+      />
     </>
   );
 };

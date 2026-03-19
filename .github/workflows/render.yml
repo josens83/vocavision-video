@@ -218,6 +218,11 @@ on:
           - InstaCard-verdict
           - InstaCard-testimony
           - InstaCard-defendant
+          - WordShort-set-044
+          - InstaCard-set044-cover
+          - InstaCard-forensic
+          - InstaCard-alibi
+          - InstaCard-surveillance
           - StoryShort-ephemeral-ko
           - StoryShort-ephemeral-en
           - StoryShort-hesitation-ko
