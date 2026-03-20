@@ -145,4 +145,45 @@ export const STORY_WORDS: StoryWord[] = [
     closingLine: "Resilience is not about never breaking. It's about always rising.",
     closingLineKo: "회복탄력성은 부러지지 않는 것이 아니다. 언제나 다시 일어서는 것이다.",
   },
+  {
+    id: "nostalgia",
+    word: "nostalgia",
+    pronunciation: "/nɒˈstældʒə/",
+    meaning: "a longing for the happiness of the past",
+    meaningKo: "과거의 행복을 그리워하는 마음",
+    hook: "This smell takes you back 20 years.",
+    hookKo: "이 냄새가 20년 전으로 데려간다.",
+    scenes: [
+      {
+        description: "A familiar smell. Suddenly, she is somewhere else.",
+        descriptionKo: "익숙한 냄새. 순간, 그녀는 다른 곳에 있다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/nostalgia/nostalgia-scene1.jpeg",
+      },
+      {
+        description: "Mother's kitchen. The warmest place she ever knew.",
+        descriptionKo: "엄마의 부엌. 세상에서 가장 따뜻한 곳.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/nostalgia/nostalgia-scene2.jpeg",
+      },
+      {
+        description: "Her hands were always gentle. Always safe.",
+        descriptionKo: "엄마의 손은 언제나 부드러웠다. 언제나 안전했다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/nostalgia/nostalgia-scene3.jpeg",
+      },
+      {
+        description: "Leaving home. Mother waving from the gate.",
+        descriptionKo: "집을 떠나던 날. 대문에서 손 흔들던 엄마.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/nostalgia/nostalgia-scene4.jpeg",
+      },
+      {
+        description: "The same soup. But it never tastes quite the same.",
+        descriptionKo: "같은 국. 그런데 맛이 같지 않다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/nostalgia/nostalgia-scene5.jpeg",
+      },
+    ],
+    emotion: "You don't miss a place. You miss a feeling.",
+    emotionKo: "그리운 건 장소가 아니다. 그 느낌이다.",
+    symbolOverlay: undefined,
+    closingLine: "Nostalgia is love for something you can't return to.",
+    closingLineKo: "향수는 돌아갈 수 없는 것에 대한 사랑이다.",
+  },
 ];

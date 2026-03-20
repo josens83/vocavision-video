@@ -229,6 +229,8 @@ on:
           - StoryShort-hesitation-en
           - StoryShort-resilience-ko
           - StoryShort-resilience-en
+          - StoryShort-nostalgia-ko
+          - StoryShort-nostalgia-en
 
 jobs:
   render:
