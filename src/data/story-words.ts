@@ -126,12 +126,12 @@ export const STORY_WORDS: StoryWord[] = [
       {
         description: "The night no one sees. The tears no one knows.",
         descriptionKo: "아무도 모르는 밤. 아무도 모르는 눈물.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene3.jpeg",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene4.jpeg",
       },
       {
         description: "One knee on the ground. The decision to stand.",
         descriptionKo: "한쪽 무릎을 딛고. 일어서기로 한다.",
-        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene4.jpeg",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/resilience/resilience-scene3.jpeg",
       },
       {
         description: "The rain has stopped. One step forward.",
