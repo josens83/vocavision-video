@@ -231,6 +231,8 @@ on:
           - StoryShort-resilience-en
           - StoryShort-nostalgia-ko
           - StoryShort-nostalgia-en
+          - StoryShort-solitude-ko
+          - StoryShort-solitude-en
 
 jobs:
   render:
