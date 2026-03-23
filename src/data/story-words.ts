@@ -186,4 +186,45 @@ export const STORY_WORDS: StoryWord[] = [
     closingLine: "Nostalgia is love for something you can't return to.",
     closingLineKo: "향수는 돌아갈 수 없는 것에 대한 사랑이다.",
   },
+  {
+    id: "solitude",
+    word: "solitude",
+    pronunciation: "/ˈsɒlɪtjuːd/",
+    meaning: "the state of being alone, especially peacefully",
+    meaningKo: "혼자 있는 상태, 특히 평온하게",
+    hook: "Being alone and being lonely are different things.",
+    hookKo: "혼자인 것과 외로운 것은 다르다.",
+    scenes: [
+      {
+        description: "Empty streets. Just him and the quiet city.",
+        descriptionKo: "텅 빈 거리. 그와 조용한 도시만.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/solitude/solitude-scene1.jpeg",
+      },
+      {
+        description: "Surrounded by everyone. Feeling nothing.",
+        descriptionKo: "모든 사람에게 둘러싸여. 아무것도 느끼지 못한다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/solitude/solitude-scene2.jpeg",
+      },
+      {
+        description: "A book. A coffee. No one to perform for.",
+        descriptionKo: "책 한 권. 커피 한 잔. 보여줄 사람이 없다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/solitude/solitude-scene3.jpeg",
+      },
+      {
+        description: "Just him and the sky. That is enough.",
+        descriptionKo: "그와 하늘만. 그것으로 충분하다.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/solitude/solitude-scene4.jpeg",
+      },
+      {
+        description: "Walking home alone — lighter than ever.",
+        descriptionKo: "혼자 집으로 걷는다 — 그 어느 때보다 가볍게.",
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/solitude/solitude-scene5.jpeg",
+      },
+    ],
+    emotion: "Sometimes the person you need most is yourself.",
+    emotionKo: "때로는 가장 필요한 사람이 자기 자신이다.",
+    symbolOverlay: undefined,
+    closingLine: "Solitude is not emptiness. It is where you find yourself.",
+    closingLineKo: "고독은 공허함이 아니다. 자신을 찾는 곳이다.",
+  },
 ];
