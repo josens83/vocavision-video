@@ -4,7 +4,8 @@ import { COLORS, FONTS } from '../styles';
 
 export const CallToAction: React.FC<{
   startFrame?: number;
-}> = ({ startFrame = 0 }) => {
+  language?: 'KO' | 'EN';
+}> = ({ startFrame = 0, language = 'KO' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -34,11 +35,11 @@ export const CallToAction: React.FC<{
           fontSize: 56,
           fontWeight: 700,
           color: 'white',
-          fontFamily: FONTS.korean,
+          fontFamily: language === 'EN' ? FONTS.english : FONTS.korean,
           textAlign: 'center',
         }}
       >
-        지금 무료로 시작하세요
+        {language === 'EN' ? 'Start learning for free' : '지금 무료로 시작하세요'}
       </div>
 
       <div
@@ -53,17 +54,17 @@ export const CallToAction: React.FC<{
           fontFamily: FONTS.english,
         }}
       >
-        vocavision.kr
+        {language === 'EN' ? 'vocavision.app' : 'vocavision.kr'}
       </div>
 
       <div
         style={{
           fontSize: 30,
           color: COLORS.gray,
-          fontFamily: FONTS.korean,
+          fontFamily: language === 'EN' ? FONTS.english : FONTS.korean,
         }}
       >
-        수능 L1(기초) 880개+ 단어 무료 학습
+        {language === 'EN' ? 'SAT Starter — 900+ words free' : '수능 L1(기초) 880개+ 단어 무료 학습'}
       </div>
     </div>
   );

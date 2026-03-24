@@ -1,6 +1,7 @@
 export interface WordData {
   word: string;
   meaning: string;           // 한국어 뜻
+  definitionEn?: string;     // EN 버전용 영어 정의 (없으면 meaning 사용)
   pronunciation: string;     // IPA 발음기호
   koreanPron: string;        // 한국어 발음
   stress: string;            // 강세 음절
