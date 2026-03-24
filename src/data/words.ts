@@ -1884,6 +1884,7 @@ export const WORD_SETS: WordSet[] = [
       {
         word: "encore",
         meaning: "앙코르; 또 다시",
+        definitionEn: "an additional performance at the end of a concert, demanded by the audience",
         pronunciation: "/ˈɒŋkɔːr/",
         koreanPron: "앙코르 (강세: 앙)",
         stress: "앙",
@@ -1896,6 +1897,7 @@ export const WORD_SETS: WordSet[] = [
       {
         word: "choreography",
         meaning: "안무; 무용 구성",
+        definitionEn: "the art of designing and arranging dance movements for a performance",
         pronunciation: "/ˌkɒriˈɒɡrəfi/",
         koreanPron: "코리오그래피 (강세: 오)",
         stress: "오",
@@ -1908,6 +1910,7 @@ export const WORD_SETS: WordSet[] = [
       {
         word: "phenomenon",
         meaning: "현상; 경이로운 존재",
+        definitionEn: "a remarkable event, person, or thing that attracts widespread attention",
         pronunciation: "/fɪˈnɒmɪnən/",
         koreanPron: "피나머넌 (강세: 나)",
         stress: "나",
