@@ -2553,6 +2553,61 @@ export const RemotionRoot: React.FC = () => {
           word: WORD_SETS[43].words[2],
         }}
       />
+
+      {/* set-047: encore, choreography, phenomenon (K-POP 콘서트 영어) */}
+      <Composition
+        id="WordShort-set-047"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 44,
+        }}
+      />
+
+      <Still
+        id="InstaCard-set047-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['encore', 'choreography', 'phenomenon'],
+          title: '🎤 K-POP 콘서트 영단어!',
+          subtitle: '🎤 앙코르 → 💃 안무 → 🌍 현상',
+        }}
+      />
+
+      <Still
+        id="InstaCard-encore"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[44].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-choreography"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[44].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-phenomenon"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[44].words[2],
+        }}
+      />
     </>
   );
 };
