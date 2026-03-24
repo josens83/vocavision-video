@@ -10,7 +10,7 @@ import {
 import { COLORS, FONTS } from '../styles';
 import { WordData } from '../data/words';
 
-export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
+export const WordSection: React.FC<{ word: WordData; language?: 'KO' | 'EN' }> = ({ word, language = 'KO' }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -75,32 +75,36 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
       </div>
 
       {/* 발음 — 한국어 (한국어 폰트) */}
-      <div
-        style={{
-          opacity: pronOpacity,
-          fontSize: 32,
-          color: COLORS.accent,
-          fontFamily: FONTS.korean,
-          marginTop: 6,
-          textAlign: 'center',
-        }}
-      >
-        {word.koreanPron}
-      </div>
+      {language === 'KO' && (
+        <div
+          style={{
+            opacity: pronOpacity,
+            fontSize: 32,
+            color: COLORS.accent,
+            fontFamily: FONTS.korean,
+            marginTop: 6,
+            textAlign: 'center',
+          }}
+        >
+          {word.koreanPron}
+        </div>
+      )}
 
       {/* 뜻 */}
       <div
         style={{
           opacity: meaningOpacity,
-          fontSize: 56,
+          fontSize: language === 'EN' ? 44 : 56,
           fontWeight: 600,
           color: COLORS.gold,
-          fontFamily: FONTS.korean,
+          fontFamily: language === 'EN' ? FONTS.english : FONTS.korean,
           marginTop: 28,
           textAlign: 'center',
+          maxWidth: 920,
+          lineHeight: 1.3,
         }}
       >
-        {word.meaning}
+        {language === 'EN' ? word.definitionEn || word.meaning : word.meaning}
       </div>
 
       {/* Rhyme 섹션 */}
@@ -143,18 +147,20 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
         </div>
 
         {/* 한국어 캡션 */}
-        <div
-          style={{
-            fontSize: 28,
-            color: '#9CA3AF',
-            fontFamily: FONTS.korean,
-            marginTop: 10,
-            textAlign: 'center',
-            lineHeight: 1.4,
-          }}
-        >
-          {word.rhymeCaptionKo}
-        </div>
+        {language === 'KO' && (
+          <div
+            style={{
+              fontSize: 28,
+              color: '#9CA3AF',
+              fontFamily: FONTS.korean,
+              marginTop: 10,
+              textAlign: 'center',
+              lineHeight: 1.4,
+            }}
+          >
+            {word.rhymeCaptionKo}
+          </div>
+        )}
       </div>
 
       {/* Rhyme 이미지 */}
@@ -202,18 +208,20 @@ export const WordSection: React.FC<{ word: WordData }> = ({ word }) => {
         >
           "{word.example}"
         </div>
-        <div
-          style={{
-            fontSize: 28,
-            color: COLORS.gray,
-            fontFamily: FONTS.korean,
-            textAlign: 'center',
-            maxWidth: 920,
-            lineHeight: 1.5,
-          }}
-        >
-          {word.exampleKo}
-        </div>
+        {language === 'KO' && (
+          <div
+            style={{
+              fontSize: 28,
+              color: COLORS.gray,
+              fontFamily: FONTS.korean,
+              textAlign: 'center',
+              maxWidth: 920,
+              lineHeight: 1.5,
+            }}
+          >
+            {word.exampleKo}
+          </div>
+        )}
       </div>
     </AbsoluteFill>
   );

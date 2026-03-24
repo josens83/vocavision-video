@@ -219,6 +219,7 @@ on:
           - InstaCard-testimony
           - InstaCard-defendant
           - WordShort-set-044
+          - WordShort-set-044-en
           - InstaCard-set044-cover
           - InstaCard-forensic
           - InstaCard-alibi
@@ -234,6 +235,7 @@ on:
           - StoryShort-solitude-ko
           - StoryShort-solitude-en
           - WordShort-set-047
+          - WordShort-set-047-en
           - InstaCard-set047-cover
           - InstaCard-encore
           - InstaCard-choreography

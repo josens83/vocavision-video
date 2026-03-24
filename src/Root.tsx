@@ -2512,6 +2512,20 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
+      {/* set-044 EN: forensic, alibi, surveillance */}
+      <Composition
+        id="WordShort-set-044-en"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 43,
+          language: 'EN' as const,
+        }}
+      />
+
       <Still
         id="InstaCard-set044-cover"
         component={InstaCompareCard}
@@ -2564,6 +2578,20 @@ export const RemotionRoot: React.FC = () => {
         height={VIDEO.PORTRAIT.height}
         defaultProps={{
           setIndex: 44,
+        }}
+      />
+
+      {/* set-047 EN: encore, choreography, phenomenon */}
+      <Composition
+        id="WordShort-set-047-en"
+        component={WordShort}
+        durationInFrames={1650}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 44,
+          language: 'EN' as const,
         }}
       />
 

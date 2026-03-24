@@ -9,7 +9,7 @@ import { COLORS, FONTS } from '../styles';
 import { WORD_SETS } from '../data/words';
 
 // 인트로 컴포넌트 (애니메이션 포함)
-const IntroSection: React.FC = () => {
+const IntroSection: React.FC<{ language: 'KO' | 'EN' }> = ({ language }) => {
   const frame = useCurrentFrame();
 
   const logoOpacity = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
@@ -73,7 +73,7 @@ const IntroSection: React.FC = () => {
           marginTop: 50,
         }}
       >
-        오늘의 영단어
+        {language === 'EN' ? '3 Words Today' : '오늘의 영단어'}
       </div>
 
       {/* 4행: URL (하단 고정) */}
@@ -87,7 +87,7 @@ const IntroSection: React.FC = () => {
           fontFamily: FONTS.english,
         }}
       >
-        vocavision.kr
+        {language === 'EN' ? 'vocavision.app' : 'vocavision.kr'}
       </div>
     </AbsoluteFill>
   );
@@ -95,7 +95,8 @@ const IntroSection: React.FC = () => {
 
 export const WordShort: React.FC<{
   setIndex?: number;
-}> = ({ setIndex = 0 }) => {
+  language?: 'KO' | 'EN';
+}> = ({ setIndex = 0, language = 'KO' }) => {
   const wordSet = WORD_SETS[setIndex] || WORD_SETS[0];
   const [word1, word2, word3] = wordSet.words;
 
@@ -109,12 +110,12 @@ export const WordShort: React.FC<{
 
       {/* ===== 인트로 (0~3초, 0~90프레임) ===== */}
       <Sequence from={0} durationInFrames={90}>
-        <IntroSection />
+        <IntroSection language={language} />
       </Sequence>
 
       {/* ===== 단어 1 (3~18초, 90~540프레임) ===== */}
       <Sequence from={90} durationInFrames={450}>
-        <WordSection word={word1} />
+        <WordSection word={word1} language={language} />
       </Sequence>
 
       {/* ===== 전환 1 (18~20초, 540~600프레임) ===== */}
@@ -124,7 +125,7 @@ export const WordShort: React.FC<{
 
       {/* ===== 단어 2 (20~35초, 600~1050프레임) ===== */}
       <Sequence from={600} durationInFrames={450}>
-        <WordSection word={word2} />
+        <WordSection word={word2} language={language} />
       </Sequence>
 
       {/* ===== 전환 2 (35~37초, 1050~1110프레임) ===== */}
@@ -134,7 +135,7 @@ export const WordShort: React.FC<{
 
       {/* ===== 단어 3 (37~52초, 1110~1560프레임) ===== */}
       <Sequence from={1110} durationInFrames={450}>
-        <WordSection word={word3} />
+        <WordSection word={word3} language={language} />
       </Sequence>
 
       {/* ===== 아웃트로/CTA (52~55초, 1560~1650프레임) ===== */}
@@ -145,7 +146,7 @@ export const WordShort: React.FC<{
             alignItems: 'center',
           }}
         >
-          <CallToAction />
+          <CallToAction language={language} />
         </AbsoluteFill>
       </Sequence>
     </AbsoluteFill>
