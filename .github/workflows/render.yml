@@ -233,6 +233,11 @@ on:
           - StoryShort-nostalgia-en
           - StoryShort-solitude-ko
           - StoryShort-solitude-en
+          - WordShort-set-047
+          - InstaCard-set047-cover
+          - InstaCard-encore
+          - InstaCard-choreography
+          - InstaCard-phenomenon
 
 jobs:
   render:
