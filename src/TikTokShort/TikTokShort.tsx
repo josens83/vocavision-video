@@ -6,6 +6,8 @@ import {
   Img,
   interpolate,
   spring,
+  Audio,
+  staticFile,
 } from 'remotion';
 import { TIKTOK_WORDS, TikTokWord } from '../data/tiktok-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
@@ -67,6 +69,7 @@ const HookScreen: React.FC<{ frame: number; hookLine1: string; hookLine2: string
       backgroundColor: '#0A0A0A',
       opacity: fadeIn * fadeOut,
       padding: '0 50px',
+      paddingBottom: 300,
     }}>
       <div style={{
         fontSize: 72,
@@ -142,12 +145,12 @@ const SceneView: React.FC<{
       <AbsoluteFill style={{
         justifyContent: 'flex-end',
         alignItems: 'center',
-        paddingBottom: 300,
+        paddingBottom: 480,
         paddingLeft: 40,
         paddingRight: 40,
       }}>
         <div style={{
-          fontSize: 52,
+          fontSize: 60,
           fontWeight: 800,
           color: '#FFFFFF',
           textAlign: 'center',
@@ -185,6 +188,7 @@ const BridgeScreen: React.FC<{ frame: number; text: string; section: Section }> 
       backgroundColor: '#0A0A0A',
       opacity: fadeIn * fadeOut,
       padding: '0 60px',
+      paddingBottom: 300,
     }}>
       <div style={{
         fontSize: 56,
@@ -239,6 +243,7 @@ const WordCard: React.FC<{
       alignItems: 'center',
       backgroundColor: '#0A0A0A',
       opacity: fadeOut,
+      paddingBottom: 300,
     }}>
       {/* Word */}
       <div style={{
@@ -287,11 +292,18 @@ const WordCard: React.FC<{
 };
 
 // ─── CTA ───
-const CTAScreen: React.FC<{ frame: number; text: string; section: Section }> = ({
-  frame, text, section,
+const CTAScreen: React.FC<{ frame: number; text: string; section: Section; lang: 'ko' | 'en' }> = ({
+  frame, text, section, lang,
 }) => {
+  const { fps } = useVideoConfig();
   const fadeIn = interpolate(frame, [section.start, section.start + 10], [0, 1], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
+  const brandScale = spring({
+    frame: Math.max(0, frame - section.start - 12),
+    fps,
+    config: { damping: 14, stiffness: 100 },
   });
 
   if (frame < section.start || frame >= section.end) return null;
@@ -303,12 +315,14 @@ const CTAScreen: React.FC<{ frame: number; text: string; section: Section }> = (
       backgroundColor: '#0A0A0A',
       opacity: fadeIn,
       padding: '0 50px',
+      paddingBottom: 200,
     }}>
+      {/* CTA 텍스트 */}
       <div style={{
         fontSize: 48,
         fontWeight: 700,
         color: '#FFD700',
-        fontFamily: koreanFontFamily,
+        fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
         textAlign: 'center',
         lineHeight: 1.5,
         wordBreak: 'keep-all',
@@ -316,17 +330,39 @@ const CTAScreen: React.FC<{ frame: number; text: string; section: Section }> = (
         {text}
       </div>
 
-      {/* VocaVision branding — 하단 작게 */}
+      {/* VocaVision AI 브랜딩 — 강조 */}
       <div style={{
-        position: 'absolute',
-        bottom: 200,
-        fontSize: 28,
-        fontWeight: 600,
-        color: '#64748B',
-        fontFamily: englishFontFamily,
-        letterSpacing: 1,
+        marginTop: 50,
+        transform: `scale(${brandScale})`,
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 12,
       }}>
-        vocavision.app
+        <div style={{
+          fontSize: 48,
+          fontWeight: 900,
+          color: '#06B6D4',
+          fontFamily: englishFontFamily,
+          letterSpacing: 2,
+          textShadow: '0 0 30px rgba(6,182,212,0.4)',
+        }}>
+          VocaVision AI
+        </div>
+        <div style={{
+          fontSize: 36,
+          fontWeight: 700,
+          color: '#FFFFFF',
+          fontFamily: englishFontFamily,
+          letterSpacing: 1,
+          backgroundColor: 'rgba(6,182,212,0.15)',
+          border: '2px solid rgba(6,182,212,0.3)',
+          borderRadius: 12,
+          padding: '8px 28px',
+        }}>
+          vocavision.app
+        </div>
       </div>
     </AbsoluteFill>
   );
@@ -345,6 +381,42 @@ export const TikTokShort: React.FC<Props> = ({ wordIndex, lang = 'ko' }) => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0A0A0A' }}>
+      {/* BGM */}
+      <Audio
+        src={staticFile('audio/bgm-short.mp3')}
+        volume={(f) => {
+          if (f < 15) return interpolate(f, [0, 15], [0, 0.25], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+          if (f > 540) return interpolate(f, [540, 600], [0.25, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+          return 0.25;
+        }}
+      />
+
+      {/* 상단 좌측 워터마크 — 전체 영상에 항상 표시 */}
+      <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
+        <div style={{
+          position: 'absolute',
+          top: 60,
+          left: 30,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 6,
+          backgroundColor: 'rgba(0,0,0,0.3)',
+          padding: '8px 16px',
+          borderRadius: 16,
+        }}>
+          <span style={{
+            fontSize: 26,
+            fontWeight: 900,
+            color: '#06B6D4',
+            letterSpacing: 1,
+            fontFamily: englishFontFamily,
+            textShadow: '0 2px 6px rgba(0,0,0,0.5)',
+          }}>
+            VocaVision AI
+          </span>
+        </div>
+      </AbsoluteFill>
+
       {/* HOOK: 0-1초 */}
       <HookScreen
         frame={frame}
@@ -390,6 +462,7 @@ export const TikTokShort: React.FC<Props> = ({ wordIndex, lang = 'ko' }) => {
         frame={frame}
         text={lang === 'ko' ? data.ctaKo : data.ctaEn}
         section={SECTIONS.cta}
+        lang={lang}
       />
     </AbsoluteFill>
   );
