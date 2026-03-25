@@ -8,6 +8,7 @@ import { InstaCTACard } from './components/InstaCTACard';
 import { VIDEO } from './styles';
 import { WORD_SETS } from './data/words';
 import { StoryShort } from './StoryShort/StoryShort';
+import { TikTokShort } from './TikTokShort/TikTokShort';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -2388,6 +2389,26 @@ export const RemotionRoot: React.FC = () => {
           wordIndex: 4,
           lang: 'en' as const,
         }}
+      />
+
+      {/* === TikTokShort (20초) === */}
+      <Composition
+        id="TikTokShort-procrastination-ko"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 0, lang: 'ko' as const }}
+      />
+      <Composition
+        id="TikTokShort-procrastination-en"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 0, lang: 'en' as const }}
       />
 
       {/* set-042: surge, embargo, renewable (에너지·유가 영어 Part 2) */}
