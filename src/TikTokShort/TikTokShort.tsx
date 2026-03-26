@@ -6,8 +6,6 @@ import {
   Img,
   interpolate,
   spring,
-  Audio,
-  staticFile,
 } from 'remotion';
 import { TIKTOK_WORDS, TikTokWord } from '../data/tiktok-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
@@ -381,16 +379,6 @@ export const TikTokShort: React.FC<Props> = ({ wordIndex, lang = 'ko' }) => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0A0A0A' }}>
-      {/* BGM */}
-      <Audio
-        src={staticFile('audio/bgm-short.mp3')}
-        volume={(f) => {
-          if (f < 15) return interpolate(f, [0, 15], [0, 0.25], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-          if (f > 540) return interpolate(f, [540, 600], [0.25, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-          return 0.25;
-        }}
-      />
-
       {/* 상단 좌측 워터마크 — 전체 영상에 항상 표시 */}
       <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
         <div style={{
