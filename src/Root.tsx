@@ -43,7 +43,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-001"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -56,7 +56,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-002"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -69,7 +69,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-003"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -82,7 +82,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-004"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -95,7 +95,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-005"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -108,7 +108,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-006"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -121,7 +121,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-007"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -134,7 +134,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-008"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -147,7 +147,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-009"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -160,7 +160,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-010"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -173,7 +173,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-011"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -186,7 +186,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-012"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -199,7 +199,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-013"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -212,7 +212,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-014"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -225,7 +225,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-015"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -238,7 +238,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-016"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -251,7 +251,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-017"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -264,7 +264,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-018"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -277,7 +277,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-019"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -290,7 +290,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-020"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -303,7 +303,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-021"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -316,7 +316,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-022"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -329,7 +329,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1192,7 +1192,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-023"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1249,7 +1249,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-024"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1306,7 +1306,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-025"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1363,7 +1363,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-026"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1420,7 +1420,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-027"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1477,7 +1477,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-028"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1534,7 +1534,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-029"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1591,7 +1591,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-030"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1648,7 +1648,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-031"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1705,7 +1705,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-032"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1762,7 +1762,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-033"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1819,7 +1819,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-034"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1876,7 +1876,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-035"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1933,7 +1933,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-036"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -1990,7 +1990,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-037"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2047,7 +2047,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-038"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2104,7 +2104,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-039"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2161,7 +2161,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-040"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2218,7 +2218,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-041"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2451,7 +2451,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-042"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2505,7 +2505,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-043"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2560,7 +2560,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-044"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2573,7 +2573,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-044-en"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2629,7 +2629,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-047"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2642,7 +2642,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="WordShort-set-047-en"
         component={WordShort}
-        durationInFrames={1650}
+        durationInFrames={1560}
         fps={VIDEO.PORTRAIT.fps}
         width={VIDEO.PORTRAIT.width}
         height={VIDEO.PORTRAIT.height}
@@ -2691,6 +2691,61 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{
           word: WORD_SETS[44].words[2],
+        }}
+      />
+
+      {/* set-046: symptom, diagnosis, chronic (의학·건강 영어 Part 1) */}
+      <Composition
+        id="WordShort-set-046"
+        component={WordShort}
+        durationInFrames={1560}
+        fps={VIDEO.PORTRAIT.fps}
+        width={VIDEO.PORTRAIT.width}
+        height={VIDEO.PORTRAIT.height}
+        defaultProps={{
+          setIndex: 45,
+        }}
+      />
+
+      <Still
+        id="InstaCard-set046-cover"
+        component={InstaCompareCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          words: ['symptom', 'diagnosis', 'chronic'],
+          title: '🏥 의학 영단어 Part 1!',
+          subtitle: '🤒 증상 → 🔍 진단 → ⏰ 만성',
+        }}
+      />
+
+      <Still
+        id="InstaCard-symptom"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[45].words[0],
+        }}
+      />
+
+      <Still
+        id="InstaCard-diagnosis"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[45].words[1],
+        }}
+      />
+
+      <Still
+        id="InstaCard-chronic"
+        component={InstaWordCard}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          word: WORD_SETS[45].words[2],
         }}
       />
     </>

@@ -246,6 +246,11 @@ on:
           - InstaCard-encore
           - InstaCard-choreography
           - InstaCard-phenomenon
+          - WordShort-set-046
+          - InstaCard-set046-cover
+          - InstaCard-symptom
+          - InstaCard-diagnosis
+          - InstaCard-chronic
 
 jobs:
   render:
