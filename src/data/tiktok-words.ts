@@ -54,4 +54,36 @@ export const TIKTOK_WORDS: TikTokWord[] = [
     ctaKo: "이 단어 알고 있었어? 👇",
     ctaEn: "Did you know this word? 👇",
   },
+  {
+    id: "cognitive-dissonance",
+    word: "cognitive dissonance",
+    pronunciation: "/ˌkɒɡnɪtɪv ˈdɪsənəns/",
+    meaningKo: "자기 행동과 신념이 충돌할 때 느끼는 불편함",
+    meaningEn: "the discomfort of acting against your own beliefs",
+    hookLine1Ko: "다이어트 한다면서",
+    hookLine2Ko: "치킨 시키는 이유",
+    hookLine1En: "Starting a diet",
+    hookLine2En: "Ordering chicken",
+    scenes: [
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/cognitive%20dissonance/cognitive%20dissonance-scene1.jpeg",
+        captionKo: "\"오늘부터 진짜 한다\"",
+        captionEn: "\"Today is THE day.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/cognitive%20dissonance/cognitive%20dissonance-scene2.jpeg",
+        captionKo: "\"근데 오늘 좀 피곤하긴 해...\"",
+        captionEn: "\"But maybe... not today.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/cognitive%20dissonance/cognitive%20dissonance-scene3.jpeg",
+        captionKo: "\"내일부터 하면 되지 뭐\"",
+        captionEn: "\"I deserve this.\"",
+      },
+    ],
+    bridgeKo: "뇌가 자기를\n속이는 거야",
+    bridgeEn: "Your brain is\nlying to you.",
+    ctaKo: "이거 나인데? 하는 사람 ✋",
+    ctaEn: "Your brain does this too? 👇",
+  },
 ];
