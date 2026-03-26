@@ -12,13 +12,13 @@ import { koreanFontFamily, englishFontFamily } from '../fonts';
 
 // 20초 = 600프레임 (30fps)
 const SECTIONS = {
-  hook:    { start: 0,   end: 30 },   // 0-1초    굵은 텍스트 Hook
-  scene1:  { start: 30,  end: 120 },  // 1-4초    장면 1
-  scene2:  { start: 120, end: 210 },  // 4-7초    장면 2
-  scene3:  { start: 210, end: 300 },  // 7-10초   장면 3
-  bridge:  { start: 300, end: 360 },  // 10-12초  "이걸 영어로 뭐라 하는지 알아?"
-  word:    { start: 360, end: 510 },  // 12-17초  단어 카드
-  cta:     { start: 510, end: 600 },  // 17-20초  CTA
+  hook:    { start: 0,   end: 60 },   // 0-2초
+  scene1:  { start: 60,  end: 150 },  // 2-5초
+  scene2:  { start: 150, end: 240 },  // 5-8초
+  scene3:  { start: 240, end: 330 },  // 8-11초
+  bridge:  { start: 330, end: 390 },  // 11-13초
+  word:    { start: 390, end: 510 },  // 13-17초
+  cta:     { start: 510, end: 600 },  // 17-20초
 };
 
 type Section = { start: number; end: number };

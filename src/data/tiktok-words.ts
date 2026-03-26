@@ -104,13 +104,13 @@ export const TIKTOK_WORDS: TikTokWord[] = [
       },
       {
         imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/vindication/vindication-scene2.jpeg",
-        captionKo: "...",
-        captionEn: "...",
+        captionKo: "아무도 보지 않는 곳에서 계속했다",
+        captionEn: "He kept going when no one watched.",
       },
       {
         imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/vindication/vindication-scene3.jpeg",
-        captionKo: "...",
-        captionEn: "...",
+        captionKo: "그리고 증명했다",
+        captionEn: "And then he proved it.",
       },
     ],
     bridgeKo: "그 순간을 설명하는\n단어가 있어",
