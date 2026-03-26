@@ -2428,6 +2428,24 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ wordIndex: 1, lang: 'en' as const }}
       />
+      <Composition
+        id="TikTokShort-vindication-ko"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 2, lang: 'ko' as const }}
+      />
+      <Composition
+        id="TikTokShort-vindication-en"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 2, lang: 'en' as const }}
+      />
 
       {/* set-042: surge, embargo, renewable (에너지·유가 영어 Part 2) */}
       <Composition

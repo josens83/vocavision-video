@@ -86,4 +86,36 @@ export const TIKTOK_WORDS: TikTokWord[] = [
     ctaKo: "이거 나인데? 하는 사람 ✋",
     ctaEn: "Your brain does this too? 👇",
   },
+  {
+    id: "vindication",
+    word: "vindication",
+    pronunciation: "/ˌvɪndɪˈkeɪʃən/",
+    meaningKo: "자신이 옳았음이 증명되는 순간",
+    meaningEn: "the proof that you were right all along",
+    hookLine1Ko: "다들 안 된다고 했는데",
+    hookLine2Ko: "해냈을 때",
+    hookLine1En: "They all said no",
+    hookLine2En: "He proved them wrong",
+    scenes: [
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/vindication/vindication-scene1.jpeg",
+        captionKo: "\"현실적으로 생각해\"",
+        captionEn: "\"Be realistic.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/vindication/vindication-scene2.jpeg",
+        captionKo: "...",
+        captionEn: "...",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/vindication/vindication-scene3.jpeg",
+        captionKo: "...",
+        captionEn: "...",
+      },
+    ],
+    bridgeKo: "그 순간을 설명하는\n단어가 있어",
+    bridgeEn: "There's a word\nfor that moment.",
+    ctaKo: "이런 순간 겪어본 사람? 👇",
+    ctaEn: "Ever felt this? 👇",
+  },
 ];
