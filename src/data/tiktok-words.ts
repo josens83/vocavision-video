@@ -118,4 +118,36 @@ export const TIKTOK_WORDS: TikTokWord[] = [
     ctaKo: "이런 순간 겪어본 사람? 👇",
     ctaEn: "Ever felt this? 👇",
   },
+  {
+    id: "complacency",
+    word: "complacency",
+    pronunciation: "/kəmˈpleɪsənsi/",
+    meaningKo: "현재에 안주하는 위험한 만족감",
+    meaningEn: "a dangerous satisfaction with how things are",
+    hookLine1Ko: "지금 편한 게",
+    hookLine2Ko: "제일 위험하다",
+    hookLine1En: "Feeling comfortable?",
+    hookLine2En: "That's the danger.",
+    scenes: [
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/complacency/complacency-scene1.jpeg",
+        captionKo: "\"딱히 불만은 없어\"",
+        captionEn: "\"Nothing to complain about.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/complacency/complacency-scene2.jpeg",
+        captionKo: "근데 뭔가 달라진 건 없어",
+        captionEn: "But nothing has changed either.",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/complacency/complacency-scene3.jpeg",
+        captionKo: "1년 전이랑 똑같은 나",
+        captionEn: "Same person as a year ago.",
+      },
+    ],
+    bridgeKo: "이 상태를 설명하는\n단어가 있어",
+    bridgeEn: "There's a word\nfor this state.",
+    ctaKo: "너도 지금 이 상태? 👇",
+    ctaEn: "Are you stuck too? 👇",
+  },
 ];
