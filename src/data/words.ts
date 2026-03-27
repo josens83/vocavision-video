@@ -10,12 +10,18 @@ export interface WordData {
   rhymeImageUrl: string;     // Supabase rhyme 이미지 URL
   example: string;           // 예문 (영어)
   exampleKo: string;         // 예문 (한국어 해석)
+  memoryLine?: string;       // 기억 문장 EN (숏츠용)
+  memoryLineKo?: string;     // 기억 문장 KR
+  recallLine?: string;       // 회상 문장 EN (숏츠용)
+  recallLineKo?: string;     // 회상 문장 KR
 }
 
 // 3단어 세트 인터페이스
 export interface WordSet {
   id: string;                // 예: "set-001"
   title: string;             // 예: "오늘의 영단어"
+  hookLine?: string;         // 세트별 Hook 문구 KR
+  hookLineEn?: string;       // 세트별 Hook 문구 EN
   words: [WordData, WordData, WordData];  // 정확히 3개
 }
 
@@ -1925,10 +1931,13 @@ export const WORD_SETS: WordSet[] = [
   {
     id: "set-046",
     title: "오늘의 영단어",
+    hookLine: "symptom, diagnosis, chronic 헷갈리면 이걸로 끝",
+    hookLineEn: "3 medical words you keep confusing — solved",
     words: [
       {
         word: "symptom",
         meaning: "증상; 징후, 조짐",
+        definitionEn: "a sign that something is wrong, especially in the body or in society",
         pronunciation: "/ˈsɪmptəm/",
         koreanPron: "심텀 (강세: 심)",
         stress: "심",
@@ -1937,10 +1946,15 @@ export const WORD_SETS: WordSet[] = [
         rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/symptom-rhyme-1774353566985.png",
         example: "Economic inequality is often described as a symptom of deeper structural problems within a society, rather than a problem that can be solved through simple policy changes alone.",
         exampleKo: "경제적 불평등은 종종 단순한 정책 변화만으로 해결될 수 있는 문제라기보다 사회 내 더 깊은 구조적 문제의 징후로 묘사된다.",
+        memoryLine: "The signal your body sends before the real problem shows",
+        memoryLineKo: "병 자체가 아니라 먼저 보이는 신호",
+        recallLine: "Fever is not a disease — it's a symptom",
+        recallLineKo: "열은 disease가 아니라 symptom",
       },
       {
         word: "diagnosis",
         meaning: "진단; 분석, 판단",
+        definitionEn: "the identification of a disease or problem by examining the symptoms",
         pronunciation: "/ˌdaɪəɡˈnoʊsɪs/",
         koreanPron: "다이어그노시스 (강세: 노)",
         stress: "노",
@@ -1949,10 +1963,15 @@ export const WORD_SETS: WordSet[] = [
         rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/diagnosis-rhyme-1774520339872.png",
         example: "A proper diagnosis requires not only medical expertise but also careful listening — understanding the patient's history, lifestyle, and emotional state is often as important as analyzing test results.",
         exampleKo: "적절한 진단에는 의학적 전문 지식뿐 아니라 주의 깊은 경청도 필요하다 — 환자의 병력, 생활 방식, 감정 상태를 이해하는 것이 검사 결과를 분석하는 것만큼 중요할 때가 많다.",
+        memoryLine: "Gathering clues to reach the final conclusion",
+        memoryLineKo: "단서들을 모아 결론을 내리는 것",
+        recallLine: "After finding symptoms → diagnosis comes next",
+        recallLineKo: "증상 발견 → 결론 내리면 diagnosis",
       },
       {
         word: "chronic",
         meaning: "만성의; 고질적인",
+        definitionEn: "lasting for a long time, especially of an illness or problem",
         pronunciation: "/ˈkrɒnɪk/",
         koreanPron: "크로닉 (강세: 크로)",
         stress: "크로",
@@ -1961,6 +1980,10 @@ export const WORD_SETS: WordSet[] = [
         rhymeImageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/visuals/chronic-rhyme-1774520667645.png",
         example: "The distinction between chronic and acute conditions is fundamental in medicine: while acute illnesses develop suddenly and require immediate treatment, chronic conditions persist over long periods and demand sustained lifestyle changes.",
         exampleKo: "만성 질환과 급성 질환의 구별은 의학에서 근본적이다: 급성 질환이 갑자기 발생하여 즉각적인 치료를 필요로 하는 반면, 만성 질환은 오랜 기간 지속되며 지속적인 생활 방식 변화를 요구한다.",
+        memoryLine: "Not brief, but lasting — a condition that stays with time",
+        memoryLineKo: "잠깐이 아니라 오래 계속되는 상태",
+        recallLine: "Sudden = acute, long-lasting = chronic",
+        recallLineKo: "갑자기 아프면 acute, 오래 가면 chronic",
       },
     ],
   },
