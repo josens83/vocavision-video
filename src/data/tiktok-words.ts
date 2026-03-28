@@ -150,4 +150,36 @@ export const TIKTOK_WORDS: TikTokWord[] = [
     ctaKo: "너도 지금 이 상태? 👇",
     ctaEn: "Are you stuck too? 👇",
   },
+  {
+    id: "ambivalence",
+    word: "ambivalence",
+    pronunciation: "/æmˈbɪvələns/",
+    meaningKo: "상반된 감정이 동시에 존재하는 상태",
+    meaningEn: "having two opposite feelings at the same time",
+    hookLine1Ko: "좋아하는데 싫은 감정",
+    hookLine2Ko: "이거 뭐냐",
+    hookLine1En: "Missing someone",
+    hookLine2En: "but not wanting to see them",
+    scenes: [
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ambivalence/ambivalence-scene1.jpeg",
+        captionKo: "\"연락하고 싶은데... 하기 싫어\"",
+        captionEn: "\"I want to call... but I don't.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ambivalence/ambivalence-scene2.jpeg",
+        captionKo: "\"읽었는데 답을 못 하겠어\"",
+        captionEn: "\"I read it. Can't reply.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/ambivalence/ambivalence-scene3.jpeg",
+        captionKo: "보고 싶은데 만나면 피곤해",
+        captionEn: "I miss you. But seeing you drains me.",
+      },
+    ],
+    bridgeKo: "이 감정, 영어로\n딱 한 단어야",
+    bridgeEn: "There's one word\nfor this feeling.",
+    ctaKo: "이런 적 있어? 댓글 👇",
+    ctaEn: "Ever felt this? 👇",
+  },
 ];
