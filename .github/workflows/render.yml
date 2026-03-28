@@ -246,6 +246,8 @@ on:
           - TikTokShort-ambivalence-en
           - TikTokShort-sycophant-ko
           - TikTokShort-sycophant-en
+          - MemeShort-procrastination-ko
+          - MemeShort-procrastination-en
           - WordShort-set-047
           - WordShort-set-047-en
           - InstaCard-set047-cover
