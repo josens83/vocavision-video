@@ -182,4 +182,36 @@ export const TIKTOK_WORDS: TikTokWord[] = [
     ctaKo: "이런 적 있어? 댓글 👇",
     ctaEn: "Ever felt this? 👇",
   },
+  {
+    id: "sycophant",
+    word: "sycophant",
+    pronunciation: "/ˈsɪkəfænt/",
+    meaningKo: "권력자에게 아첨하는 사람",
+    meaningEn: "a person who flatters powerful people to gain advantage",
+    hookLine1Ko: "회사에 꼭 한 명",
+    hookLine2Ko: "있는 사람",
+    hookLine1En: "Every office",
+    hookLine2En: "has this person",
+    scenes: [
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/sycophant/sycophant-scene1.jpeg",
+        captionKo: "\"열심히 하는 척... 아닌데\"",
+        captionEn: "\"The hardest worker... or so it seems.\"",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/sycophant/sycophant-scene2.jpeg",
+        captionKo: "뒤에서는 완전히 다른 얼굴",
+        captionEn: "But behind closed doors...",
+      },
+      {
+        imageUrl: "https://sfqzlrsvrszdlusntdky.supabase.co/storage/v1/object/public/word-images/stories/sycophant/sycophant-scene3.png",
+        captionKo: "진짜 일한 사람은 아무도 몰라",
+        captionEn: "The real work was never noticed.",
+      },
+    ],
+    bridgeKo: "이런 사람을 부르는\n단어가 있어",
+    bridgeEn: "There's a word\nfor this person.",
+    ctaKo: "너 주변에도 있어? 👇",
+    ctaEn: "Know someone like this? 👇",
+  },
 ];
