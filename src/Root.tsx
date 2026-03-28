@@ -9,6 +9,7 @@ import { VIDEO } from './styles';
 import { WORD_SETS } from './data/words';
 import { StoryShort } from './StoryShort/StoryShort';
 import { TikTokShort } from './TikTokShort/TikTokShort';
+import { MemeShort } from './MemeShort/MemeShort';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -2389,6 +2390,26 @@ export const RemotionRoot: React.FC = () => {
           wordIndex: 4,
           lang: 'en' as const,
         }}
+      />
+
+      {/* === MemeShort (25초) === */}
+      <Composition
+        id="MemeShort-procrastination-ko"
+        component={MemeShort}
+        durationInFrames={750}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 0, lang: 'ko' as const }}
+      />
+      <Composition
+        id="MemeShort-procrastination-en"
+        component={MemeShort}
+        durationInFrames={750}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 0, lang: 'en' as const }}
       />
 
       {/* === TikTokShort (20초) === */}
