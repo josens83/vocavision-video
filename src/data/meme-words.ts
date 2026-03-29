@@ -12,7 +12,7 @@ export interface MemeWord {
   meaningKo: string;
   hook: string;
   hookKo: string;
-  scenes: [MemeScene, MemeScene];  // 정확히 2개
+  scenes: [MemeScene, MemeScene] | [MemeScene, MemeScene, MemeScene];  // 2개 또는 3개
   tagline: string;
   taglineKo: string;
   cta: string;
