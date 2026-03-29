@@ -6,62 +6,28 @@ import {
   Img,
   interpolate,
   spring,
-  Audio,
-  staticFile,
 } from 'remotion';
 import { MEME_WORDS } from '../data/meme-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
 
-// 25초 = 750프레임 (30fps)
-const SECTIONS = {
-  hook:   { start: 0,   end: 45  },  // 0-1.5초
+type Section = { start: number; end: number };
+
+const SECTIONS_2 = {
   scene1: { start: 45,  end: 210 },  // 1.5-7초
   scene2: { start: 210, end: 390 },  // 7-13초
+  scene3: null,
   word:   { start: 390, end: 600 },  // 13-20초
   cta:    { start: 600, end: 690 },  // 20-23초
   outro:  { start: 690, end: 750 },  // 23-25초
 };
 
-type Section = { start: number; end: number };
-
-// ─── HookText ───
-const HookText: React.FC<{
-  frame: number;
-  text: string;
-  section: Section;
-  lang: 'ko' | 'en';
-}> = ({ frame, text, section, lang }) => {
-  const fadeIn = interpolate(frame, [section.start, section.start + 10], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const fadeOut = interpolate(frame, [section.end - 8, section.end], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  if (frame < section.start || frame >= section.end) return null;
-
-  return (
-    <AbsoluteFill style={{
-      justifyContent: 'center',
-      alignItems: 'center',
-      opacity: fadeIn * fadeOut,
-      padding: '0 50px',
-    }}>
-      <div style={{
-        fontSize: 72,
-        fontWeight: 900,
-        color: '#FFFFFF',
-        textAlign: 'center',
-        fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
-        textShadow: '0 4px 30px rgba(0,0,0,0.9)',
-        lineHeight: 1.3,
-        wordBreak: 'keep-all',
-        overflowWrap: 'break-word',
-      }}>
-        {text}
-      </div>
-    </AbsoluteFill>
-  );
+const SECTIONS_3 = {
+  scene1: { start: 45,  end: 195 },  // 1.5-6.5초
+  scene2: { start: 195, end: 345 },  // 6.5-11.5초
+  scene3: { start: 345, end: 495 },  // 11.5-16.5초
+  word:   { start: 495, end: 660 },  // 16.5-22초
+  cta:    { start: 660, end: 735 },  // 22-24.5초
+  outro:  { start: 735, end: 795 },  // 24.5-26.5초
 };
 
 // ─── MemeScene ───
@@ -96,14 +62,14 @@ const MemeSceneView: React.FC<{
       <AbsoluteFill style={{
         justifyContent: 'flex-end',
         alignItems: 'center',
-        paddingBottom: 380,
+        paddingBottom: 460,
         paddingLeft: 40,
         paddingRight: 40,
       }}>
         {lang === 'ko' ? (
           <>
             <div style={{
-              fontSize: 52,
+              fontSize: 58,
               fontWeight: 800,
               color: '#FFFFFF',
               textAlign: 'center',
@@ -111,6 +77,8 @@ const MemeSceneView: React.FC<{
               textShadow: '0 4px 30px rgba(0,0,0,0.9)',
               lineHeight: 1.4,
               wordBreak: 'keep-all',
+              overflowWrap: 'break-word',
+              maxWidth: 900,
               opacity: captionProgress,
               transform: `translateY(${(1 - captionProgress) * 20}px)`,
             }}>
@@ -124,6 +92,7 @@ const MemeSceneView: React.FC<{
               fontFamily: englishFontFamily,
               lineHeight: 1.4,
               marginTop: 10,
+              maxWidth: 900,
               opacity: captionProgress,
               transform: `translateY(${(1 - captionProgress) * 20}px)`,
             }}>
@@ -132,13 +101,16 @@ const MemeSceneView: React.FC<{
           </>
         ) : (
           <div style={{
-            fontSize: 52,
+            fontSize: 58,
             fontWeight: 800,
             color: '#FFFFFF',
             textAlign: 'center',
             fontFamily: englishFontFamily,
             textShadow: '0 4px 30px rgba(0,0,0,0.9)',
             lineHeight: 1.4,
+            maxWidth: 900,
+            wordBreak: 'keep-all',
+            overflowWrap: 'break-word',
             opacity: captionProgress,
             transform: `translateY(${(1 - captionProgress) * 20}px)`,
           }}>
@@ -347,21 +319,13 @@ export const MemeShort: React.FC<Props> = ({ wordIndex, lang }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const data = MEME_WORDS[wordIndex];
-  const hookText = lang === 'ko' ? data.hookKo : data.hook;
+
+  const is3Scenes = data.scenes.length === 3;
+  const SCENE_SECTIONS = is3Scenes ? SECTIONS_3 : SECTIONS_2;
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0F172A' }}>
       <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)' }} />
-
-      {/* BGM */}
-      <Audio
-        src={staticFile('audio/bgm-short.mp3')}
-        volume={(f) => {
-          if (f < 20) return interpolate(f, [0, 20], [0, 0.25], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-          if (f > 700) return interpolate(f, [700, 750], [0.25, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-          return 0.25;
-        }}
-      />
 
       {/* Watermark */}
       <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
@@ -379,12 +343,55 @@ export const MemeShort: React.FC<Props> = ({ wordIndex, lang }) => {
         </div>
       </AbsoluteFill>
 
-      <HookText frame={frame} text={hookText} section={SECTIONS.hook} lang={lang} />
-      <MemeSceneView frame={frame} imageUrl={data.scenes[0].imageUrl} description={data.scenes[0].description} descriptionKo={data.scenes[0].descriptionKo} section={SECTIONS.scene1} lang={lang} />
-      <MemeSceneView frame={frame} imageUrl={data.scenes[1].imageUrl} description={data.scenes[1].description} descriptionKo={data.scenes[1].descriptionKo} section={SECTIONS.scene2} lang={lang} />
-      <WordReveal frame={frame} fps={fps} word={data.word} pronunciation={data.pronunciation} meaning={data.meaning} meaningKo={data.meaningKo} section={SECTIONS.word} lang={lang} />
-      <MemeCTA frame={frame} tagline={data.tagline} taglineKo={data.taglineKo} cta={data.cta} ctaKo={data.ctaKo} section={SECTIONS.cta} lang={lang} />
-      <OutroSection frame={frame} section={SECTIONS.outro} lang={lang} />
+      {/* 상단 고정 제목 바 — 영상 전체 구간에 항상 표시 */}
+      <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 90 }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: '#06B6D4',
+          paddingTop: 60,
+          paddingBottom: 24,
+          paddingLeft: 40,
+          paddingRight: 40,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <div style={{
+            fontSize: 52,
+            fontWeight: 900,
+            color: '#FFFFFF',
+            textAlign: 'center',
+            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+            lineHeight: 1.25,
+            wordBreak: 'keep-all',
+            overflowWrap: 'break-word',
+            textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+          }}>
+            {lang === 'ko' ? data.hookKo : data.hook}
+          </div>
+        </div>
+      </AbsoluteFill>
+
+      {/* Scenes */}
+      <MemeSceneView frame={frame} imageUrl={data.scenes[0].imageUrl} description={data.scenes[0].description} descriptionKo={data.scenes[0].descriptionKo} section={SCENE_SECTIONS.scene1} lang={lang} />
+      <MemeSceneView frame={frame} imageUrl={data.scenes[1].imageUrl} description={data.scenes[1].description} descriptionKo={data.scenes[1].descriptionKo} section={SCENE_SECTIONS.scene2} lang={lang} />
+      {is3Scenes && data.scenes[2] && SCENE_SECTIONS.scene3 && (
+        <MemeSceneView
+          frame={frame}
+          imageUrl={data.scenes[2].imageUrl}
+          description={data.scenes[2].description}
+          descriptionKo={data.scenes[2].descriptionKo}
+          section={SCENE_SECTIONS.scene3}
+          lang={lang}
+        />
+      )}
+
+      <WordReveal frame={frame} fps={fps} word={data.word} pronunciation={data.pronunciation} meaning={data.meaning} meaningKo={data.meaningKo} section={SCENE_SECTIONS.word} lang={lang} />
+      <MemeCTA frame={frame} tagline={data.tagline} taglineKo={data.taglineKo} cta={data.cta} ctaKo={data.ctaKo} section={SCENE_SECTIONS.cta} lang={lang} />
+      <OutroSection frame={frame} section={SCENE_SECTIONS.outro} lang={lang} />
     </AbsoluteFill>
   );
 };
