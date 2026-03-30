@@ -10,15 +10,14 @@ import {
 import { MEME_WORDS } from '../data/meme-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
 
-// 11.5초 = 345프레임 (30fps)
+// 25초 = 750프레임 (30fps)
 const SECTIONS = {
-  hook:   { start: 0,   end: 27  },
-  scene1: { start: 27,  end: 99  },
-  scene2: { start: 99,  end: 174 },
-  scene3: { start: 174, end: 249 },
-  word:   { start: 249, end: 309 },
-  cta:    { start: 309, end: 327 },
-  outro:  { start: 327, end: 345 },
+  scene1: { start: 0,   end: 75  },   // 0-2.5초
+  scene2: { start: 75,  end: 225 },   // 2.5-7.5초
+  scene3: { start: 225, end: 375 },   // 7.5-12.5초
+  word:   { start: 375, end: 555 },   // 12.5-18.5초
+  cta:    { start: 555, end: 660 },   // 18.5-22초
+  outro:  { start: 660, end: 750 },   // 22-25초
 };
 
 type Section = { start: number; end: number };
@@ -108,36 +107,37 @@ const TopBar: React.FC<{
     <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 90 }}>
       <div style={{
         position: 'absolute',
-        top: 0,
+        top: 160,          // 워터마크(VocaVision AI pill) 아래
         left: 0,
         right: 0,
         backgroundColor: '#06B6D4',
-        paddingTop: 56,
-        paddingBottom: 20,
+        paddingTop: 16,
+        paddingBottom: 16,
         paddingLeft: 36,
         paddingRight: 36,
       }}>
-        {/* 한국어 훅 라인 */}
+        {/* 단어 — 먼저, 크게, 강조 */}
         <div style={{
-          fontSize: 44,
+          fontSize: 52,
           fontWeight: 900,
           color: '#FFFFFF',
-          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
-          lineHeight: 1.2,
-          wordBreak: 'keep-all',
+          fontFamily: englishFontFamily,
+          letterSpacing: 3,
+          textShadow: '0 2px 12px rgba(0,0,0,0.3)',
         }}>
-          {topLine}
+          {word.toUpperCase()}
         </div>
-        {/* 단어 */}
+        {/* 한국어 훅 라인 — 아래, 작게 */}
         <div style={{
           fontSize: 36,
           fontWeight: 700,
-          color: 'rgba(255,255,255,0.85)',
-          fontFamily: englishFontFamily,
-          letterSpacing: 2,
+          color: 'rgba(255,255,255,0.9)',
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+          lineHeight: 1.3,
+          wordBreak: 'keep-all',
           marginTop: 4,
         }}>
-          {word.toUpperCase()}
+          {topLine}
         </div>
       </div>
     </AbsoluteFill>
@@ -164,7 +164,7 @@ const SceneCaption: React.FC<{
     <AbsoluteFill style={{
       justifyContent: 'flex-end',
       alignItems: 'center',
-      paddingBottom: 120,
+      paddingBottom: 380,
       paddingLeft: 40,
       paddingRight: 40,
       zIndex: 10,
@@ -233,7 +233,7 @@ const WordOverlay: React.FC<{
       <AbsoluteFill style={{
         justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: 100,
+        paddingBottom: 300,
         flexDirection: 'column',
         gap: 0,
       }}>
@@ -306,7 +306,7 @@ const CTAOverlay: React.FC<{
     <AbsoluteFill style={{
       justifyContent: 'flex-end',
       alignItems: 'center',
-      paddingBottom: 160,
+      paddingBottom: 400,
       zIndex: 25,
       opacity: fadeIn,
     }}>
@@ -345,18 +345,33 @@ const MiniEndMark: React.FC<{
     <AbsoluteFill style={{
       justifyContent: 'flex-end',
       alignItems: 'center',
-      paddingBottom: 60,
+      paddingBottom: 300,
       zIndex: 30,
       opacity,
     }}>
       <div style={{
-        fontSize: 24,
-        fontWeight: 600,
-        color: '#94A3B8',
-        fontFamily: englishFontFamily,
-        letterSpacing: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 8,
       }}>
-        VocaVision AI · {lang === 'ko' ? 'vocavision.kr' : 'vocavision.app'}
+        <div style={{
+          fontSize: 40,
+          fontWeight: 800,
+          color: '#06B6D4',
+          fontFamily: englishFontFamily,
+          letterSpacing: 2,
+        }}>
+          VocaVision AI
+        </div>
+        <div style={{
+          fontSize: 32,
+          fontWeight: 600,
+          color: '#94A3B8',
+          fontFamily: englishFontFamily,
+        }}>
+          {lang === 'ko' ? 'vocavision.kr' : 'vocavision.app'}
+        </div>
       </div>
     </AbsoluteFill>
   );
@@ -367,7 +382,7 @@ const Watermark: React.FC<{ lang: 'ko' | 'en' }> = ({ lang }) => (
   <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
     <div style={{
       position: 'absolute',
-      top: 200,  // 상단 바 아래
+      top: 60,   // 최상단
       left: 36,
       backgroundColor: 'rgba(0,0,0,0.4)',
       padding: '6px 14px',

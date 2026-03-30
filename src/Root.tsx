@@ -2392,11 +2392,11 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* === MemeShort (11.5초) === */}
+      {/* === MemeShort (25초) === */}
       <Composition
         id="MemeShort-procrastination-ko"
         component={MemeShort}
-        durationInFrames={345}
+        durationInFrames={750}
         fps={30}
         width={1080}
         height={1920}
@@ -2405,7 +2405,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="MemeShort-procrastination-en"
         component={MemeShort}
-        durationInFrames={345}
+        durationInFrames={750}
         fps={30}
         width={1080}
         height={1920}
