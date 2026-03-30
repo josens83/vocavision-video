@@ -359,7 +359,7 @@ const CTAScreen: React.FC<{ frame: number; text: string; section: Section; lang:
           borderRadius: 12,
           padding: '8px 28px',
         }}>
-          vocavision.app
+          {lang === 'ko' ? 'vocavision.kr' : 'vocavision.app'}
         </div>
       </div>
     </AbsoluteFill>
