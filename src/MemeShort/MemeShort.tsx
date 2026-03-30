@@ -10,304 +10,381 @@ import {
 import { MEME_WORDS } from '../data/meme-words';
 import { koreanFontFamily, englishFontFamily } from '../fonts';
 
+// 11.5초 = 345프레임 (30fps)
+const SECTIONS = {
+  hook:   { start: 0,   end: 27  },
+  scene1: { start: 27,  end: 99  },
+  scene2: { start: 99,  end: 174 },
+  scene3: { start: 174, end: 249 },
+  word:   { start: 249, end: 309 },
+  cta:    { start: 309, end: 327 },
+  outro:  { start: 327, end: 345 },
+};
+
 type Section = { start: number; end: number };
 
-const SECTIONS_2 = {
-  scene1: { start: 45,  end: 210 },  // 1.5-7초
-  scene2: { start: 210, end: 390 },  // 7-13초
-  scene3: null,
-  word:   { start: 390, end: 600 },  // 13-20초
-  cta:    { start: 600, end: 690 },  // 20-23초
-  outro:  { start: 690, end: 750 },  // 23-25초
-};
-
-const SECTIONS_3 = {
-  scene1: { start: 45,  end: 195 },  // 1.5-6.5초
-  scene2: { start: 195, end: 345 },  // 6.5-11.5초
-  scene3: { start: 345, end: 495 },  // 11.5-16.5초
-  word:   { start: 495, end: 660 },  // 16.5-22초
-  cta:    { start: 660, end: 735 },  // 22-24.5초
-  outro:  { start: 735, end: 795 },  // 24.5-26.5초
-};
-
-// ─── MemeScene ───
-const MemeSceneView: React.FC<{
-  frame: number;
+// ─── 1:1 이미지 + blur 배경 레이어 ───
+const ImageWithBlurBg: React.FC<{
   imageUrl: string;
-  description: string;
-  descriptionKo: string;
+  frame: number;
   section: Section;
-  lang: 'ko' | 'en';
-}> = ({ frame, imageUrl, description, descriptionKo, section, lang }) => {
+  freezeFrom?: number;  // 이 프레임부터 freeze (word 구간에서 scene3 유지)
+}> = ({ imageUrl, frame, section, freezeFrom }) => {
   const fadeIn = interpolate(frame, [section.start, section.start + 9], [0, 1], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
-  const fadeOut = interpolate(frame, [section.end - 9, section.end], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const captionProgress = interpolate(frame, [section.start + 10, section.start + 25], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
+  const fadeOut = freezeFrom
+    ? 1  // freeze면 fade out 없음
+    : interpolate(frame, [section.end - 9, section.end], [1, 0], {
+        extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+      });
 
-  if (frame < section.start || frame >= section.end) return null;
+  if (frame < section.start) return null;
+  if (!freezeFrom && frame >= section.end) return null;
+
+  // 미세 줌인 모션
+  const zoom = interpolate(frame, [section.start, section.end], [1.0, 1.05], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
   return (
     <AbsoluteFill style={{ opacity: fadeIn * fadeOut }}>
+      {/* 배경 레이어: cover + blur + 어둡게 */}
       <AbsoluteFill style={{ overflow: 'hidden' }}>
-        <Img src={imageUrl} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Img
+          src={imageUrl}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            filter: 'blur(20px) brightness(0.4)',
+            transform: 'scale(1.1)',
+          }}
+        />
       </AbsoluteFill>
-      <AbsoluteFill style={{
-        background: 'linear-gradient(to bottom, transparent 40%, rgba(15,23,42,0.85) 100%)',
-      }} />
-      <AbsoluteFill style={{
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        paddingBottom: 460,
-        paddingLeft: 40,
-        paddingRight: 40,
-      }}>
-        {lang === 'ko' ? (
-          <>
-            <div style={{
-              fontSize: 58,
-              fontWeight: 800,
-              color: '#FFFFFF',
-              textAlign: 'center',
-              fontFamily: koreanFontFamily,
-              textShadow: '0 4px 30px rgba(0,0,0,0.9)',
-              lineHeight: 1.4,
-              wordBreak: 'keep-all',
-              overflowWrap: 'break-word',
-              maxWidth: 900,
-              opacity: captionProgress,
-              transform: `translateY(${(1 - captionProgress) * 20}px)`,
-            }}>
-              {descriptionKo}
-            </div>
-            <div style={{
-              fontSize: 34,
-              fontWeight: 500,
-              color: '#94A3B8',
-              textAlign: 'center',
-              fontFamily: englishFontFamily,
-              lineHeight: 1.4,
-              marginTop: 10,
-              maxWidth: 900,
-              opacity: captionProgress,
-              transform: `translateY(${(1 - captionProgress) * 20}px)`,
-            }}>
-              {description}
-            </div>
-          </>
-        ) : (
-          <div style={{
-            fontSize: 58,
-            fontWeight: 800,
-            color: '#FFFFFF',
-            textAlign: 'center',
-            fontFamily: englishFontFamily,
-            textShadow: '0 4px 30px rgba(0,0,0,0.9)',
-            lineHeight: 1.4,
-            maxWidth: 900,
-            wordBreak: 'keep-all',
-            overflowWrap: 'break-word',
-            opacity: captionProgress,
-            transform: `translateY(${(1 - captionProgress) * 20}px)`,
-          }}>
-            {description}
-          </div>
-        )}
+
+      {/* 전경 레이어: 1:1 contain, 중앙 배치 */}
+      <AbsoluteFill
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <div style={{
+          width: 1080,
+          height: 1080,
+          overflow: 'hidden',
+          transform: `scale(${zoom})`,
+        }}>
+          <Img
+            src={imageUrl}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
       </AbsoluteFill>
+
+      {/* 하단 그라데이션 (자막 가독성) */}
+      <AbsoluteFill
+        style={{
+          background: 'linear-gradient(to bottom, transparent 55%, rgba(15,23,42,0.9) 100%)',
+        }}
+      />
     </AbsoluteFill>
   );
 };
 
-// ─── WordReveal ───
-const WordReveal: React.FC<{
+// ─── 상단 고정 제목 바 ───
+const TopBar: React.FC<{
+  word: string;
+  topLine: string;
+  lang: 'ko' | 'en';
+}> = ({ word, topLine, lang }) => {
+  return (
+    <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 90 }}>
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: '#06B6D4',
+        paddingTop: 56,
+        paddingBottom: 20,
+        paddingLeft: 36,
+        paddingRight: 36,
+      }}>
+        {/* 한국어 훅 라인 */}
+        <div style={{
+          fontSize: 44,
+          fontWeight: 900,
+          color: '#FFFFFF',
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+          lineHeight: 1.2,
+          wordBreak: 'keep-all',
+        }}>
+          {topLine}
+        </div>
+        {/* 단어 */}
+        <div style={{
+          fontSize: 36,
+          fontWeight: 700,
+          color: 'rgba(255,255,255,0.85)',
+          fontFamily: englishFontFamily,
+          letterSpacing: 2,
+          marginTop: 4,
+        }}>
+          {word.toUpperCase()}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ─── 장면 자막 ───
+const SceneCaption: React.FC<{
+  frame: number;
+  text: string;
+  section: Section;
+  lang: 'ko' | 'en';
+}> = ({ frame, text, section, lang }) => {
+  const progress = interpolate(frame, [section.start + 8, section.start + 20], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+  const fadeOut = interpolate(frame, [section.end - 8, section.end], [1, 0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
+  if (frame < section.start || frame >= section.end) return null;
+
+  return (
+    <AbsoluteFill style={{
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      paddingBottom: 120,
+      paddingLeft: 40,
+      paddingRight: 40,
+      zIndex: 10,
+    }}>
+      <div style={{
+        fontSize: 58,
+        fontWeight: 900,
+        color: '#FFFFFF',
+        textAlign: 'center',
+        fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+        textShadow: '0 4px 30px rgba(0,0,0,0.95)',
+        lineHeight: 1.35,
+        wordBreak: 'keep-all',
+        maxWidth: 900,
+        opacity: progress * fadeOut,
+        transform: `translateY(${(1 - progress) * 16}px)`,
+      }}>
+        {text}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ─── 단어 + 뜻 오버레이 (scene3 freeze 위에) ───
+const WordOverlay: React.FC<{
   frame: number;
   fps: number;
   word: string;
-  pronunciation: string;
   meaning: string;
   meaningKo: string;
+  meaningLock: string;
   section: Section;
   lang: 'ko' | 'en';
-}> = ({ frame, fps, word, pronunciation, meaning, meaningKo, section, lang }) => {
+}> = ({ frame, fps, word, meaning, meaningKo, meaningLock, section, lang }) => {
   if (frame < section.start || frame >= section.end) return null;
 
   const localFrame = frame - section.start;
-  const wordScale = spring({ frame: localFrame, fps, config: { damping: 12, stiffness: 120, mass: 0.8 } });
-  const pronOpacity = interpolate(localFrame, [8, 20], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const meaningOpacity = interpolate(localFrame, [15, 30], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const fadeOut = interpolate(frame, [section.end - 10, section.end], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+
+  // 배경 어둡게
+  const dimProgress = interpolate(localFrame, [0, 15], [0, 0.6], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
+  const wordScale = spring({
+    frame: localFrame,
+    fps,
+    config: { damping: 14, stiffness: 130, mass: 0.7 },
+  });
+
+  const meaningOpacity = interpolate(localFrame, [12, 25], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
+  const lockOpacity = interpolate(localFrame, [30, 45], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
   return (
-    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', paddingBottom: 200, opacity: fadeOut }}>
-      <div style={{
-        fontSize: 80,
-        fontWeight: 900,
-        color: '#06B6D4',
-        fontFamily: englishFontFamily,
-        textAlign: 'center',
-        textShadow: '0 4px 30px rgba(6,182,212,0.5)',
-        transform: `scale(${wordScale})`,
-        letterSpacing: 2,
+    <AbsoluteFill style={{ zIndex: 20 }}>
+      {/* 어둡게 오버레이 */}
+      <AbsoluteFill style={{
+        backgroundColor: `rgba(15,23,42,${dimProgress})`,
+      }} />
+
+      {/* 단어 + 뜻 */}
+      <AbsoluteFill style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 100,
+        flexDirection: 'column',
+        gap: 0,
       }}>
-        {word.toUpperCase()}
-      </div>
-      <div style={{
-        fontSize: 34,
-        fontWeight: 300,
-        color: '#94A3B8',
-        fontFamily: englishFontFamily,
-        textAlign: 'center',
-        marginTop: 16,
-        opacity: pronOpacity,
-      }}>
-        {pronunciation}
-      </div>
-      {lang === 'ko' ? (
-        <>
-          <div style={{
-            fontSize: 48,
-            fontWeight: 700,
-            color: '#FFFFFF',
-            fontFamily: koreanFontFamily,
-            textAlign: 'center',
-            marginTop: 24,
-            opacity: meaningOpacity,
-            lineHeight: 1.4,
-            wordBreak: 'keep-all',
-            padding: '0 50px',
-          }}>
-            {meaningKo}
-          </div>
-          <div style={{
-            fontSize: 30,
-            fontWeight: 400,
-            color: '#CBD5E1',
-            fontFamily: englishFontFamily,
-            textAlign: 'center',
-            marginTop: 12,
-            opacity: meaningOpacity,
-            padding: '0 50px',
-          }}>
-            {meaning}
-          </div>
-        </>
-      ) : (
+        {/* 단어 */}
         <div style={{
-          fontSize: 40,
-          fontWeight: 500,
-          color: '#FFFFFF',
+          fontSize: 88,
+          fontWeight: 900,
+          color: '#06B6D4',
           fontFamily: englishFontFamily,
           textAlign: 'center',
-          marginTop: 24,
+          textShadow: '0 4px 40px rgba(6,182,212,0.6)',
+          transform: `scale(${wordScale})`,
+          letterSpacing: 2,
+        }}>
+          {word.toUpperCase()}
+        </div>
+
+        {/* 한국어 뜻 */}
+        <div style={{
+          fontSize: 50,
+          fontWeight: 700,
+          color: '#FFFFFF',
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+          textAlign: 'center',
+          marginTop: 20,
           opacity: meaningOpacity,
           lineHeight: 1.4,
+          wordBreak: 'keep-all',
           padding: '0 50px',
         }}>
-          {meaning}
+          {lang === 'ko' ? meaningKo : meaning}
         </div>
-      )}
+
+        {/* 기억 고정 문장 */}
+        <div style={{
+          fontSize: 38,
+          fontWeight: 600,
+          color: '#94A3B8',
+          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+          textAlign: 'center',
+          marginTop: 16,
+          opacity: lockOpacity,
+          lineHeight: 1.4,
+          wordBreak: 'keep-all',
+          fontStyle: 'italic',
+          padding: '0 50px',
+        }}>
+          {meaningLock}
+        </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
 
-// ─── MemeCTA ───
-const MemeCTA: React.FC<{
+// ─── CTA 오버레이 ───
+const CTAOverlay: React.FC<{
   frame: number;
-  tagline: string;
-  taglineKo: string;
   cta: string;
   ctaKo: string;
   section: Section;
   lang: 'ko' | 'en';
-}> = ({ frame, tagline, taglineKo, cta, ctaKo, section, lang }) => {
-  const fadeIn = interpolate(frame, [section.start, section.start + 15], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const fadeOut = interpolate(frame, [section.end - 10, section.end], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  if (frame < section.start || frame >= section.end) return null;
-
-  return (
-    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: fadeIn * fadeOut, padding: '0 60px' }}>
-      <AbsoluteFill style={{ backgroundColor: 'rgba(15,23,42,0.75)' }} />
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, zIndex: 1 }}>
-        <div style={{
-          fontSize: 60,
-          fontWeight: 900,
-          color: '#FFFFFF',
-          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
-          textAlign: 'center',
-          lineHeight: 1.3,
-          wordBreak: 'keep-all',
-        }}>
-          {lang === 'ko' ? taglineKo : tagline}
-        </div>
-        <div style={{
-          fontSize: 38,
-          fontWeight: 700,
-          color: '#FFFFFF',
-          fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
-          backgroundColor: '#06B6D4',
-          padding: '16px 48px',
-          borderRadius: 50,
-          textAlign: 'center',
-          wordBreak: 'keep-all',
-          lineHeight: 1.4,
-        }}>
-          {lang === 'ko' ? ctaKo : cta}
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-// ─── Outro ───
-const OutroSection: React.FC<{ frame: number; section: Section; lang: 'ko' | 'en' }> = ({ frame, section, lang }) => {
+}> = ({ frame, cta, ctaKo, section, lang }) => {
   const fadeIn = interpolate(frame, [section.start, section.start + 10], [0, 1], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
-  const fadeOut = interpolate(frame, [section.end - 10, section.end], [1, 0], {
+
+  if (frame < section.start || frame >= section.end) return null;
+
+  return (
+    <AbsoluteFill style={{
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      paddingBottom: 160,
+      zIndex: 25,
+      opacity: fadeIn,
+    }}>
+      <div style={{
+        fontSize: 46,
+        fontWeight: 900,
+        color: '#FFFFFF',
+        fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
+        backgroundColor: '#06B6D4',
+        padding: '18px 52px',
+        borderRadius: 50,
+        textAlign: 'center',
+        wordBreak: 'keep-all',
+        lineHeight: 1.3,
+        textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+      }}>
+        {lang === 'ko' ? ctaKo : cta}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ─── 미니 엔드마크 ───
+const MiniEndMark: React.FC<{
+  frame: number;
+  section: Section;
+  lang: 'ko' | 'en';
+}> = ({ frame, section, lang }) => {
+  const opacity = interpolate(frame, [section.start, section.start + 8], [0, 0.7], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
   if (frame < section.start || frame >= section.end) return null;
 
   return (
-    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: fadeIn * fadeOut, paddingBottom: 100 }}>
+    <AbsoluteFill style={{
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      paddingBottom: 60,
+      zIndex: 30,
+      opacity,
+    }}>
       <div style={{
-        fontSize: 56,
-        fontWeight: 900,
-        color: '#06B6D4',
+        fontSize: 24,
+        fontWeight: 600,
+        color: '#94A3B8',
         fontFamily: englishFontFamily,
-        textAlign: 'center',
-        letterSpacing: 3,
-        textShadow: '0 0 40px rgba(6,182,212,0.5)',
+        letterSpacing: 1,
       }}>
-        VocaVision AI
-      </div>
-      <div style={{
-        fontSize: 40,
-        fontWeight: 700,
-        color: '#FFFFFF',
-        fontFamily: englishFontFamily,
-        textAlign: 'center',
-        marginTop: 16,
-        backgroundColor: 'rgba(6,182,212,0.15)',
-        border: '2px solid rgba(6,182,212,0.4)',
-        borderRadius: 12,
-        padding: '10px 32px',
-      }}>
-        {lang === 'ko' ? 'vocavision.kr' : 'vocavision.app'}
+        VocaVision AI · {lang === 'ko' ? 'vocavision.kr' : 'vocavision.app'}
       </div>
     </AbsoluteFill>
   );
 };
+
+// ─── 워터마크 ───
+const Watermark: React.FC<{ lang: 'ko' | 'en' }> = ({ lang }) => (
+  <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
+    <div style={{
+      position: 'absolute',
+      top: 200,  // 상단 바 아래
+      left: 36,
+      backgroundColor: 'rgba(0,0,0,0.4)',
+      padding: '6px 14px',
+      borderRadius: 16,
+    }}>
+      <span style={{
+        fontSize: 22,
+        fontWeight: 800,
+        color: '#06B6D4',
+        fontFamily: englishFontFamily,
+        letterSpacing: 1,
+      }}>
+        VocaVision AI
+      </span>
+    </div>
+  </AbsoluteFill>
+);
 
 // ─── Main Component ───
 interface Props {
@@ -320,78 +397,82 @@ export const MemeShort: React.FC<Props> = ({ wordIndex, lang }) => {
   const { fps } = useVideoConfig();
   const data = MEME_WORDS[wordIndex];
 
-  const is3Scenes = data.scenes.length === 3;
-  const SCENE_SECTIONS = is3Scenes ? SECTIONS_3 : SECTIONS_2;
+  const topLine = lang === 'ko' ? data.topLineKo : data.topLineEn;
+  const meaningLock = lang === 'ko' ? data.meaningLockKo : data.meaningLockEn;
+
+  // 장면별 자막
+  const scene1Caption = lang === 'ko' ? data.scenes[0].descriptionKo : data.scenes[0].description;
+  const scene2Caption = lang === 'ko' ? data.scenes[1].descriptionKo : data.scenes[1].description;
+  const scene3Caption = lang === 'ko' ? data.scenes[2].descriptionKo : data.scenes[2].description;
+
+  // word 구간에서 scene3 이미지 freeze (word start 이후에도 scene3 이미지 유지)
+  const showScene3Freeze = frame >= SECTIONS.scene3.start;
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0F172A' }}>
-      <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)' }} />
+      {/* 배경 그라데이션 */}
+      <AbsoluteFill style={{
+        background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)',
+      }} />
 
-      {/* Watermark */}
-      <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 100 }}>
-        <div style={{
-          position: 'absolute', top: 70, left: 40,
-          backgroundColor: 'rgba(0,0,0,0.35)',
-          padding: '8px 16px', borderRadius: 20,
-        }}>
-          <span style={{
-            fontSize: 26, fontWeight: 800, color: '#06B6D4',
-            letterSpacing: 1, fontFamily: englishFontFamily,
-          }}>
-            VocaVision AI
-          </span>
-        </div>
-      </AbsoluteFill>
+      {/* Scene 1 — 책상 */}
+      <ImageWithBlurBg
+        imageUrl={data.scenes[0].imageUrl}
+        frame={frame}
+        section={SECTIONS.scene1}
+      />
 
-      {/* 상단 고정 제목 바 — 영상 전체 구간에 항상 표시 */}
-      <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 90 }}>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          backgroundColor: '#06B6D4',
-          paddingTop: 60,
-          paddingBottom: 24,
-          paddingLeft: 40,
-          paddingRight: 40,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <div style={{
-            fontSize: 52,
-            fontWeight: 900,
-            color: '#FFFFFF',
-            textAlign: 'center',
-            fontFamily: lang === 'ko' ? koreanFontFamily : englishFontFamily,
-            lineHeight: 1.25,
-            wordBreak: 'keep-all',
-            overflowWrap: 'break-word',
-            textShadow: '0 2px 8px rgba(0,0,0,0.3)',
-          }}>
-            {lang === 'ko' ? data.hookKo : data.hook}
-          </div>
-        </div>
-      </AbsoluteFill>
+      {/* Scene 2 — 침대 */}
+      <ImageWithBlurBg
+        imageUrl={data.scenes[1].imageUrl}
+        frame={frame}
+        section={SECTIONS.scene2}
+      />
 
-      {/* Scenes */}
-      <MemeSceneView frame={frame} imageUrl={data.scenes[0].imageUrl} description={data.scenes[0].description} descriptionKo={data.scenes[0].descriptionKo} section={SCENE_SECTIONS.scene1} lang={lang} />
-      <MemeSceneView frame={frame} imageUrl={data.scenes[1].imageUrl} description={data.scenes[1].description} descriptionKo={data.scenes[1].descriptionKo} section={SCENE_SECTIONS.scene2} lang={lang} />
-      {is3Scenes && data.scenes[2] && SCENE_SECTIONS.scene3 && (
-        <MemeSceneView
-          frame={frame}
+      {/* Scene 3 — 아침 후회 (word 구간까지 freeze 유지) */}
+      {showScene3Freeze && (
+        <ImageWithBlurBg
           imageUrl={data.scenes[2].imageUrl}
-          description={data.scenes[2].description}
-          descriptionKo={data.scenes[2].descriptionKo}
-          section={SCENE_SECTIONS.scene3}
-          lang={lang}
+          frame={frame}
+          section={SECTIONS.scene3}
+          freezeFrom={SECTIONS.word.start}
         />
       )}
 
-      <WordReveal frame={frame} fps={fps} word={data.word} pronunciation={data.pronunciation} meaning={data.meaning} meaningKo={data.meaningKo} section={SCENE_SECTIONS.word} lang={lang} />
-      <MemeCTA frame={frame} tagline={data.tagline} taglineKo={data.taglineKo} cta={data.cta} ctaKo={data.ctaKo} section={SCENE_SECTIONS.cta} lang={lang} />
-      <OutroSection frame={frame} section={SCENE_SECTIONS.outro} lang={lang} />
+      {/* 자막들 */}
+      <SceneCaption frame={frame} text={scene1Caption} section={SECTIONS.scene1} lang={lang} />
+      <SceneCaption frame={frame} text={scene2Caption} section={SECTIONS.scene2} lang={lang} />
+      <SceneCaption frame={frame} text={scene3Caption} section={SECTIONS.scene3} lang={lang} />
+
+      {/* 단어 + 뜻 오버레이 */}
+      <WordOverlay
+        frame={frame}
+        fps={fps}
+        word={data.word}
+        meaning={data.meaning}
+        meaningKo={data.meaningKo}
+        meaningLock={meaningLock}
+        section={SECTIONS.word}
+        lang={lang}
+      />
+
+      {/* CTA */}
+      <CTAOverlay
+        frame={frame}
+        cta={data.cta}
+        ctaKo={data.ctaKo}
+        section={SECTIONS.cta}
+        lang={lang}
+      />
+
+      {/* 미니 엔드마크 */}
+      <MiniEndMark frame={frame} section={SECTIONS.outro} lang={lang} />
+
+      {/* 상단 고정 제목 바 */}
+      <TopBar word={data.word} topLine={topLine} lang={lang} />
+
+      {/* 워터마크 */}
+      <Watermark lang={lang} />
     </AbsoluteFill>
   );
 };
