@@ -246,6 +246,10 @@ on:
           - TikTokShort-ambivalence-en
           - TikTokShort-sycophant-ko
           - TikTokShort-sycophant-en
+          - TikTokShort-apathy-ko
+          - TikTokShort-apathy-en
+          - TikTokShort-stagnation-ko
+          - TikTokShort-stagnation-en
           - MemeShort-procrastination-ko
           - MemeShort-procrastination-en
           - WordShort-set-047

@@ -2521,6 +2521,42 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ wordIndex: 5, lang: 'en' as const }}
       />
+      <Composition
+        id="TikTokShort-apathy-ko"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 6, lang: 'ko' as const }}
+      />
+      <Composition
+        id="TikTokShort-apathy-en"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 6, lang: 'en' as const }}
+      />
+      <Composition
+        id="TikTokShort-stagnation-ko"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 7, lang: 'ko' as const }}
+      />
+      <Composition
+        id="TikTokShort-stagnation-en"
+        component={TikTokShort}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ wordIndex: 7, lang: 'en' as const }}
+      />
 
       {/* set-042: surge, embargo, renewable (에너지·유가 영어 Part 2) */}
       <Composition
